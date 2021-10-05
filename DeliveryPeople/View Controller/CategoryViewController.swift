@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-class ViewController: UIViewController {
+class CategoryViewController: UIViewController {
 
   @IBOutlet weak var collectionView: UICollectionView!
   
@@ -25,12 +25,13 @@ class ViewController: UIViewController {
     collectionView.collectionViewLayout = layout()
     
     view.addSubview(restaurents)
+    
   }
 
 
 }
 
-extension ViewController {
+extension CategoryViewController {
   private func layout() -> UICollectionViewLayout{
     let layout = UICollectionViewFlowLayout()
     layout.sectionInset = .zero
@@ -44,7 +45,7 @@ extension ViewController {
   }
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension CategoryViewController: UICollectionViewDataSource {
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     1
