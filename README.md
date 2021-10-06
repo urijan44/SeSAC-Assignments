@@ -2,9 +2,9 @@
 
 # 스토리보드 구성
 
-![Untitled](src/Untitled.png)
+![Untitled](src/storyboard.png)
 
-![Untitled](src/Untitled%201.png)
+![Untitled](src/stack.png)
 
 슬라임 이미지와 레이블은 사진과 같이 스텍뷰를 중첩해서 만들었다.
 
@@ -197,4 +197,4 @@ class EmotionManager {
 - 이 과정에서 emotions이 비어있으면 저장된 적이 없는 것으로 판단해 emotions를 초기값으로 만든다.
 - save 메소드는 load와 똑같이 JSONEncoder를 통해 Data로 변환 후 UserDefaults를 사용하여 저장했다. (근데 이렇게 까지 하면 그냥 Plist로 저장하는 거랑 다를 거 없지 않나?)
 
-![Simulator Screen Recording - iPhone 13 Pro Max - 2021-10-07 at 01.44.59.gif](src/Simulator_Screen_Recording_-_iPhone_13_Pro_Max_-_2021-10-07_at_01.44.59.gif)
+![](src/result.gif)
