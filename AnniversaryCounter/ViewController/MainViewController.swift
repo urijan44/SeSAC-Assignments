@@ -38,9 +38,6 @@ class MainViewController: UIViewController {
     }
     
     updateUI()
-    
-    
-    
   }
   
   @objc func dDaySetup(sender: DdayViewTapGesture) {
@@ -81,7 +78,7 @@ class MainViewController: UIViewController {
     
   }
   
-  
+  //UI Reset
   func updateUI() {
     //dDayImageView UI
     for (imageView, dday) in zip(dDayImageViews, dDayManager.ddays) {

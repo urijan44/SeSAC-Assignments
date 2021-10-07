@@ -5,7 +5,7 @@
 //  Created by hoseung Lee on 2021/10/07.
 //
 
-import UIKit
+import Foundation
 
 struct DDay: Codable {
   var targetDate: Date
@@ -22,7 +22,6 @@ struct DDay: Codable {
   var ddayText: String {
     return dday > 0 ? "D+\(dday)" : "D-\(dday)"
   }
-  
 }
 
 
