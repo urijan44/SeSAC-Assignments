@@ -227,33 +227,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outletCollection property="emotionImageViewCollection" destination="T3l-q9-EEa" collectionClass="NSMutableArray" id="qv6-dc-kdA"/>
-                        <outletCollection property="emotionImageViewCollection" destination="w2H-IH-Y0m" collectionClass="NSMutableArray" id="kcb-0B-4j5"/>
-                        <outletCollection property="emotionImageViewCollection" destination="Abm-ML-xmB" collectionClass="NSMutableArray" id="b7l-8Z-1oo"/>
-                        <outletCollection property="emotionImageViewCollection" destination="bxc-lH-EFl" collectionClass="NSMutableArray" id="yFG-3v-iE4"/>
-                        <outletCollection property="emotionImageViewCollection" destination="KG0-h7-PHq" collectionClass="NSMutableArray" id="g0e-2g-phj"/>
-                        <outletCollection property="emotionImageViewCollection" destination="6SD-ms-Q6P" collectionClass="NSMutableArray" id="QsC-lO-Irv"/>
-                        <outletCollection property="emotionImageViewCollection" destination="Obw-X7-x6T" collectionClass="NSMutableArray" id="RO4-rG-RVP"/>
-                        <outletCollection property="emotionImageViewCollection" destination="JBP-aI-cKT" collectionClass="NSMutableArray" id="ZKf-Q9-2cB"/>
-                        <outletCollection property="emotionImageViewCollection" destination="Bqd-5T-a11" collectionClass="NSMutableArray" id="gdv-VL-kXs"/>
-                        <outletCollection property="emotionLableViewCollection" destination="RyU-KO-Aer" collectionClass="NSMutableArray" id="Zry-Ky-ZEb"/>
-                        <outletCollection property="emotionLableViewCollection" destination="hRU-Or-UWz" collectionClass="NSMutableArray" id="6ov-Cq-Oas"/>
-                        <outletCollection property="emotionLableViewCollection" destination="IgZ-LG-PXB" collectionClass="NSMutableArray" id="gUc-eV-4h0"/>
-                        <outletCollection property="emotionLableViewCollection" destination="aao-ge-C9N" collectionClass="NSMutableArray" id="aCe-9f-G9a"/>
-                        <outletCollection property="emotionLableViewCollection" destination="wYA-JN-UZs" collectionClass="NSMutableArray" id="iO5-tN-72H"/>
-                        <outletCollection property="emotionLableViewCollection" destination="iwi-Mg-pkL" collectionClass="NSMutableArray" id="T0z-AS-K6m"/>
-                        <outletCollection property="emotionLableViewCollection" destination="IVb-sx-El4" collectionClass="NSMutableArray" id="UdA-6T-0fu"/>
-                        <outletCollection property="emotionLableViewCollection" destination="qu4-ED-b1s" collectionClass="NSMutableArray" id="kuG-vb-Ug1"/>
-                        <outletCollection property="emotionLableViewCollection" destination="k21-d5-dCx" collectionClass="NSMutableArray" id="K65-9T-I72"/>
-                        <outletCollection property="emotionStackViewCollection" destination="iT4-78-skT" collectionClass="NSMutableArray" id="FcJ-LI-lDa"/>
-                        <outletCollection property="emotionStackViewCollection" destination="zx8-Mm-dG1" collectionClass="NSMutableArray" id="YU2-mK-0fE"/>
-                        <outletCollection property="emotionStackViewCollection" destination="7xn-pi-qDa" collectionClass="NSMutableArray" id="xEa-4B-pxP"/>
-                        <outletCollection property="emotionStackViewCollection" destination="plB-gG-PLP" collectionClass="NSMutableArray" id="EN6-bj-Jsw"/>
-                        <outletCollection property="emotionStackViewCollection" destination="hw4-Y8-yv7" collectionClass="NSMutableArray" id="he9-Nc-sRD"/>
-                        <outletCollection property="emotionStackViewCollection" destination="Wic-2J-SB0" collectionClass="NSMutableArray" id="QPi-4p-Pqd"/>
-                        <outletCollection property="emotionStackViewCollection" destination="ZNa-nu-CZg" collectionClass="NSMutableArray" id="gcZ-lC-PNy"/>
-                        <outletCollection property="emotionStackViewCollection" destination="HWV-7W-P9b" collectionClass="NSMutableArray" id="mbH-Z3-vXp"/>
-                        <outletCollection property="emotionStackViewCollection" destination="Kyf-vK-wgu" collectionClass="NSMutableArray" id="r7v-rr-rwN"/>
+                        <outlet property="superStackView" destination="EcG-gq-xGK" id="9Xy-TY-25a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z56-dz-ymx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

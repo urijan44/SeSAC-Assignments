@@ -9,10 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
   
-
-  @IBOutlet var emotionImageViewCollection: [UIImageView]!
-  @IBOutlet var emotionLableViewCollection: [UILabel]!
-  @IBOutlet var emotionStackViewCollection: [UIStackView]!
+  @IBOutlet var superStackView: UIStackView!
+  
+  var elements: [UIView] {
+    superStackView.subviews.map { $0.subviews }.flatMap { $0 }
+  }
   
   let manager = EmotionManager()
   
@@ -23,24 +24,21 @@ class ViewController: UIViewController {
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     
-    
-    if manager.emotions.count == emotionImageViewCollection.count {
-      for (emotion, eachView) in zip(manager.emotions, emotionImageViewCollection) {
-        eachView.image = emotion.image
-      }
-      for (emotion, eachView) in zip(manager.emotions, emotionLableViewCollection) {
-        eachView.text = "\(emotion.emotionState.rawValue) \(emotion.emotionCount)"
-        eachView.font = eachView.font.withSize(15)
-        eachView.textColor = .black
-      }
-    }
-    
-    for (idx, stackView) in emotionStackViewCollection.enumerated() {
+    for (emotion, (idx, element)) in zip(manager.emotions, elements.enumerated()) {
       let tapGesture = StackViewTapGesture(target: self, action: #selector(tappedEmotion(sender:)))
       tapGesture.idx = idx
-      stackView.addGestureRecognizer(tapGesture)
+      element.addGestureRecognizer(tapGesture)
+      
+      if let imageView = element.subviews[0] as? UIImageView {
+        imageView.image = emotion.image
+      }
+      
+      if let labelView = element.subviews[1] as? UILabel {
+        labelView.text = "\(emotion.emotionState.rawValue) \(emotion.emotionCount)"
+        labelView.font = labelView.font.withSize(15)
+        labelView.textColor = .black
+      }
     }
-    
   }
   
   @objc func tappedEmotion(sender: StackViewTapGesture) {
@@ -48,18 +46,20 @@ class ViewController: UIViewController {
     manager.emotions[idx].emotionCount += 1
     updateLable(for: idx)
     
-    let origin = emotionImageViewCollection[idx].center.x
+    let targetImage = elements[idx].subviews[0] as! UIImageView
+    let origin = targetImage.center.x
     UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0.0, options: [], animations: {
-      self.emotionImageViewCollection[idx].center.x += 10
+      targetImage.center.x += 10
     }, completion: nil)
-    emotionImageViewCollection[idx].center.x = emotionImageViewCollection[idx].center.x != origin ? origin : emotionImageViewCollection[idx].center.x
+    targetImage.center.x = targetImage.center.x != origin ? origin : targetImage.center.x
     
     
   }
   
   func updateLable(for idx: Int) {
     let emotion = manager.emotions[idx]
-    emotionLableViewCollection[idx].text = "\(emotion.emotionState.rawValue) \(emotion.emotionCount)"
+    let targetLabel = elements[idx].subviews[1] as! UILabel
+    targetLabel.text = "\(emotion.emotionState.rawValue) \(emotion.emotionCount)"
     manager.save()
   }
 }
