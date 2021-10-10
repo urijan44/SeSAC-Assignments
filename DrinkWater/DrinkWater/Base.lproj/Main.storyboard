@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bar-qT-feq">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--물 마시기-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DrinkWaterViewController" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ltH-q6-nj9">
+                                <rect key="frame" x="20" y="74" width="335" height="114"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="잘하셨어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpB-HH-kWy">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 마신 양은" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VU2-Q8-Btm">
+                                        <rect key="frame" x="0.0" y="30" width="335" height="30"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200ml" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0O-qe-Ivc">
+                                        <rect key="frame" x="0.0" y="60" width="335" height="37"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="목표의 67%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K54-eo-U3g">
+                                        <rect key="frame" x="0.0" y="97" width="335" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-9" translatesAutoresizingMaskIntoConstraints="NO" id="hhS-1k-ASd">
+                                <rect key="frame" x="60" y="228" width="255" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hhS-1k-ASd" secondAttribute="height" id="TQd-1o-hjq"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1200ml" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ec-11-5h8">
+                                <rect key="frame" x="112.5" y="503" width="150" height="50"/>
+                                <color key="backgroundColor" name="BackgroundHighlight"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1sN-OS-aHB"/>
+                                    <constraint firstAttribute="width" constant="150" id="BWX-J4-l0E"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sL2-RZ-YfV">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nJz-qu-eq9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="물마시기">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedDrinkAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="tMd-h8-HlR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USERNAME님의 하루 물 권장 섭취량은 2.1L 입니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTG-T2-HVM">
+                                <rect key="frame" x="20" y="594" width="335" height="14.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hhS-1k-ASd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="24Z-Pj-8g6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hhS-1k-ASd" secondAttribute="trailing" constant="60" id="CEI-Bm-2cC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ltH-q6-nj9" secondAttribute="trailing" constant="20" id="EIa-Tt-amf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sTG-T2-HVM" secondAttribute="trailing" constant="20" id="N33-Rl-kQD"/>
+                            <constraint firstItem="hhS-1k-ASd" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="NMt-ur-trA"/>
+                            <constraint firstItem="4Ec-11-5h8" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ox4-W0-m4V"/>
+                            <constraint firstItem="ltH-q6-nj9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZAD-7x-n88"/>
+                            <constraint firstItem="ltH-q6-nj9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="fyX-UG-lKJ"/>
+                            <constraint firstItem="4Ec-11-5h8" firstAttribute="top" secondItem="hhS-1k-ASd" secondAttribute="bottom" constant="20" id="hDX-Cv-mjk"/>
+                            <constraint firstItem="sTG-T2-HVM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iOf-05-kXq"/>
+                            <constraint firstItem="hhS-1k-ASd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="lSn-Tx-mwA"/>
+                            <constraint firstItem="sL2-RZ-YfV" firstAttribute="top" secondItem="sTG-T2-HVM" secondAttribute="bottom" constant="8.5" id="oRG-sU-D1x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sL2-RZ-YfV" secondAttribute="bottom" id="sZj-x0-Jgj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sL2-RZ-YfV" secondAttribute="trailing" id="tYA-Af-zp1"/>
+                            <constraint firstItem="sL2-RZ-YfV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wdv-4V-Cr8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="물 마시기" id="yje-XD-G3c">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.clockwise" catalog="system" id="Znu-G5-KBV">
+                            <connections>
+                                <action selector="tappedResetButton" destination="BYZ-38-t0r" id="LMG-Nf-eTW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.circle" catalog="system" id="q5Y-cV-4kg">
+                            <connections>
+                                <segue destination="Gcu-dD-K6d" kind="show" identifier="ProfileSetup" id="Zu3-Zj-4I8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="achivmentLabel" destination="K54-eo-U3g" id="60n-pd-Yq6"/>
+                        <outlet property="cactusImage" destination="hhS-1k-ASd" id="I23-pX-4IY"/>
+                        <outlet property="drinkButton" destination="sL2-RZ-YfV" id="9hl-v2-7hl"/>
+                        <outlet property="encorageMessageLabel" destination="zpB-HH-kWy" id="ctw-FC-cgK"/>
+                        <outlet property="footerLabel" destination="sTG-T2-HVM" id="e48-Qz-Uft"/>
+                        <outlet property="intakeWaterAmountLabel" destination="4Ec-11-5h8" id="pmd-l2-bvO"/>
+                        <outlet property="todayDescriptionLabel" destination="VU2-Q8-Btm" id="eHr-SZ-47D"/>
+                        <outlet property="totalWaterIntakeLabel" destination="k0O-qe-Ivc" id="Wji-gT-vEE"/>
+                        <outletCollection property="wholeTextUI" destination="zpB-HH-kWy" collectionClass="NSMutableArray" id="NQF-DY-1st"/>
+                        <outletCollection property="wholeTextUI" destination="VU2-Q8-Btm" collectionClass="NSMutableArray" id="bAB-oc-qhS"/>
+                        <outletCollection property="wholeTextUI" destination="k0O-qe-Ivc" collectionClass="NSMutableArray" id="un5-55-wzm"/>
+                        <outletCollection property="wholeTextUI" destination="K54-eo-U3g" collectionClass="NSMutableArray" id="uZ8-T1-PgF"/>
+                        <outletCollection property="wholeTextUI" destination="4Ec-11-5h8" collectionClass="NSMutableArray" id="9xE-34-fVd"/>
+                        <outletCollection property="wholeTextUI" destination="sTG-T2-HVM" collectionClass="NSMutableArray" id="obc-pn-x4M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1040.8" y="109.29535232383809"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="lC5-Ee-XRr">
+            <objects>
+                <viewController id="Gcu-dD-K6d" customClass="ProfileViewController" customModule="DrinkWater" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Vf-52-Tyg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-9" translatesAutoresizingMaskIntoConstraints="NO" id="Wa6-ML-Ivg">
+                                <rect key="frame" x="20" y="64" width="335" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="Ffn-CH-HfY"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="키(cm)를 설정해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LNd-fr-8Hl" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="30" y="294" width="315" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Skn-1b-fMV"/>
+                                    <constraint firstAttribute="height" constant="50" id="uHc-FS-olY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="몸무게(kg)을 설정해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rod-0V-ehf" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="30" y="364" width="315" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="0zb-hP-DYx"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="KJH-pI-qUH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 설정해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ef-AI-Sio" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="30" y="224" width="315" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="KoX-qE-7QK"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="NyB-Vb-691"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cYi-ES-Lhp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Rod-0V-ehf" firstAttribute="leading" secondItem="cYi-ES-Lhp" secondAttribute="leading" constant="30" id="HZh-h4-orz"/>
+                            <constraint firstItem="LNd-fr-8Hl" firstAttribute="leading" secondItem="cYi-ES-Lhp" secondAttribute="leading" constant="30" id="KVI-Jh-1VO"/>
+                            <constraint firstItem="cYi-ES-Lhp" firstAttribute="trailing" secondItem="5ef-AI-Sio" secondAttribute="trailing" constant="30" id="LG6-lV-UhF"/>
+                            <constraint firstItem="LNd-fr-8Hl" firstAttribute="top" secondItem="5ef-AI-Sio" secondAttribute="bottom" constant="20" id="M5S-KK-XN0"/>
+                            <constraint firstItem="5ef-AI-Sio" firstAttribute="leading" secondItem="cYi-ES-Lhp" secondAttribute="leading" constant="30" id="Qqk-6F-jld"/>
+                            <constraint firstItem="Wa6-ML-Ivg" firstAttribute="top" secondItem="cYi-ES-Lhp" secondAttribute="top" constant="20" id="T5w-iK-1gs"/>
+                            <constraint firstItem="5ef-AI-Sio" firstAttribute="top" secondItem="Wa6-ML-Ivg" secondAttribute="bottom" constant="30" id="ULe-Kz-YC7"/>
+                            <constraint firstItem="Wa6-ML-Ivg" firstAttribute="leading" secondItem="cYi-ES-Lhp" secondAttribute="leading" constant="20" id="r0v-Gx-QsX"/>
+                            <constraint firstItem="cYi-ES-Lhp" firstAttribute="trailing" secondItem="Rod-0V-ehf" secondAttribute="trailing" constant="30" id="rdP-31-zZe"/>
+                            <constraint firstItem="cYi-ES-Lhp" firstAttribute="trailing" secondItem="Wa6-ML-Ivg" secondAttribute="trailing" constant="20" id="v7U-qM-FgE"/>
+                            <constraint firstItem="Rod-0V-ehf" firstAttribute="top" secondItem="LNd-fr-8Hl" secondAttribute="bottom" constant="20" id="wSh-ge-t5n"/>
+                            <constraint firstItem="cYi-ES-Lhp" firstAttribute="trailing" secondItem="LNd-fr-8Hl" secondAttribute="trailing" constant="30" id="ytL-c3-Wzv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rdR-ZG-DJ4">
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="REo-Of-ykJ">
+                            <connections>
+                                <action selector="saveProfile:" destination="Gcu-dD-K6d" id="ynq-xJ-cEY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nickNameTextField" destination="5ef-AI-Sio" id="9p5-Hv-PfE"/>
+                        <outlet property="tallTextField" destination="LNd-fr-8Hl" id="1F4-5Y-aPD"/>
+                        <outlet property="weightTextField" destination="Rod-0V-ehf" id="dYR-zS-P4a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8wI-Dx-hos" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="109"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="13t-3k-wT6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bar-qT-feq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0eR-09-lK7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="jLL-hS-9Pq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RPh-qV-D7N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="5ef-AI-Sio">
+            <size key="intrinsicContentSize" width="151.5" height="21"/>
+        </designable>
+        <designable name="LNd-fr-8Hl">
+            <size key="intrinsicContentSize" width="157.5" height="21"/>
+        </designable>
+        <designable name="Rod-0V-ehf">
+            <size key="intrinsicContentSize" width="182" height="21"/>
+        </designable>
+    </designables>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+    <resources>
+        <image name="1-9" width="152" height="151"/>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <namedColor name="BackgroundHighlight">
+            <color red="0.25283218113239753" green="0.51045008912655976" blue="0.3857003170331787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
