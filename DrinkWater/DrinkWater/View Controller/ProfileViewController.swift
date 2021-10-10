@@ -19,6 +19,13 @@ class ProfileViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    //keyboard
+    let device = UIDevice.current.name
+    if device.contains("SE") || device.contains("pod") {
+      NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+      NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
     //userProfile이 nil이면 뒤로가기 버튼 숨기기
     if userManager.userProfile == nil {
       print("userProfile nil")
@@ -32,13 +39,21 @@ class ProfileViewController: UIViewController {
     
     //view
     view.backgroundColor = UIColor(named: Constants.backgroundColor)
+    
     //textField
+    let bar = UIToolbar()
+    let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+    let next = UIBarButtonItem(image: UIImage(systemName: "chevron.right"), style: .plain, target: self, action: #selector(nextTextfield))
+    let previous = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(previousTextfield))
+    bar.items = [flexibleSpace, previous, next]
+    bar.sizeToFit()
     [nickNameTextField, tallTextField, weightTextField].forEach { field in
       field?.borderActiveColor = .white
       field?.placeholderColor = .white
       field?.placeholderFontScale = 0.8
       field?.textColor = .white
       field?.delegate = self
+      field?.inputAccessoryView = bar
     }
     
     //textfield
@@ -50,11 +65,53 @@ class ProfileViewController: UIViewController {
     view.addGestureRecognizer(resignKeyboardGesture)
   }
   
+  
+  //MARK: - Helper Methods
   @objc func resignKeyboard() {
     view.endEditing(true)
   }
   
+  @objc func nextTextfield() {
+    if nickNameTextField.isFirstResponder {
+      tallTextField.becomeFirstResponder()
+    } else if tallTextField.isFirstResponder {
+      weightTextField.becomeFirstResponder()
+    } else if weightTextField.isFirstResponder {
+      saveProfile()
+    }
+  }
   
+  @objc func previousTextfield() {
+    if weightTextField.isFirstResponder {
+      tallTextField.becomeFirstResponder()
+    } else if tallTextField.isFirstResponder {
+      nickNameTextField.becomeFirstResponder()
+    }
+  }
+  
+  @objc private func keyboardWillShow(notification: NSNotification) {
+    if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+      if self.view.frame.origin.y == 0 {
+        self.view.frame.origin.y -= keyboardSize.height - 150
+      }
+    }
+  }
+  
+  @objc private func keyboardWillHide(notification: NSNotification) {
+    if self.view.frame.origin.y != 0 {
+      self.view.frame.origin.y = 0
+    }
+  }
+  
+  func showAlert(_ message: String) {
+    let alert = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
+    let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+    alert.addAction(ok)
+    
+    present(alert, animated: true, completion: nil)
+  }
+  
+  //MARK: - IBAction
   @IBAction func saveProfile() {
     guard let nickname = nickNameTextField.text,
             let tall = tallTextField.text,
@@ -76,27 +133,12 @@ class ProfileViewController: UIViewController {
       showAlert("키와 몸무게는 숫자만 입력해 주세요!")
       return
     }
-    
-  }
-  
-  func showAlert(_ message: String) {
-    let alert = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
-    let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
-    alert.addAction(ok)
-    
-    present(alert, animated: true, completion: nil)
   }
 }
 
 extension ProfileViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    if nickNameTextField.isFirstResponder {
-      tallTextField.becomeFirstResponder()
-    } else if tallTextField.isFirstResponder {
-      weightTextField.becomeFirstResponder()
-    } else if weightTextField.isFirstResponder {
-      saveProfile()
-    }
+    nextTextfield()
     return true
   }
 }

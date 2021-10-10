@@ -199,7 +199,7 @@
                     <navigationItem key="navigationItem" id="rdR-ZG-DJ4">
                         <barButtonItem key="rightBarButtonItem" title="저장" id="REo-Of-ykJ">
                             <connections>
-                                <action selector="saveProfile:" destination="Gcu-dD-K6d" id="ynq-xJ-cEY"/>
+                                <action selector="saveProfile" destination="Gcu-dD-K6d" id="cf8-eg-CCM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -249,7 +249,7 @@
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
         <namedColor name="BackgroundHighlight">
-            <color red="0.25283218113239753" green="0.51045008912655976" blue="0.3857003170331787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.25299999117851257" green="0.50999999046325684" blue="0.38600000739097595" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
