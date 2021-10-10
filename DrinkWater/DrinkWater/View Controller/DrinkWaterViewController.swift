@@ -151,9 +151,17 @@ class DrinkWaterViewController: UIViewController {
   }
   
   @IBAction func tappedResetButton() {
-    userManager.userProfile?.todayWaterIntake = 0
-    updateUI()
-    resetLabelColor()
-    userManager.save()
+    let alert = UIAlertController(title: "알림!", message: "정말 오늘 기록을 초기화 하시겠습니까?", preferredStyle: .alert)
+    let ok = UIAlertAction(title: "초기화", style: .destructive) { _ in
+      self.userManager.userProfile?.todayWaterIntake = 0
+      self.updateUI()
+      self.resetLabelColor()
+      self.userManager.save()
+    }
+    alert.addAction(ok)
+    let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+    alert.addAction(cancel)
+    
+    present(alert, animated: true, completion: nil)    
   }
 }
