@@ -10,3 +10,4 @@
 |5|Emotion Diary|어플이 너무 귀여움, 스토리보드로 스택 뷰 잡는 것 연습 많이 됨, 다량의 IBOutlet들을 Collection Outlet으로 가져오는 법이 있었고, 상위 뷰로 통째로 묶어서 subviews로 접근하는 법이 있었음 각각의 장단이 있다.|[이동하기](EmotionDiary/README.md)
 |6|기념일 계산기|마찬가지로 뷰 구성하는 연습이 되었음, TimeInterval과 Date에 대해서 따로 정리중인데 깊게 들어가니 어렵다. 계속 공부중|[이동하기](AnniversaryCounter/README.md)
 |7|Drink Water|여태 한 것중 가장 덩치그 크나 크게 어려운 부분은 없었음, 그러나 추가하고 싶은 것은 많음, 리드미 참고, 이 시점에서 Assignment Repo 통합함|[이동하기](DrinkWater/README.md)
+|8|테이블뷰컨트롤러구현하기|테이블뷰컨트롤러 스태틱과 프로토타입으로 구현, 14이후 deprecated된 셀, 헤더 구성방법 특별히 신경써봄|[이동하기](MyChecklist/README.md)
