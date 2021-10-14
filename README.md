@@ -12,4 +12,4 @@
 |7|Drink Water|여태 한 것중 가장 덩치그 크나 크게 어려운 부분은 없었음, 그러나 추가하고 싶은 것은 많음, 리드미 참고, 이 시점에서 Assignment Repo 통합함|[이동하기](DrinkWater/README.md)
 |8|테이블뷰컨트롤러구현하기|테이블뷰컨트롤러 스태틱과 프로토타입으로 구현, 14이후 deprecated된 셀, 헤더 구성방법 특별히 신경써봄|[이동하기](MyChecklist/README.md)
 |9-1|환율변동프로그램|특별한 점은 없음, Setter는 항상 조금 헷갈림|[이동하기](ExchangeProgram/README.md)
-|9-2|쇼핑리스트|DiffableDataSource로 바꾸기, 코드 리펙토링, 세부기능 안한거 너무 많음, 세이브 너무 자주함, 앱이 백그라운드로 가거나 종료되었을 대 저장하면 되겠음, 싱글톤 패턴 삭제하기, 디바이스 별 레이아웃 체크하기|[이동하기](ShoppingList/README.md)
+|9-2|쇼핑리스트|DiffableDataSource 적용 실패기 ㅎㅎ.|[이동하기](ShoppingList/README.md)

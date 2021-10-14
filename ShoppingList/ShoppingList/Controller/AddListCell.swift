@@ -12,13 +12,29 @@ protocol AddListCellDelegate: AnyObject {
 }
 
 class AddListCell: UITableViewCell {
-  @IBOutlet weak var addListTextField: UITextField!
-  @IBOutlet weak var addListButton: UIButton!
+  @IBOutlet weak var addListTextField: UITextField! {
+    didSet {
+      addListTextField.delegate = self
+    }
+  }
+  @IBOutlet weak var addListButton: UIButton! {
+    didSet {
+      addListButton.layer.cornerRadius = 8
+    }
+  }
   
   weak var delegate: AddListCellDelegate?
   
   @IBAction func addList() {
     delegate?.addListCell(self, with: addListTextField.text)
     addListTextField.text = ""
+  }
+}
+
+extension AddListCell: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    addList()
+    return true
   }
 }

@@ -9,11 +9,15 @@ import UIKit
 
 protocol ShoppingListCellDelegate: AnyObject {
   func shoppingListCell(_ shoppingListCell: ShoppingListCell, tappedCheckbox check: Bool, index: Int)
-  func shoppingListCell(_ shoppingListCell: ShoppingListCell, tappedStar check: Bool, index: Int)
+  func shoppingListCell(_ shoppingListCell: ShoppingListCell, tappedStar star: Bool, index: Int)
 }
 
 class ShoppingListCell: UITableViewCell {
-  @IBOutlet weak var backscreenView: UIView!
+  @IBOutlet weak var backscreenView: UIView! {
+    didSet {
+      backscreenView.layer.cornerRadius = 15
+    }
+  }
   @IBOutlet weak var checkboxImageView: UIImageView! {
     didSet {
       checkboxImageView.isUserInteractionEnabled = true
@@ -36,12 +40,23 @@ class ShoppingListCell: UITableViewCell {
   
   weak var delegate: ShoppingListCellDelegate?
   
+  func configuration(_ idx: Int, for wish: Wish) {
+    check = wish.check
+    star = wish.star
+    self.idx = idx
+    
+    checkboxImageView.image = wish.check ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
+    itemNameLabel.text = wish.wishDescription
+    markImageView.image = wish.star ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+  }
+  
+  
   @objc func toggleCheckBox(sender: UITapGestureRecognizer) {
     delegate?.shoppingListCell(self, tappedCheckbox: check, index: idx)
   }
   
   @objc func toggleStar(sender: UITapGestureRecognizer) {
-    delegate?.shoppingListCell(self, tappedStar: check, index: idx)
+    delegate?.shoppingListCell(self, tappedStar: star, index: idx)
   }
   
 }

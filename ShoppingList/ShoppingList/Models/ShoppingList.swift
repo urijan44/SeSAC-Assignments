@@ -9,8 +9,10 @@ import Foundation
 
 class ShoppingList {
   static let shared = ShoppingList()
-  
+  private init() {}
   var wishList: [Wish] = []
+  
+  var currentSortStyle: SortStyle = SortStyle(rawValue: UserDefaults.standard.integer(forKey: "\(SortStyle.self)")) ?? .name
   
   private let initData = [
     Wish(wishDescription: "그립톡 구매하기", check: true, star: true),
@@ -26,11 +28,8 @@ class ShoppingList {
     encoder.outputFormatting = .prettyPrinted
     do {
       let wishsData = try encoder.encode(wishList)
-      print(wishsJSONURL)
       try wishsData.write(to: wishsJSONURL, options: .atomic)
-      print("save success")
     } catch let error {
-      print("save fail")
       print(error.localizedDescription)
     }
   }
@@ -55,6 +54,25 @@ class ShoppingList {
   
   func addNewWish(wish: Wish) {
     wishList.append(wish)
+    saveWishs()
+  }
+  
+  func deleteWish(wish: Wish) -> Bool {
+    guard let index = wishList.firstIndex(of: wish) else { return false }
+    wishList.remove(at: index)
+    saveWishs()
+    return true
+  }
+  
+  func sortWish(_ sortStyle: SortStyle) {
+    switch sortStyle {
+    case .check:
+      wishList.sort { !$0.check && $1.check }
+    case .favorite:
+      wishList.sort { $0.star && !$1.star }
+    case .name:
+      wishList.sort { $0.wishDescription.localizedCaseInsensitiveCompare($1.wishDescription) == .orderedAscending }
+    }
     saveWishs()
   }
   
