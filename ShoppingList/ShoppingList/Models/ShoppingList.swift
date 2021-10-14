@@ -12,6 +12,8 @@ class ShoppingList {
   private init() {}
   var wishList: [Wish] = []
   
+  var currentSortStyle: SortStyle = SortStyle(rawValue: UserDefaults.standard.integer(forKey: "\(SortStyle.self)")) ?? .name
+  
   private let initData = [
     Wish(wishDescription: "그립톡 구매하기", check: true, star: true),
     Wish(wishDescription: "사이다 구매", star: false),
@@ -60,6 +62,18 @@ class ShoppingList {
     wishList.remove(at: index)
     saveWishs()
     return true
+  }
+  
+  func sortWish(_ sortStyle: SortStyle) {
+    switch sortStyle {
+    case .check:
+      wishList.sort { !$0.check && $1.check }
+    case .favorite:
+      wishList.sort { $0.star && !$1.star }
+    case .name:
+      wishList.sort { $0.wishDescription.localizedCaseInsensitiveCompare($1.wishDescription) == .orderedAscending }
+    }
+    saveWishs()
   }
   
 }

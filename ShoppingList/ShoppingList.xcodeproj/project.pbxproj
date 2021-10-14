@@ -17,6 +17,7 @@
 		8A8EEEB527173C1E0044BACA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8EEEB327173C1E0044BACA /* LaunchScreen.storyboard */; };
 		8A8EEEC1271748740044BACA /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8EEEC0271748740044BACA /* Wish.swift */; };
 		8A8EEEC4271748EC0044BACA /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8EEEC3271748EC0044BACA /* ShoppingList.swift */; };
+		8AF5E89C271858C9007C310F /* SortStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5E89B271858C9007C310F /* SortStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8A8EEEB627173C1E0044BACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A8EEEC0271748740044BACA /* Wish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wish.swift; sourceTree = "<group>"; };
 		8A8EEEC3271748EC0044BACA /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
+		8AF5E89B271858C9007C310F /* SortStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				8A8EEEC0271748740044BACA /* Wish.swift */,
 				8A8EEEC3271748EC0044BACA /* ShoppingList.swift */,
+				8AF5E89B271858C9007C310F /* SortStyle.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				8A8DCE37271765B30031B4CA /* ShoppingListCell.swift in Sources */,
 				8A8EEEC1271748740044BACA /* Wish.swift in Sources */,
 				8A8DCE36271765B30031B4CA /* AddListCell.swift in Sources */,
+				8AF5E89C271858C9007C310F /* SortStyle.swift in Sources */,
 				8A8EEEAD27173C1D0044BACA /* ShoppingListViewController.swift in Sources */,
 				8A8EEEC4271748EC0044BACA /* ShoppingList.swift in Sources */,
 				8A8EEEA927173C1D0044BACA /* AppDelegate.swift in Sources */,

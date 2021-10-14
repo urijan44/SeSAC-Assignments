@@ -9,7 +9,7 @@ import UIKit
 
 protocol ShoppingListCellDelegate: AnyObject {
   func shoppingListCell(_ shoppingListCell: ShoppingListCell, tappedCheckbox check: Bool, index: Int)
-  func shoppingListCell(_ shoppingListCell: ShoppingListCell, tappedStar check: Bool, index: Int)
+  func shoppingListCell(_ shoppingListCell: ShoppingListCell, tappedStar star: Bool, index: Int)
 }
 
 class ShoppingListCell: UITableViewCell {
@@ -56,7 +56,7 @@ class ShoppingListCell: UITableViewCell {
   }
   
   @objc func toggleStar(sender: UITapGestureRecognizer) {
-    delegate?.shoppingListCell(self, tappedStar: check, index: idx)
+    delegate?.shoppingListCell(self, tappedStar: star, index: idx)
   }
   
 }
