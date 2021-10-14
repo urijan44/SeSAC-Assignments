@@ -138,7 +138,12 @@
                             <outlet property="delegate" destination="YvA-0z-uO4" id="arW-qF-aSe"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="즐겨찾기" id="1W9-jV-f9S"/>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="RSe-1U-FDC"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="쇼핑" id="aQh-GP-tm1"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoi-2W-C34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,13 +152,17 @@
         <!--Navigation Controller-->
         <scene sceneID="Qwj-Lu-5uy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w81-df-JaH" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="w81-df-JaH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qi7-wD-2Zx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q6p-bw-X5X">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="YvA-0z-uO4" kind="relationship" relationship="rootViewController" id="8Tm-9k-eKB"/>
                     </connections>
