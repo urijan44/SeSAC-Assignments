@@ -13,7 +13,11 @@ protocol AddListCellDelegate: AnyObject {
 
 class AddListCell: UITableViewCell {
   @IBOutlet weak var addListTextField: UITextField!
-  @IBOutlet weak var addListButton: UIButton!
+  @IBOutlet weak var addListButton: UIButton! {
+    didSet {
+      addListButton.layer.cornerRadius = 8
+    }
+  }
   
   weak var delegate: AddListCellDelegate?
   

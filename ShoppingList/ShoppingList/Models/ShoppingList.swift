@@ -9,7 +9,7 @@ import Foundation
 
 class ShoppingList {
   static let shared = ShoppingList()
-  
+  private init() {}
   var wishList: [Wish] = []
   
   private let initData = [
@@ -26,11 +26,8 @@ class ShoppingList {
     encoder.outputFormatting = .prettyPrinted
     do {
       let wishsData = try encoder.encode(wishList)
-      print(wishsJSONURL)
       try wishsData.write(to: wishsJSONURL, options: .atomic)
-      print("save success")
     } catch let error {
-      print("save fail")
       print(error.localizedDescription)
     }
   }
@@ -56,6 +53,13 @@ class ShoppingList {
   func addNewWish(wish: Wish) {
     wishList.append(wish)
     saveWishs()
+  }
+  
+  func deleteWish(wish: Wish) -> Bool {
+    guard let index = wishList.firstIndex(of: wish) else { return false }
+    wishList.remove(at: index)
+    saveWishs()
+    return true
   }
   
 }

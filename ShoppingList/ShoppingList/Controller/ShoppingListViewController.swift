@@ -31,21 +31,13 @@ extension ShoppingListViewController {
     switch indexPath.section {
     case 0:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "AddListCell", for: indexPath) as? AddListCell else { fatalError() }
-      cell.layer.cornerRadius = 15
-      cell.addListButton.layer.cornerRadius = 8
       cell.delegate = self
       return cell
     default:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingListCell", for: indexPath) as? ShoppingListCell else { fatalError() }
       let wish = shoppingManager.wishList[indexPath.row]
       cell.delegate = self
-      cell.backscreenView.layer.cornerRadius = 15
-      cell.check = wish.check
-      cell.star = wish.star
-      cell.idx = indexPath.row
-      cell.checkboxImageView.image = wish.check ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
-      cell.itemNameLabel.text = wish.wishDescription
-      cell.markImageView.image = wish.star ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+      cell.configuration(indexPath.row, for: wish)
       
       return cell
     }
@@ -58,9 +50,10 @@ extension ShoppingListViewController {
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
       let indexPaths = [indexPath]
-      shoppingManager.wishList.remove(at: indexPath.row)
-      shoppingManager.saveWishs()
-      tableView.deleteRows(at: indexPaths, with: .automatic)
+      let wish = shoppingManager.wishList[indexPath.row]
+      if shoppingManager.deleteWish(wish: wish) {
+        tableView.deleteRows(at: indexPaths, with: .automatic)        
+      }
     }
   }
   
