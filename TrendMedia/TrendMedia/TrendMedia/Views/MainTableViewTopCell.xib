@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainTableViewHeaderView" customModule="TrendMedia" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTableViewTopCell" rowHeight="57" id="FUh-vC-c1q" customClass="MainTableViewTopCell" customModule="TrendMedia" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FUh-vC-c1q" id="CWv-Xp-OY2">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GwV-6a-tSi" customClass="MainTableViewHeaderView" customModule="TrendMedia" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="227"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ADBanner" translatesAutoresizingMaskIntoConstraints="NO" id="DWH-PY-hJf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="wWr-Af-8Md"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fec-Vh-zZr">
+                                <rect key="frame" x="15" y="79" width="345" height="128"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Sy7-yz-6wX">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="128"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="film" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jD2-xo-AaD">
+                                                <rect key="frame" x="0.0" y="39.5" width="115" height="48.5"/>
+                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tv" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="B4v-Df-AaS">
+                                                <rect key="frame" x="115" y="39" width="115" height="50"/>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book.closed" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Pad-hh-1Sj">
+                                                <rect key="frame" x="230" y="38.5" width="115" height="51"/>
+                                                <color key="tintColor" systemColor="systemBlueColor"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Pad-hh-1Sj" firstAttribute="height" secondItem="Sy7-yz-6wX" secondAttribute="height" multiplier="0.4" id="3Hd-2d-kkn"/>
+                                            <constraint firstItem="jD2-xo-AaD" firstAttribute="width" secondItem="Sy7-yz-6wX" secondAttribute="width" multiplier="0.333333" id="4Fe-zg-E0N"/>
+                                            <constraint firstItem="B4v-Df-AaS" firstAttribute="width" secondItem="Sy7-yz-6wX" secondAttribute="width" multiplier="0.333333" id="5sH-cM-KrS"/>
+                                            <constraint firstItem="Pad-hh-1Sj" firstAttribute="width" secondItem="Sy7-yz-6wX" secondAttribute="width" multiplier="0.333333" id="Oxt-aJ-uGs"/>
+                                            <constraint firstItem="jD2-xo-AaD" firstAttribute="height" secondItem="Sy7-yz-6wX" secondAttribute="height" multiplier="0.4" id="Y7V-9b-ehL"/>
+                                            <constraint firstItem="B4v-Df-AaS" firstAttribute="height" secondItem="Sy7-yz-6wX" secondAttribute="height" multiplier="0.4" id="cfq-tG-wZV"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Sy7-yz-6wX" firstAttribute="top" secondItem="Fec-Vh-zZr" secondAttribute="top" id="3BY-xN-wL3"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sy7-yz-6wX" secondAttribute="trailing" id="OFA-Wi-9GK"/>
+                                    <constraint firstAttribute="height" constant="128" id="QiA-5L-qLa"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sy7-yz-6wX" secondAttribute="bottom" id="WOy-4X-viN"/>
+                                    <constraint firstItem="Sy7-yz-6wX" firstAttribute="centerX" secondItem="Fec-Vh-zZr" secondAttribute="centerX" id="l6u-Dc-cfr"/>
+                                    <constraint firstItem="Sy7-yz-6wX" firstAttribute="leading" secondItem="Fec-Vh-zZr" secondAttribute="leading" id="le1-Bc-nYl"/>
+                                    <constraint firstItem="Sy7-yz-6wX" firstAttribute="centerY" secondItem="Fec-Vh-zZr" secondAttribute="centerY" id="rAO-Z2-BJH"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TREND MEDIA!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHo-OU-iL6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fec-Vh-zZr" firstAttribute="top" secondItem="GwV-6a-tSi" secondAttribute="top" constant="79" id="2zg-r4-ZRn"/>
+                            <constraint firstItem="WHo-OU-iL6" firstAttribute="centerY" secondItem="DWH-PY-hJf" secondAttribute="centerY" id="4Pq-wo-nNf"/>
+                            <constraint firstItem="WHo-OU-iL6" firstAttribute="trailing" secondItem="DWH-PY-hJf" secondAttribute="trailing" id="9Fy-2i-Kl1"/>
+                            <constraint firstItem="WHo-OU-iL6" firstAttribute="bottom" secondItem="DWH-PY-hJf" secondAttribute="bottom" id="Azk-AK-9wG"/>
+                            <constraint firstItem="WHo-OU-iL6" firstAttribute="centerX" secondItem="DWH-PY-hJf" secondAttribute="centerX" id="NvD-3y-ock"/>
+                            <constraint firstItem="DWH-PY-hJf" firstAttribute="top" secondItem="GwV-6a-tSi" secondAttribute="top" id="SeB-BU-EyU"/>
+                            <constraint firstItem="WHo-OU-iL6" firstAttribute="leading" secondItem="DWH-PY-hJf" secondAttribute="leading" id="g9f-Ni-BoD"/>
+                            <constraint firstAttribute="trailing" secondItem="DWH-PY-hJf" secondAttribute="trailing" id="gIM-D0-t7c"/>
+                            <constraint firstAttribute="trailing" secondItem="Fec-Vh-zZr" secondAttribute="trailing" constant="15" id="hRW-DP-ywH"/>
+                            <constraint firstItem="Fec-Vh-zZr" firstAttribute="leading" secondItem="GwV-6a-tSi" secondAttribute="leading" constant="15" id="mZu-HE-ib6"/>
+                            <constraint firstItem="DWH-PY-hJf" firstAttribute="leading" secondItem="GwV-6a-tSi" secondAttribute="leading" id="mlj-wD-v67"/>
+                            <constraint firstItem="WHo-OU-iL6" firstAttribute="top" secondItem="DWH-PY-hJf" secondAttribute="top" id="xvm-Qi-aqL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="filterView" destination="Fec-Vh-zZr" id="GQ1-sU-Lwl"/>
+            </connections>
+            <point key="canvasLocation" x="-116.66666666666667" y="-424.21875"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ADBanner" width="960" height="539"/>
+        <image name="book.closed" catalog="system" width="115" height="128"/>
+        <image name="film" catalog="system" width="128" height="93"/>
+        <image name="tv" catalog="system" width="128" height="97"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="119" id="KGk-i7-Jjw" customClass="MovieSearchTableViewCell" customModule="TrendMedia" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="376" height="119"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="376" height="119"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="h_hometown_cha_cha_cha" translatesAutoresizingMaskIntoConstraints="NO" id="y0a-17-CcL">
+                        <rect key="frame" x="8" y="8" width="69" height="103"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="y0a-17-CcL" secondAttribute="height" multiplier="69:103" id="Kta-qI-yyb"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="VFa-KF-MWL">
+                        <rect key="frame" x="85" y="8" width="283" height="103"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해리 포터와 죽음의 성물1(Harry Potter and the Deathly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-dT-66Q">
+                                <rect key="frame" x="0.0" y="0.0" width="283" height="22.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="75T-gZ-5rd">
+                                <rect key="frame" x="0.0" y="22.5" width="283" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="2010-10-17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAw-6Y-Oio">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="bGW-s1-7UY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" horizontalHuggingPriority="253" translatesAutoresizingMaskIntoConstraints="NO" id="Ma5-aa-gMU" customClass="VerticalLineView" customModule="TrendMedia" customModuleProvider="target">
+                                        <rect key="frame" x="65" y="0.0" width="10" height="21"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="10" id="nkz-qv-cki"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="EN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tel-Z1-2zM">
+                                        <rect key="frame" x="75" y="0.0" width="208" height="21"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="길고도 지루한 여름 날 호그와트 마법학교 다섯 번째 해를 기다리고 있는 해리포터(다니엘 래드클리프). 이모부 더즐리 식구들과 참고 사는 것도 지겨운데다 친구 론(루퍼트 그린트)과 헤르미온느(엠마 왓슨)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kje-hr-alU">
+                                <rect key="frame" x="0.0" y="43.5" width="283" height="59.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="y0a-17-CcL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="8CI-0r-eTO"/>
+                    <constraint firstItem="y0a-17-CcL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="KLa-oV-Rvm"/>
+                    <constraint firstItem="VFa-KF-MWL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Vgx-KV-xR4"/>
+                    <constraint firstAttribute="trailing" secondItem="VFa-KF-MWL" secondAttribute="trailing" constant="8" id="eGq-FS-evN"/>
+                    <constraint firstItem="VFa-KF-MWL" firstAttribute="leading" secondItem="y0a-17-CcL" secondAttribute="trailing" constant="8" id="nGi-Sh-ghF"/>
+                    <constraint firstAttribute="bottom" secondItem="VFa-KF-MWL" secondAttribute="bottom" constant="8" id="r62-cF-vIb"/>
+                    <constraint firstAttribute="bottom" secondItem="y0a-17-CcL" secondAttribute="bottom" constant="8" id="sso-aQ-P8P"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="languageLabel" destination="Tel-Z1-2zM" id="40S-jE-xcI"/>
+                <outlet property="posterImageView" destination="y0a-17-CcL" id="f88-Hz-Ah3"/>
+                <outlet property="releaseDateLabel" destination="DAw-6Y-Oio" id="tqq-92-vkX"/>
+                <outlet property="storylineLabel" destination="kje-hr-alU" id="buM-gZ-UNh"/>
+                <outlet property="titleLabel" destination="BpI-dT-66Q" id="6JJ-1h-0vn"/>
+            </connections>
+            <point key="canvasLocation" x="77" y="107"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="h_hometown_cha_cha_cha" width="175" height="262.5"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
