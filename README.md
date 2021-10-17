@@ -13,3 +13,4 @@
 |8|테이블뷰컨트롤러구현하기|테이블뷰컨트롤러 스태틱과 프로토타입으로 구현, 14이후 deprecated된 셀, 헤더 구성방법 특별히 신경써봄|[이동하기](MyChecklist/README.md)
 |9-1|환율변동프로그램|특별한 점은 없음, Setter는 항상 조금 헷갈림|[이동하기](ExchangeProgram/README.md)
 |9-2|쇼핑리스트|DiffableDataSource 적용 실패기 ㅎㅎ.|[이동하기](ShoppingList/README.md)
+|10|트렌드 미디어|셀 이미지를 로드 향상 필요함, 서치뷰 적용 필요함, cornerRadius랑 shadow 동시에 주기가 번거로웠음|[이동하기](TrendMedia/README.md)
