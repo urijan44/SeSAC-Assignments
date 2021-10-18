@@ -16,7 +16,12 @@ class DrinkWaterViewController: UIViewController {
   @IBOutlet weak var achivmentLabel: UILabel!
   @IBOutlet weak var cactusImage: UIImageView!
   @IBOutlet weak var footerLabel: UILabel!
-  @IBOutlet weak var drinkButton: UIButton!
+  @IBOutlet weak var drinkButton: UIButton! {
+    didSet {
+      drinkButton.backgroundColor = .white
+      drinkButton.setTitleColor(.black, for: .normal)
+    }
+  }
   @IBOutlet weak var intakeWaterAmountLabel: UILabel!
   var intakeWaterAmount = 0 {
     didSet {
@@ -40,8 +45,6 @@ class DrinkWaterViewController: UIViewController {
     //navigation
     navigationController?.navigationBar.backgroundColor = UIColor(named: Constants.backgroundColor)
     
-    //button
-    drinkButton.backgroundColor = .white
     
     //labels
     resetLabelColor()
@@ -54,11 +57,22 @@ class DrinkWaterViewController: UIViewController {
     intakeWaterAmountLabel.addGestureRecognizer(inputIntakeWaterAmountGesture)
     intakeWaterAmountLabel.text = "\(intakeWaterAmount)ml"
     
+    tooMuchDring()
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     updateUI()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    setImageViewAnimation()
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    setImageViewIdentity()
   }
   
   //MARK: 마실 물량 설정 뷰
@@ -72,7 +86,17 @@ class DrinkWaterViewController: UIViewController {
       guard let text = alert.textFields?[0].text else { return }
       if !text.isEmpty {
         if let amount = Int(text) {
-          self.intakeWaterAmount = amount
+          if amount < 2000 {
+            self.intakeWaterAmount = amount
+          } else {
+            let waringAlert = UIAlertController(title: "주의", message: "한번에 그만큼이나 마셨을리가 없습니다.", preferredStyle: .alert)
+            let close = UIAlertAction(title: "닫기", style: .default, handler: nil)
+            
+            waringAlert.addAction(close)
+            self.present(waringAlert, animated: true, completion: nil)
+            
+            
+          }
         }
       }
     }
@@ -142,12 +166,22 @@ class DrinkWaterViewController: UIViewController {
     }
   }
   
+  func tooMuchDring() {
+    if let todayDrink = userManager.userProfile?.todayWaterIntake {
+      if todayDrink > 5000 {
+        drinkButton.isUserInteractionEnabled = false
+        drinkButton.setTitle("오늘은 그만 마시기", for: .normal)
+      }
+    }
+  }
+  
   //MARK: - IBAction
   @IBAction func tappedDrinkAction() {
     userManager.userProfile?.todayWaterIntake += intakeWaterAmount
     intakeWaterAmount = 0
     updateUI()
     userManager.save()
+    tooMuchDring()
   }
   
   @IBAction func tappedResetButton() {
@@ -157,11 +191,28 @@ class DrinkWaterViewController: UIViewController {
       self.updateUI()
       self.resetLabelColor()
       self.userManager.save()
+      
+      self.drinkButton.isUserInteractionEnabled = true
+      self.drinkButton.setTitle("물 마시기", for: .normal)
+      
     }
     alert.addAction(ok)
     let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
     alert.addAction(cancel)
     
-    present(alert, animated: true, completion: nil)    
+    present(alert, animated: true, completion: nil)
+  }
+}
+
+extension DrinkWaterViewController {
+  private func setImageViewAnimation(){
+    UIView.animate(withDuration: 1.2, delay: 0, options: [.repeat, .autoreverse, .beginFromCurrentState]) {
+      self.cactusImage.transform = CGAffineTransform(translationX: 0, y: 0).scaledBy(x: 0.9, y: 0.9)
+    }
+  }
+  
+  private func setImageViewIdentity(){
+    self.cactusImage.layer.removeAllAnimations()
+    self.cactusImage.transform = .identity
   }
 }

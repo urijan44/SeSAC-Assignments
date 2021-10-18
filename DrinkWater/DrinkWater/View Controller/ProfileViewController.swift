@@ -28,7 +28,6 @@ class ProfileViewController: UIViewController {
     
     //userProfile이 nil이면 뒤로가기 버튼 숨기기
     if userManager.userProfile == nil {
-      print("userProfile nil")
       self.navigationItem.setHidesBackButton(true, animated: false)
       navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     } else {
