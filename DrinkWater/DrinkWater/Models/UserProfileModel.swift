@@ -25,9 +25,6 @@ class UserProfileManager {
   var userProfile: UserProfile?
   init() {
     load()
-    if userProfile == nil {
-      print("UserProfile is nil")
-    }
   }
   
   func save() {
