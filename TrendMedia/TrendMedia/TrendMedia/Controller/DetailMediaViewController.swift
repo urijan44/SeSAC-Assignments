@@ -15,7 +15,6 @@ class DetailMediaViewController: UITableViewController {
     super.viewDidLoad()
     
     navigationItem.title = "출연/제작"
-    navigationController?.hidesBarsOnSwipe = true
     
     //alert
     if mediaContent.cast.isEmpty {
@@ -29,6 +28,11 @@ class DetailMediaViewController: UITableViewController {
     
     //register
     tableView.register(UINib(nibName: Constants.Cells.actorTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.Cells.actorTableViewCell)
+    tableView.register(UINib(nibName: Constants.Headers.actorTableViewHeaderView, bundle: nil), forHeaderFooterViewReuseIdentifier: Constants.Headers.actorTableViewHeaderView)
+    
+    if #available(iOS 15.0, *) {
+      tableView.sectionHeaderTopPadding = 0
+    }
   }
   
   required init?(coder: NSCoder) { fatalError("never be called") }
@@ -61,6 +65,14 @@ extension DetailMediaViewController {
     
     return cell
   }
+  
+  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: Constants.Headers.actorTableViewHeaderView) as? ActorTableViewHeaderView else { return nil }
+    
+    header.configure(with: mediaContent)
+    
+    return header
+  }
 }
 
 
@@ -69,5 +81,9 @@ extension DetailMediaViewController {
 extension DetailMediaViewController {
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     70
+  }
+  
+  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    250
   }
 }

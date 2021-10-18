@@ -8,14 +8,13 @@
 import UIKit
 
 class MainViewController: UIViewController {
-  
+
   @IBOutlet weak var mediaTableView: UITableView! {
     didSet {
       mediaTableView.delegate = self
       mediaTableView.dataSource = self
       mediaTableView.register(UINib(nibName: Constants.Cells.mediaTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.Cells.mediaTableViewCell)
       mediaTableView.register(UINib(nibName: Constants.Cells.mainTableViewTopCell, bundle: nil), forCellReuseIdentifier: Constants.Cells.mainTableViewTopCell)
-      
       mediaTableView.separatorStyle = .none
     }
   }
@@ -27,9 +26,6 @@ class MainViewController: UIViewController {
     navigationItem.backButtonTitle = "뒤로"
     navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: Constants.searchButtonImage), style: .plain, target: self, action: #selector(pushSearchViewController))
     navigationItem.rightBarButtonItem?.tintColor = .black
-    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-    navigationController?.navigationBar.shadowImage = UIImage()
-    navigationController?.navigationBar.backgroundColor = .clear
   }
   
   //MARK: - Navigation
@@ -58,6 +54,7 @@ extension MainViewController: UITableViewDataSource {
     case 1:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.mediaTableViewCell, for: indexPath) as? MediaTableViewCell else { fatalError("Cant' load Media Table View Cell")}
       let media = mediaList[indexPath.row]
+      cell.delegate = self
       cell.configure(media)
       return cell
     default:
@@ -66,7 +63,7 @@ extension MainViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    indexPath.section == 0 ? 227 : 400
+    indexPath.section == 0 ? 227 : view.frame.height / 2
   }
 }
 
@@ -85,7 +82,16 @@ extension MainViewController: UITableViewDelegate {
     default:
       return
     }
-    
   }
 }
 
+extension MainViewController: MediaTableViewCellDelegate {
+  func mediaTableViewCell(_ mediaTableViewCell: MediaTableViewCell, mediaContent: MediaContent?) {
+    guard let controller = storyboard?.instantiateViewController(withIdentifier: "\(WebViewController.self)")
+            as? WebViewController else { return }
+    controller.mediaContent = mediaContent
+    controller.modalPresentationStyle = .formSheet
+    present(controller, animated: true, completion: nil)
+    
+  }
+}

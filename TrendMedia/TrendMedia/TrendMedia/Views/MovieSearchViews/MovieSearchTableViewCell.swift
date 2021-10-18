@@ -9,7 +9,6 @@ import UIKit
 
 class MovieSearchTableViewCell: UITableViewCell {
   
-  
   @IBOutlet weak var posterImageView: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var releaseDateLabel: UILabel!
@@ -32,9 +31,12 @@ class MovieSearchTableViewCell: UITableViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
+    setup()
   }
   
+  private func setup() {
+    selectionStyle = .none
+  }
   
   func configure(with media: MediaContent) {
     posterImageView.image = UIImage(named: "h_a_tale_dark_grimm")

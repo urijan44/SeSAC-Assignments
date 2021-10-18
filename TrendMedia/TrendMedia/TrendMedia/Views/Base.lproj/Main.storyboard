@@ -88,6 +88,21 @@
             </objects>
             <point key="canvasLocation" x="1790" y="-265"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="U65-uS-gEO">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="xY7-aD-mZO" customClass="WebViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q6m-tk-buL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="fnH-WX-DGm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AV6-ez-8yz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="721" y="749"/>
+        </scene>
         <!--Detail Media View Controller-->
         <scene sceneID="zxo-F2-KKv">
             <objects>

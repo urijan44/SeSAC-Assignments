@@ -46,15 +46,15 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="v_hometown_cha_cha_cha" translatesAutoresizingMaskIntoConstraints="NO" id="x9t-7K-jc3">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="208.5"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예상" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPi-gz-0Fs">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평점" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPi-gz-0Fs">
                                         <rect key="frame" x="10" y="173.5" width="30" height="20"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="XcR-3l-LGr"/>
                                             <constraint firstAttribute="width" constant="30" id="c7q-yF-PyN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNF-Af-uxR">
@@ -77,7 +77,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wmu-tD-Ea2">
                                         <rect key="frame" x="10" y="287" width="325" height="20"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비슷한 컨텐츠 보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Boi-DK-Hz8">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자세히 보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Boi-DK-Hz8">
                                                 <rect key="frame" x="0.0" y="0.0" width="312.5" height="20"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                 <nil key="textColor"/>
@@ -109,6 +109,16 @@
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperclip" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5ul-bx-WCV">
+                                        <rect key="frame" x="303" y="11.5" width="30" height="31"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="AKe-Gm-Z8h"/>
+                                            <constraint firstAttribute="width" constant="30" id="BYb-Wb-wxK"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -125,12 +135,14 @@
                                     <constraint firstItem="EsH-SO-e5B" firstAttribute="top" secondItem="x9t-7K-jc3" secondAttribute="bottom" constant="8" symbolic="YES" id="OwN-qB-kRC"/>
                                     <constraint firstItem="iG2-gd-lOM" firstAttribute="top" secondItem="EsH-SO-e5B" secondAttribute="bottom" constant="0.5" id="TFb-wN-K2a"/>
                                     <constraint firstAttribute="trailing" secondItem="EsH-SO-e5B" secondAttribute="trailing" constant="10" id="U8a-EQ-B8s"/>
+                                    <constraint firstAttribute="trailing" secondItem="5ul-bx-WCV" secondAttribute="trailing" constant="12" id="UTo-QV-pdT"/>
                                     <constraint firstItem="sEE-Ae-gOS" firstAttribute="bottom" secondItem="Boi-DK-Hz8" secondAttribute="top" constant="4.5" id="VFM-tJ-bav"/>
                                     <constraint firstItem="TPi-gz-0Fs" firstAttribute="leading" secondItem="x9t-7K-jc3" secondAttribute="leading" constant="10" id="VIT-Je-toA"/>
                                     <constraint firstAttribute="trailing" secondItem="Wmu-tD-Ea2" secondAttribute="trailing" constant="10" id="X7e-XO-3c3"/>
                                     <constraint firstItem="TPi-gz-0Fs" firstAttribute="bottom" secondItem="x9t-7K-jc3" secondAttribute="bottom" constant="-15" id="XrE-gZ-Pg4"/>
                                     <constraint firstAttribute="bottom" secondItem="Wmu-tD-Ea2" secondAttribute="bottom" constant="8" id="YOR-Jt-onk"/>
                                     <constraint firstItem="iG2-gd-lOM" firstAttribute="leading" secondItem="bOP-WT-dbJ" secondAttribute="leading" constant="10" id="ZS1-Wa-wQW"/>
+                                    <constraint firstItem="5ul-bx-WCV" firstAttribute="top" secondItem="bOP-WT-dbJ" secondAttribute="top" constant="12" id="cSK-zR-5hh"/>
                                     <constraint firstItem="sEE-Ae-gOS" firstAttribute="top" secondItem="iG2-gd-lOM" secondAttribute="bottom" constant="4.5" id="j1g-0m-Y54"/>
                                     <constraint firstItem="EsH-SO-e5B" firstAttribute="leading" secondItem="bOP-WT-dbJ" secondAttribute="leading" constant="10" id="tbx-Br-ST0"/>
                                 </constraints>
@@ -155,21 +167,23 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="castLabel" destination="iG2-gd-lOM" id="MDE-M0-zGI"/>
                 <outlet property="containerView" destination="bOP-WT-dbJ" id="8TE-UF-NUk"/>
-                <outlet property="englishTitleLabel" destination="4cE-Hh-94T" id="zx2-LL-zEj"/>
-                <outlet property="koreanTitleLabel" destination="EsH-SO-e5B" id="95C-og-ObO"/>
+                <outlet property="genreLabel" destination="4cE-Hh-94T" id="zx2-LL-zEj"/>
                 <outlet property="lineView" destination="sEE-Ae-gOS" id="xF1-TX-l9S"/>
-                <outlet property="mediaDateLabel" destination="iG2-gd-lOM" id="MDE-M0-zGI"/>
                 <outlet property="mediaPosterImage" destination="x9t-7K-jc3" id="mRK-ib-2fV"/>
                 <outlet property="mediaRateLabel" destination="hNF-Af-uxR" id="fMa-5X-QeP"/>
+                <outlet property="movieTitleLabel" destination="EsH-SO-e5B" id="95C-og-ObO"/>
+                <outlet property="releaseDateLabel" destination="GXe-hJ-B0v" id="kZW-65-ehD"/>
                 <outlet property="shadowView" destination="xwj-2n-sGB" id="Dy2-AW-dqH"/>
-                <outlet property="tagLineLabel" destination="GXe-hJ-B0v" id="kZW-65-ehD"/>
+                <outlet property="webViewButton" destination="5ul-bx-WCV" id="TNa-aX-JEB"/>
             </connections>
             <point key="canvasLocation" x="-64.799999999999997" y="130.43478260869566"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="paperclip" catalog="system" width="121" height="128"/>
         <image name="v_hometown_cha_cha_cha" width="256" height="134.5"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -180,8 +194,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

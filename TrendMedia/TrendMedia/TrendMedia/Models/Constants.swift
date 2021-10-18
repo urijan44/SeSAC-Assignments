@@ -17,6 +17,10 @@ enum Constants {
     static let movieSearchTableViewCell = "MovieSearchTableViewCell"
   }
   
+  struct Headers {
+    static let actorTableViewHeaderView = "ActorTableViewHeaderView"
+  }
+  
   struct VerticalPoster {
     static let aTaleDarkGrimm = "v_a_tale_dark_grimm"
     static let aliceInBorderland = "v_alice_in_borderland"
