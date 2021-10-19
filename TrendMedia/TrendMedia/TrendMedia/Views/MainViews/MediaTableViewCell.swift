@@ -43,6 +43,7 @@ class MediaTableViewCell: UITableViewCell {
   @IBOutlet weak var lineView: LineView!
   @IBOutlet weak var webViewButton: UIImageView! {
     didSet {
+      webViewButton.tintColor = .black
       webViewButton.isUserInteractionEnabled = true
       let tapGesture = UITapGestureRecognizer(target: self, action: #selector(showWebViewController))
       webViewButton.addGestureRecognizer(tapGesture)
