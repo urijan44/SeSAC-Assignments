@@ -16,3 +16,4 @@
 |10-1|트렌드 미디어|셀 이미지를 로드 향상 필요함, 서치뷰 적용 필요함, cornerRadius랑 shadow 동시에 주기가 번거로웠음|[이동하기](TrendMedia/1017README.md)|
 |10-2|트렌드 미디어|킹피셔를 이용한 이미지 로드 향상, 당일 과제 구현 달성|[이동하기](TrendMedia/1018README.md)|2021/10/19|
 |10-3|트렌드 미디어|당일 과제 구현, 대부분 만족스럽게 구현 되지가 않음|[이동하기](TrendMedia/README.md)|2021/10/20|
+|11|RawString|플레이그라운드에서 연습해보기|[이동하기](RawStringPractice.playground/README.md)|2021/10/20|
