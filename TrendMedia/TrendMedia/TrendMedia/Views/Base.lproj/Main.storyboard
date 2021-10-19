@@ -53,6 +53,43 @@
             </objects>
             <point key="canvasLocation" x="720.79999999999995" y="79.064039408867004"/>
         </scene>
+        <!--Book List View Controller-->
+        <scene sceneID="RDa-Rx-KU3">
+            <objects>
+                <viewController storyboardIdentifier="BookListViewController" id="pEk-Fq-Egt" customClass="BookListViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IEh-fU-60i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ngH-rT-wPu">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T0p-Qg-5XG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UF8-og-VtY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UF8-og-VtY" firstAttribute="trailing" secondItem="ngH-rT-wPu" secondAttribute="trailing" id="VnX-FZ-uMJ"/>
+                            <constraint firstItem="ngH-rT-wPu" firstAttribute="top" secondItem="UF8-og-VtY" secondAttribute="top" id="hCI-9X-MKO"/>
+                            <constraint firstItem="UF8-og-VtY" firstAttribute="bottom" secondItem="ngH-rT-wPu" secondAttribute="bottom" id="ols-s5-07i"/>
+                            <constraint firstItem="ngH-rT-wPu" firstAttribute="leading" secondItem="UF8-og-VtY" secondAttribute="leading" id="xZ3-5f-Ogd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bookListCollectionView" destination="ngH-rT-wPu" id="H54-Gl-xSH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SLf-fF-7f6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1790" y="-1056"/>
+        </scene>
         <!--Movie Search View Controller-->
         <scene sceneID="hXV-7u-hle">
             <objects>

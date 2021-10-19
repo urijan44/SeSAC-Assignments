@@ -15,6 +15,12 @@ enum Constants {
     static let mediaTableViewCell = "MediaTableViewCell"
     static let actorTableViewCell = "ActorTableViewCell"
     static let movieSearchTableViewCell = "MovieSearchTableViewCell"
+    static let detailMediaStorylineTableViewCell = "DetailMediaStorylineTableViewCell"
+    static let bookListCollectionViewCell = "BookListCollectionViewCell"
+  }
+  
+  struct ViewController {
+    static let bookListViewController = "BookListViewController"
   }
   
   struct Headers {

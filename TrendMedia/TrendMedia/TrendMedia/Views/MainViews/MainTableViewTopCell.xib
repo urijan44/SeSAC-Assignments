@@ -94,6 +94,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="filterView" destination="Fec-Vh-zZr" id="GQ1-sU-Lwl"/>
+                <outlet property="showBookListButton" destination="Pad-hh-1Sj" id="PmD-ox-bbk"/>
             </connections>
             <point key="canvasLocation" x="-116.66666666666667" y="-424.21875"/>
         </tableViewCell>

@@ -17,19 +17,41 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="v_a_tale_dark_grimm" translatesAutoresizingMaskIntoConstraints="NO" id="hZt-EB-e5y">
                     <rect key="frame" x="0.0" y="0.0" width="390" height="250"/>
                 </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="v_a_tale_dark_grimm" translatesAutoresizingMaskIntoConstraints="NO" id="cXZ-ql-0Fg">
+                    <rect key="frame" x="16" y="63" width="124" height="167"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Tale Dark Grimm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hx5-RU-Oyg">
+                    <rect key="frame" x="148" y="209" width="120" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="1dU-JZ-bJc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="cXZ-ql-0Fg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="0OM-ol-v2m"/>
+                <constraint firstAttribute="bottom" secondItem="cXZ-ql-0Fg" secondAttribute="bottom" constant="20" symbolic="YES" id="1y9-Py-Y1y"/>
                 <constraint firstItem="hZt-EB-e5y" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FEb-PM-bni"/>
                 <constraint firstItem="hZt-EB-e5y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KJs-NQ-Npp"/>
+                <constraint firstItem="cXZ-ql-0Fg" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.668" id="LQx-Vs-FJ7"/>
                 <constraint firstAttribute="trailing" secondItem="hZt-EB-e5y" secondAttribute="trailing" id="PN4-Ip-lKB"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Hx5-RU-Oyg" secondAttribute="trailing" constant="8" id="aMh-uX-RK2"/>
                 <constraint firstAttribute="bottom" secondItem="hZt-EB-e5y" secondAttribute="bottom" id="eM7-yR-lTc"/>
+                <constraint firstItem="cXZ-ql-0Fg" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.317949" id="lF3-58-95J"/>
+                <constraint firstAttribute="bottom" secondItem="Hx5-RU-Oyg" secondAttribute="bottom" constant="20" symbolic="YES" id="mSr-Z1-O5J"/>
+                <constraint firstItem="Hx5-RU-Oyg" firstAttribute="leading" secondItem="cXZ-ql-0Fg" secondAttribute="trailing" constant="8" id="y3Z-pY-ujh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="headerImageView" destination="hZt-EB-e5y" id="d8V-s0-eBl"/>
+                <outlet property="titleLabel" destination="Hx5-RU-Oyg" id="phi-xW-LNm"/>
+                <outlet property="verticalImageView" destination="cXZ-ql-0Fg" id="2j2-aq-xAg"/>
             </connections>
-            <point key="canvasLocation" x="-161.59999999999999" y="-268.96551724137936"/>
+            <point key="canvasLocation" x="-161.59999999999999" y="-269.86506746626691"/>
         </view>
     </objects>
     <resources>

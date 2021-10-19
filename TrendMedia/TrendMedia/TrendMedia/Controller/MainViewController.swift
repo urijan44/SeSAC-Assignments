@@ -33,6 +33,12 @@ class MainViewController: UIViewController {
   @objc func pushSearchViewController() {
     performSegue(withIdentifier: Constants.pushSearchViewController, sender: nil)
   }
+  
+  @objc func pushBookListViewController() {
+    guard let controller = storyboard?.instantiateViewController(withIdentifier: Constants.ViewController.bookListViewController) as? BookListViewController else { fatalError("BookListViewController load failure")}
+    
+    navigationController?.pushViewController(controller, animated: true)
+  }
 }
 
 //MARK: - DataSource
@@ -50,6 +56,10 @@ extension MainViewController: UITableViewDataSource {
     switch indexPath.section {
     case 0:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.mainTableViewTopCell, for: indexPath) as? MainTableViewTopCell else { fatalError("Cant' load Main Top Table View Cell")}
+      
+      let showBookListTapGesture = UITapGestureRecognizer(target: self, action: #selector(pushBookListViewController))
+      cell.showBookListButton.addGestureRecognizer(showBookListTapGesture)
+      
       return cell
     case 1:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.mediaTableViewCell, for: indexPath) as? MediaTableViewCell else { fatalError("Cant' load Media Table View Cell")}

@@ -9,6 +9,12 @@ import UIKit
 
 class MainTableViewTopCell: UITableViewCell {
   
+  @IBOutlet weak var showBookListButton: UIImageView! {
+    didSet {
+      showBookListButton.isUserInteractionEnabled = true
+    }
+  }
+  
   @IBOutlet weak var filterView: UIView! {
     didSet {
       filterView.layer.cornerRadius = 8
