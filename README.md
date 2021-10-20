@@ -18,3 +18,5 @@
 |10-3|트렌드 미디어|당일 과제 구현, 대부분 만족스럽게 구현 되지가 않음|[이동하기](TrendMedia/README.md)|2021/10/20|
 |11|RawString|플레이그라운드에서 연습해보기|[이동하기](RawStringPractice.playground/README.md)|2021/10/20|
 |12|WebViewController|웹뷰 컨트롤러|[이동하기](WebViewController/README.md)|2021/10/20|
+|10-3|트렌드 미디어|당일 과제 구현, 대부분 만족스럽게 구현 되지가 않음|[이동하기](TrendMedia/1019README.md)|2021/10/20|
+|10-4|트렌드 미디어|당일 과제 구현, 구현은 완료했으나 추가하고 싶은 기능이 많이 생김|[이동하기](TrendMedia/README.md)|2021/10/21|

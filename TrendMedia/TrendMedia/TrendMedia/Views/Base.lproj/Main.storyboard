@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,7 +43,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TREMD MEDIA" id="3k1-2Y-c95">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="list.dash" catalog="system" id="UwJ-W5-XFZ"/>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Item" image="list.dash" catalog="system" id="UwJ-W5-XFZ"/>
+                            <barButtonItem image="map.fill" catalog="system" id="h1E-z0-N5s">
+                                <connections>
+                                    <segue destination="4Bz-yI-eGu" kind="show" id="rXP-g1-dYq"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="mediaTableView" destination="KmI-OT-78b" id="99J-qA-4xO"/>
@@ -89,6 +97,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLf-fF-7f6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1790" y="-1056"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="zy4-Mo-IW6">
+            <objects>
+                <viewController id="4Bz-yI-eGu" customClass="MapViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w6a-CU-uUN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DdL-zk-AcG">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1f-KI-fCS">
+                                <rect key="frame" x="16" y="688" width="38" height="38"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="38" id="4Wm-GS-wKU"/>
+                                    <constraint firstAttribute="height" constant="38" id="xrX-ZL-Ddx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="paperplane.fill" catalog="system" symbolScale="default"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCurrentUserLocation" destination="4Bz-yI-eGu" eventType="touchUpInside" id="5Wg-gg-r1C"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QP3-id-79E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DdL-zk-AcG" firstAttribute="leading" secondItem="QP3-id-79E" secondAttribute="leading" id="88g-sZ-snQ"/>
+                            <constraint firstItem="QP3-id-79E" firstAttribute="trailing" secondItem="DdL-zk-AcG" secondAttribute="trailing" id="9CG-nh-kHf"/>
+                            <constraint firstItem="QP3-id-79E" firstAttribute="bottom" secondItem="n1f-KI-fCS" secondAttribute="bottom" constant="52" id="Ims-Ah-neB"/>
+                            <constraint firstItem="n1f-KI-fCS" firstAttribute="leading" secondItem="QP3-id-79E" secondAttribute="leading" constant="16" id="JgF-oN-lcM"/>
+                            <constraint firstItem="QP3-id-79E" firstAttribute="bottom" secondItem="DdL-zk-AcG" secondAttribute="bottom" id="ktw-iz-zdU"/>
+                            <constraint firstItem="DdL-zk-AcG" firstAttribute="top" secondItem="QP3-id-79E" secondAttribute="top" id="w5r-ef-Nzq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q7w-vU-axO">
+                        <barButtonItem key="rightBarButtonItem" image="list.dash" catalog="system" id="THm-Cg-riA">
+                            <color key="tintColor" systemColor="systemBlueColor"/>
+                            <connections>
+                                <action selector="filterCinemaPlace:" destination="4Bz-yI-eGu" id="am9-WH-qqB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="filterButton" destination="THm-Cg-riA" id="F4c-OC-n5f"/>
+                        <outlet property="mapView" destination="DdL-zk-AcG" id="fJJ-yH-uCM"/>
+                        <outlet property="userLocationButton" destination="n1f-KI-fCS" id="Les-n1-tY8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z4H-9Q-ix0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="720.79999999999995" y="-624.38423645320199"/>
         </scene>
         <!--Movie Search View Controller-->
         <scene sceneID="hXV-7u-hle">
@@ -192,11 +258,16 @@
     <color key="tintColor" systemColor="labelColor"/>
     <resources>
         <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
+        <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
