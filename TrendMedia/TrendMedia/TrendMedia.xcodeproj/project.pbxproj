@@ -30,11 +30,14 @@
 		8A437087271C4175002BF12F /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A437086271C4175002BF12F /* LineView.swift */; };
 		8A43708A271C426B002BF12F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A437089271C426B002BF12F /* Extensions.swift */; };
 		8A623F57271BEE65006699BA /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A623F55271BEE65006699BA /* MediaTableViewCell.swift */; };
+		8A6B81842720338300C03E11 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B81832720338300C03E11 /* MapViewController.swift */; };
 		8A7ADAEF271F0E48008AB620 /* DetailMediaStorylineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A7ADAED271F0E48008AB620 /* DetailMediaStorylineTableViewCell.xib */; };
 		8A7ADAF0271F0E48008AB620 /* DetailMediaStorylineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7ADAEE271F0E48008AB620 /* DetailMediaStorylineTableViewCell.swift */; };
 		8A7ADAF2271F31DC008AB620 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7ADAF1271F31DC008AB620 /* BookListViewController.swift */; };
 		8A7ADAF6271F3407008AB620 /* BookListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7ADAF4271F3407008AB620 /* BookListCollectionViewCell.swift */; };
 		8A7ADAF7271F3407008AB620 /* BookListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A7ADAF5271F3407008AB620 /* BookListCollectionViewCell.xib */; };
+		8AC9956427204A3300F64BE2 /* cinemas.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AC9956327204A3300F64BE2 /* cinemas.json */; };
+		8AC9956627204AD500F64BE2 /* TheaterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9956527204AD500F64BE2 /* TheaterLocation.swift */; };
 		8AD18715271DAAE1009814BE /* MediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD18714271DAAE1009814BE /* MediaTableViewCell.xib */; };
 		8AD18719271DAB82009814BE /* ActorTableViewHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD18718271DAB82009814BE /* ActorTableViewHeaderView.swift */; };
 		8AEB03B4271DBF9000503A5F /* ActorTableViewHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AEB03B3271DBF9000503A5F /* ActorTableViewHeaderView.xib */; };
@@ -65,11 +68,14 @@
 		8A437086271C4175002BF12F /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		8A437089271C426B002BF12F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8A623F55271BEE65006699BA /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
+		8A6B81832720338300C03E11 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8A7ADAED271F0E48008AB620 /* DetailMediaStorylineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMediaStorylineTableViewCell.xib; sourceTree = "<group>"; };
 		8A7ADAEE271F0E48008AB620 /* DetailMediaStorylineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMediaStorylineTableViewCell.swift; sourceTree = "<group>"; };
 		8A7ADAF1271F31DC008AB620 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		8A7ADAF4271F3407008AB620 /* BookListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A7ADAF5271F3407008AB620 /* BookListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookListCollectionViewCell.xib; sourceTree = "<group>"; };
+		8AC9956327204A3300F64BE2 /* cinemas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cinemas.json; sourceTree = "<group>"; };
+		8AC9956527204AD500F64BE2 /* TheaterLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocation.swift; sourceTree = "<group>"; };
 		8AD18714271DAAE1009814BE /* MediaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaTableViewCell.xib; sourceTree = "<group>"; };
 		8AD18718271DAB82009814BE /* ActorTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorTableViewHeaderView.swift; sourceTree = "<group>"; };
 		8AEB03B3271DBF9000503A5F /* ActorTableViewHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActorTableViewHeaderView.xib; sourceTree = "<group>"; };
@@ -124,7 +130,7 @@
 				8A233D832719A69000BB33DF /* Controller */,
 				8A623F50271BED55006699BA /* Views */,
 				8A437088271C424F002BF12F /* Support */,
-				8A233D7827199E0C00BB33DF /* Assets.xcassets */,
+				8AC9956227204A1E00F64BE2 /* Resources */,
 				8A233D7A27199E0C00BB33DF /* LaunchScreen.storyboard */,
 				8A233D7D27199E0C00BB33DF /* Info.plist */,
 			);
@@ -139,6 +145,7 @@
 				8A24E660271CA0CE007560D6 /* MovieSearchViewController.swift */,
 				8A0D4119271D9FBC00D02849 /* WebViewController.swift */,
 				8A7ADAF1271F31DC008AB620 /* BookListViewController.swift */,
+				8A6B81832720338300C03E11 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -149,6 +156,7 @@
 				8A233D842719A69A00BB33DF /* Constants.swift */,
 				8A43707F271C3465002BF12F /* MediaContents.swift */,
 				8A437081271C3527002BF12F /* MediaManager.swift */,
+				8AC9956527204AD500F64BE2 /* TheaterLocation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +188,15 @@
 				8A7ADAF5271F3407008AB620 /* BookListCollectionViewCell.xib */,
 			);
 			path = BookListViews;
+			sourceTree = "<group>";
+		};
+		8AC9956227204A1E00F64BE2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8A233D7827199E0C00BB33DF /* Assets.xcassets */,
+				8AC9956327204A3300F64BE2 /* cinemas.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		8AD18716271DAB37009814BE /* MovieSearchViews */ = {
@@ -235,6 +252,9 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
@@ -269,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AC9956427204A3300F64BE2 /* cinemas.json in Resources */,
 				8AD18715271DAAE1009814BE /* MediaTableViewCell.xib in Resources */,
 				8A24E665271CA123007560D6 /* MovieSearchTableViewCell.xib in Resources */,
 				8A0D411D271DAA6100D02849 /* MainTableViewTopCell.xib in Resources */,
@@ -299,9 +320,11 @@
 				8A437080271C3465002BF12F /* MediaContents.swift in Sources */,
 				8A24E655271C7EF9007560D6 /* DetailMediaViewController.swift in Sources */,
 				8A24E661271CA0CE007560D6 /* MovieSearchViewController.swift in Sources */,
+				8AC9956627204AD500F64BE2 /* TheaterLocation.swift in Sources */,
 				8A233D7027199E0B00BB33DF /* AppDelegate.swift in Sources */,
 				8AD18719271DAB82009814BE /* ActorTableViewHeaderView.swift in Sources */,
 				8A437087271C4175002BF12F /* LineView.swift in Sources */,
+				8A6B81842720338300C03E11 /* MapViewController.swift in Sources */,
 				8A233D7227199E0B00BB33DF /* SceneDelegate.swift in Sources */,
 				8A24E664271CA123007560D6 /* MovieSearchTableViewCell.swift in Sources */,
 				8A24E65A271C953A007560D6 /* ActorTableViewCell.swift in Sources */,
@@ -457,6 +480,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = TrendMedia/Resources/cinemas.json;
 				DEVELOPMENT_TEAM = XJXA3BQDMJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TrendMedia/Info.plist;
@@ -486,6 +510,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = TrendMedia/Resources/cinemas.json;
 				DEVELOPMENT_TEAM = XJXA3BQDMJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TrendMedia/Info.plist;
