@@ -20,3 +20,4 @@
 |12|WebViewController|웹뷰 컨트롤러|[이동하기](WebViewController/README.md)|2021/10/20|
 |10-3|트렌드 미디어|당일 과제 구현, 대부분 만족스럽게 구현 되지가 않음|[이동하기](TrendMedia/1019README.md)|2021/10/20|
 |10-4|트렌드 미디어|당일 과제 구현, 구현은 완료했으나 추가하고 싶은 기능이 많이 생김|[이동하기](TrendMedia/README.md)|2021/10/21|
+|11|오토레이아웃연습|다른 사람들이랑 비교해서 어떤 다른 방법이 있는지 알 필요 있음|[이동하기](AutolayoutPractice/README.md)|2021/10/25|

@@ -12,7 +12,10 @@ import CoreLocation
 class MapViewController: UIViewController {
   
   let manager = TheaterLocationManager()
+  
+  //서울 시청을 기본 좌표로 함
   let defaultLocation = CLLocationCoordinate2D(latitude: 37.566667, longitude: 126.978368)
+  
   var userLocation: CLLocationCoordinate2D? {
     didSet {
       //annotation update
@@ -41,6 +44,7 @@ class MapViewController: UIViewController {
       
     }
   }
+  
   let locationManager = CLLocationManager()
   let geocoder = CLGeocoder()
   var placemark: CLPlacemark?
@@ -90,6 +94,7 @@ class MapViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+  
     
     if userLocation == nil {
       let region = MKCoordinateRegion(center: defaultLocation, latitudinalMeters: 50, longitudinalMeters: 50)
