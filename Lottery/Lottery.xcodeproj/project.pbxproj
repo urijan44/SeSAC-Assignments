@@ -15,6 +15,7 @@
 		8A808D2327270BB800D388FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A808D2227270BB800D388FD /* Assets.xcassets */; };
 		8A808D2627270BB800D388FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A808D2427270BB800D388FD /* LaunchScreen.storyboard */; };
 		8A808D312727130600D388FD /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A808D302727130600D388FD /* LineView.swift */; };
+		8ABA49382728317700769DE9 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8ABA49372728317700769DE9 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ABA49382728317700769DE9 /* SwiftyJSON in Frameworks */,
 				8A060EEF27277E0E006EA2C8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +100,7 @@
 			name = Lottery;
 			packageProductDependencies = (
 				8A060EEE27277E0E006EA2C8 /* Alamofire */,
+				8ABA49372728317700769DE9 /* SwiftyJSON */,
 			);
 			productName = Lottery;
 			productReference = 8A808D1627270BB600D388FD /* Lottery.app */;
@@ -129,6 +132,7 @@
 			mainGroup = 8A808D0D27270BB600D388FD;
 			packageReferences = (
 				8A060EED27277E0E006EA2C8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8ABA49362728317700769DE9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 8A808D1727270BB600D388FD /* Products */;
 			projectDirPath = "";
@@ -390,6 +394,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8ABA49362728317700769DE9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -397,6 +409,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8A060EED27277E0E006EA2C8 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		8ABA49372728317700769DE9 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ABA49362728317700769DE9 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
