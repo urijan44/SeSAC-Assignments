@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ViewController: UIViewController {
   
@@ -63,6 +64,33 @@ class ViewController: UIViewController {
     previousSelect = lotteryCount.count - 1
   }
   
+  func requestGame(game: Int) {
+    var components = URLComponents(string: "https://www.dhlottery.co.kr/common.do")
+    let method = URLQueryItem(name: "method", value: "getLottoNumber")
+    let game = URLQueryItem(name: "drwNo", value: String(game))
+    
+    components?.queryItems = [method, game]
+    
+    
+    guard let url = components?.url else {
+      print("url build failure")
+      return
+    }
+    
+    if let request = try? URLRequest(url: url, method: .get) {
+      URLSession.shared.dataTask(with: request) { data, response, error in
+        if error == nil {
+          print(response ?? "")
+          
+          if let data = data {
+            print(String(data: data, encoding: .utf8) ?? "")
+          }
+        }
+      }.resume()
+    }
+    
+    
+  }
   
 }
 
@@ -110,6 +138,6 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     searchTextField.resignFirstResponder()
     previousSelect = row
-    
+    requestGame(game: lotteryCount[row])
   }
 }
