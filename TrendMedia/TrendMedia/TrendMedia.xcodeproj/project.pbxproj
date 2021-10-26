@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		8A0D411A271D9FBC00D02849 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0D4119271D9FBC00D02849 /* WebViewController.swift */; };
 		8A0D411D271DAA6100D02849 /* MainTableViewTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A0D411C271DAA6100D02849 /* MainTableViewTopCell.xib */; };
+		8A166FE327279D2500FA852B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8A166FE227279D2500FA852B /* Alamofire */; };
+		8A166FE627279D3300FA852B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8A166FE527279D3300FA852B /* SwiftyJSON */; };
+		8A166FE82727A8B200FA852B /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A166FE72727A8B200FA852B /* MovieModel.swift */; };
 		8A233D7027199E0B00BB33DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233D6F27199E0B00BB33DF /* AppDelegate.swift */; };
 		8A233D7227199E0B00BB33DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233D7127199E0B00BB33DF /* SceneDelegate.swift */; };
 		8A233D7427199E0B00BB33DF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233D7327199E0B00BB33DF /* MainViewController.swift */; };
@@ -36,6 +39,11 @@
 		8A7ADAF2271F31DC008AB620 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7ADAF1271F31DC008AB620 /* BookListViewController.swift */; };
 		8A7ADAF6271F3407008AB620 /* BookListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7ADAF4271F3407008AB620 /* BookListCollectionViewCell.swift */; };
 		8A7ADAF7271F3407008AB620 /* BookListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A7ADAF5271F3407008AB620 /* BookListCollectionViewCell.xib */; };
+		8ABA493A27284DEC00769DE9 /* MovieSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8ABA493927284DEC00769DE9 /* MovieSearch.storyboard */; };
+		8ABA493C2728501800769DE9 /* BoxOfficeVIewController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA493B2728501800769DE9 /* BoxOfficeVIewController.swift.swift */; };
+		8ABA49402728538700769DE9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8ABA493F2728538700769DE9 /* SnapKit */; };
+		8ABA494427286B9C00769DE9 /* BoxOfficeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABA494227286B9C00769DE9 /* BoxOfficeCell.swift */; };
+		8ABA494527286B9C00769DE9 /* BoxOfficeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ABA494327286B9C00769DE9 /* BoxOfficeCell.xib */; };
 		8AC9956427204A3300F64BE2 /* cinemas.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AC9956327204A3300F64BE2 /* cinemas.json */; };
 		8AC9956627204AD500F64BE2 /* TheaterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC9956527204AD500F64BE2 /* TheaterLocation.swift */; };
 		8AD18715271DAAE1009814BE /* MediaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AD18714271DAAE1009814BE /* MediaTableViewCell.xib */; };
@@ -46,6 +54,8 @@
 /* Begin PBXFileReference section */
 		8A0D4119271D9FBC00D02849 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8A0D411C271DAA6100D02849 /* MainTableViewTopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewTopCell.xib; sourceTree = "<group>"; };
+		8A166FE72727A8B200FA852B /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		8A166FE92727AC9A00FA852B /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		8A233D6C27199E0B00BB33DF /* TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A233D6F27199E0B00BB33DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A233D7127199E0B00BB33DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +84,10 @@
 		8A7ADAF1271F31DC008AB620 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		8A7ADAF4271F3407008AB620 /* BookListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A7ADAF5271F3407008AB620 /* BookListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookListCollectionViewCell.xib; sourceTree = "<group>"; };
+		8ABA493927284DEC00769DE9 /* MovieSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieSearch.storyboard; sourceTree = "<group>"; };
+		8ABA493B2728501800769DE9 /* BoxOfficeVIewController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeVIewController.swift.swift; sourceTree = "<group>"; };
+		8ABA494227286B9C00769DE9 /* BoxOfficeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeCell.swift; sourceTree = "<group>"; };
+		8ABA494327286B9C00769DE9 /* BoxOfficeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoxOfficeCell.xib; sourceTree = "<group>"; };
 		8AC9956327204A3300F64BE2 /* cinemas.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cinemas.json; sourceTree = "<group>"; };
 		8AC9956527204AD500F64BE2 /* TheaterLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocation.swift; sourceTree = "<group>"; };
 		8AD18714271DAAE1009814BE /* MediaTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MediaTableViewCell.xib; sourceTree = "<group>"; };
@@ -86,7 +100,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A166FE627279D3300FA852B /* SwiftyJSON in Frameworks */,
+				8ABA49402728538700769DE9 /* SnapKit in Frameworks */,
 				8A437085271C3720002BF12F /* Kingfisher in Frameworks */,
+				8A166FE327279D2500FA852B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +149,7 @@
 				8A437088271C424F002BF12F /* Support */,
 				8AC9956227204A1E00F64BE2 /* Resources */,
 				8A233D7A27199E0C00BB33DF /* LaunchScreen.storyboard */,
+				8A166FE92727AC9A00FA852B /* Config.xcconfig */,
 				8A233D7D27199E0C00BB33DF /* Info.plist */,
 			);
 			path = TrendMedia;
@@ -142,7 +160,7 @@
 			children = (
 				8A233D7327199E0B00BB33DF /* MainViewController.swift */,
 				8A24E654271C7EF9007560D6 /* DetailMediaViewController.swift */,
-				8A24E660271CA0CE007560D6 /* MovieSearchViewController.swift */,
+				8ABA493D2728502D00769DE9 /* MovieSearch */,
 				8A0D4119271D9FBC00D02849 /* WebViewController.swift */,
 				8A7ADAF1271F31DC008AB620 /* BookListViewController.swift */,
 				8A6B81832720338300C03E11 /* MapViewController.swift */,
@@ -155,6 +173,7 @@
 			children = (
 				8A233D842719A69A00BB33DF /* Constants.swift */,
 				8A43707F271C3465002BF12F /* MediaContents.swift */,
+				8A166FE72727A8B200FA852B /* MovieModel.swift */,
 				8A437081271C3527002BF12F /* MediaManager.swift */,
 				8AC9956527204AD500F64BE2 /* TheaterLocation.swift */,
 			);
@@ -173,9 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				8A233D7527199E0B00BB33DF /* Main.storyboard */,
+				8ABA493927284DEC00769DE9 /* MovieSearch.storyboard */,
 				8A0D411B271DA98400D02849 /* MainViews */,
 				8AD18717271DAB4F009814BE /* MediaDetailViews */,
-				8AD18716271DAB37009814BE /* MovieSearchViews */,
+				8ABA494127286B8200769DE9 /* MovieSearch */,
 				8A7ADAF3271F33DB008AB620 /* BookListViews */,
 			);
 			path = Views;
@@ -188,6 +208,25 @@
 				8A7ADAF5271F3407008AB620 /* BookListCollectionViewCell.xib */,
 			);
 			path = BookListViews;
+			sourceTree = "<group>";
+		};
+		8ABA493D2728502D00769DE9 /* MovieSearch */ = {
+			isa = PBXGroup;
+			children = (
+				8A24E660271CA0CE007560D6 /* MovieSearchViewController.swift */,
+				8ABA493B2728501800769DE9 /* BoxOfficeVIewController.swift.swift */,
+			);
+			path = MovieSearch;
+			sourceTree = "<group>";
+		};
+		8ABA494127286B8200769DE9 /* MovieSearch */ = {
+			isa = PBXGroup;
+			children = (
+				8AD18716271DAB37009814BE /* MovieSearchViews */,
+				8ABA494227286B9C00769DE9 /* BoxOfficeCell.swift */,
+				8ABA494327286B9C00769DE9 /* BoxOfficeCell.xib */,
+			);
+			path = MovieSearch;
 			sourceTree = "<group>";
 		};
 		8AC9956227204A1E00F64BE2 /* Resources */ = {
@@ -240,6 +279,9 @@
 			name = TrendMedia;
 			packageProductDependencies = (
 				8A437084271C3720002BF12F /* Kingfisher */,
+				8A166FE227279D2500FA852B /* Alamofire */,
+				8A166FE527279D3300FA852B /* SwiftyJSON */,
+				8ABA493F2728538700769DE9 /* SnapKit */,
 			);
 			productName = TrendMedia;
 			productReference = 8A233D6C27199E0B00BB33DF /* TrendMedia.app */;
@@ -274,6 +316,9 @@
 			mainGroup = 8A233D6327199E0B00BB33DF;
 			packageReferences = (
 				8A437083271C3720002BF12F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8A166FE127279D2500FA852B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8A166FE427279D3300FA852B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				8ABA493E2728538700769DE9 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 8A233D6D27199E0B00BB33DF /* Products */;
 			projectDirPath = "";
@@ -293,6 +338,7 @@
 				8AD18715271DAAE1009814BE /* MediaTableViewCell.xib in Resources */,
 				8A24E665271CA123007560D6 /* MovieSearchTableViewCell.xib in Resources */,
 				8A0D411D271DAA6100D02849 /* MainTableViewTopCell.xib in Resources */,
+				8ABA494527286B9C00769DE9 /* BoxOfficeCell.xib in Resources */,
 				8A7ADAF7271F3407008AB620 /* BookListCollectionViewCell.xib in Resources */,
 				8A233D7C27199E0C00BB33DF /* LaunchScreen.storyboard in Resources */,
 				8A24E65B271C953A007560D6 /* ActorTableViewCell.xib in Resources */,
@@ -300,6 +346,7 @@
 				8A7ADAEF271F0E48008AB620 /* DetailMediaStorylineTableViewCell.xib in Resources */,
 				8A233D7927199E0C00BB33DF /* Assets.xcassets in Resources */,
 				8A233D7727199E0B00BB33DF /* Main.storyboard in Resources */,
+				8ABA493A27284DEC00769DE9 /* MovieSearch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,13 +368,16 @@
 				8A24E655271C7EF9007560D6 /* DetailMediaViewController.swift in Sources */,
 				8A24E661271CA0CE007560D6 /* MovieSearchViewController.swift in Sources */,
 				8AC9956627204AD500F64BE2 /* TheaterLocation.swift in Sources */,
+				8A166FE82727A8B200FA852B /* MovieModel.swift in Sources */,
 				8A233D7027199E0B00BB33DF /* AppDelegate.swift in Sources */,
+				8ABA493C2728501800769DE9 /* BoxOfficeVIewController.swift.swift in Sources */,
 				8AD18719271DAB82009814BE /* ActorTableViewHeaderView.swift in Sources */,
 				8A437087271C4175002BF12F /* LineView.swift in Sources */,
 				8A6B81842720338300C03E11 /* MapViewController.swift in Sources */,
 				8A233D7227199E0B00BB33DF /* SceneDelegate.swift in Sources */,
 				8A24E664271CA123007560D6 /* MovieSearchTableViewCell.swift in Sources */,
 				8A24E65A271C953A007560D6 /* ActorTableViewCell.swift in Sources */,
+				8ABA494427286B9C00769DE9 /* BoxOfficeCell.swift in Sources */,
 				8A623F57271BEE65006699BA /* MediaTableViewCell.swift in Sources */,
 				8A233D852719A69A00BB33DF /* Constants.swift in Sources */,
 				8A7ADAF6271F3407008AB620 /* BookListCollectionViewCell.swift in Sources */,
@@ -359,6 +409,7 @@
 /* Begin XCBuildConfiguration section */
 		8A233D7E27199E0C00BB33DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A166FE92727AC9A00FA852B /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -420,6 +471,7 @@
 		};
 		8A233D7F27199E0C00BB33DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A166FE92727AC9A00FA852B /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -557,6 +609,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8A166FE127279D2500FA852B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		8A166FE427279D3300FA852B /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
 		8A437083271C3720002BF12F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -565,13 +633,36 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		8ABA493E2728538700769DE9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8A166FE227279D2500FA852B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A166FE127279D2500FA852B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		8A166FE527279D3300FA852B /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A166FE427279D3300FA852B /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
 		8A437084271C3720002BF12F /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8A437083271C3720002BF12F /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		8ABA493F2728538700769DE9 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8ABA493E2728538700769DE9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

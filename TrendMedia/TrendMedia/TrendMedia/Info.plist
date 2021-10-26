@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>KobisKey</key>
+	<string>$(KobisKey)</string>
+	<key>NaverAPIID</key>
+	<string>$(NaverAPIID)</string>
+	<key>NaverAPISecret</key>
+	<string>$(NaverAPISecret)</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>더 정확한 정보 안내를 위해 위치정보에 대한 권한이 필요합니다.</string>
 	<key>UIApplicationSceneManifest</key>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F2b-50-Bo2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F2b-50-Bo2">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -54,7 +54,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mediaTableView" destination="KmI-OT-78b" id="99J-qA-4xO"/>
-                        <segue destination="ZPJ-Dm-tpg" kind="show" identifier="PushSearchViewController" id="DMo-FW-dtx"/>
+                        <segue destination="yRR-PN-6wa" kind="show" identifier="PushSearchViewController" id="vWu-25-xX6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -156,40 +156,15 @@
             </objects>
             <point key="canvasLocation" x="720.79999999999995" y="-624.38423645320199"/>
         </scene>
-        <!--Movie Search View Controller-->
-        <scene sceneID="hXV-7u-hle">
+        <!--MovieSearch-->
+        <scene sceneID="Xi6-c6-hvC">
             <objects>
-                <tableViewController id="ZPJ-Dm-tpg" customClass="MovieSearchViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="TzM-Bt-BWy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="4CN-Qc-ftf">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieSearchTableViewCell" id="tuH-VN-txN">
-                                <rect key="frame" x="0.0" y="88.666666030883789" width="375" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tuH-VN-txN" id="5Ht-fG-s1n">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="ZPJ-Dm-tpg" id="ZHd-5L-C4b"/>
-                            <outlet property="delegate" destination="ZPJ-Dm-tpg" id="IFM-CQ-ew3"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="UJR-SB-jfm"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bte-mk-Rue" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="MovieSearch" id="yRR-PN-6wa" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="vy4-Gy-sG2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LII-Nm-V4v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1790" y="-265"/>
+            <point key="canvasLocation" x="1576" y="-238"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="U65-uS-gEO">

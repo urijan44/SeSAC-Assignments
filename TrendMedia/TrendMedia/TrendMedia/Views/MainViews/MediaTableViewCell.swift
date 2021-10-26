@@ -82,14 +82,7 @@ class MediaTableViewCell: UITableViewCell {
         .processor(processor),
         .transition(.fade(1)),
         .cacheOriginalImage
-      ]) { result in
-        switch result {
-        case .success(let value):
-          print("Task don for: \(value.source.url?.absoluteString ?? "")")
-        case .failure(let error):
-          print("Job failed: \(error.localizedDescription)")
-        }
-      }
+      ])
     self.media = media
   }
   

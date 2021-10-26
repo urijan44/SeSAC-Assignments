@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieSearchTableViewCell: UITableViewCell {
   
@@ -38,12 +39,25 @@ class MovieSearchTableViewCell: UITableViewCell {
     selectionStyle = .none
   }
   
-  func configure(with media: MediaContent) {
-    posterImageView.image = UIImage(named: "h_a_tale_dark_grimm")
+  func configure(with media: MovieModel) {
     titleLabel.text = media.title
-    mediaDate = media.releaseDate
-    languageLabel.text = media.region
-    storylineLabel.text = media.overview
+    mediaDate = media.pubData
+    languageLabel.text = "미-국"
+    storylineLabel.text = media.actor
+    
+    let url = URL(string: media.image)
+    let processor = DownsamplingImageProcessor(size: posterImageView.bounds.size)
+    posterImageView.kf.indicatorType = .activity
+    posterImageView.kf.setImage(
+      with: url,
+      placeholder: UIImage(systemName: "film"),
+      options: [
+        .processor(processor),
+        .transition(.fade(1)),
+        .cacheOriginalImage
+      ])
   }
   
 }
+
+

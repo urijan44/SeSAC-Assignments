@@ -17,6 +17,7 @@ enum Constants {
     static let movieSearchTableViewCell = "MovieSearchTableViewCell"
     static let detailMediaStorylineTableViewCell = "DetailMediaStorylineTableViewCell"
     static let bookListCollectionViewCell = "BookListCollectionViewCell"
+    static let boxOfficeCell = "BoxOfficeCell"
   }
   
   struct ViewController {
