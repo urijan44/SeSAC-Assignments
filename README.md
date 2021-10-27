@@ -26,3 +26,4 @@
 |13-2|로또 당첨번호 검색기|최신 게임 가져오기|[이동하기](Lottery/README.md)|2021/10/26|
 |10-4|트렌드 미디어|데일리 박스 오피스 뷰 추가|[이동하기](TrendMedia/README.md)|2021/10/27|
 |12-2|오픈웨더API|Manager, Escaping Closure로 UI문제 해결|[이동하기](HeyWeather/README.md)|2021/10/27|
+|14|KAKAO OCR|멀티파트폼데이터|[이동하기](KakaoOCR/README.md)
