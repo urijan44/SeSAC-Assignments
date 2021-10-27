@@ -5,6 +5,7 @@
 //  Created by hoseung Lee on 2021/10/18.
 //
 
+import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
@@ -21,6 +22,7 @@ class MovieSearchViewController: UIViewController {
     didSet {
       tableView.delegate = self
       tableView.dataSource = self
+      tableView.prefetchDataSource = self
       tableView.contentInset = .init(top: searchFieldBar.frame.height, left: 0, bottom: 0, right: 0)
       tableView.keyboardDismissMode = .interactive
       tableView.register(UINib(nibName: Constants.Cells.movieSearchTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.Cells.movieSearchTableViewCell)
@@ -28,11 +30,16 @@ class MovieSearchViewController: UIViewController {
   }
   var movieList: [MovieModel] = [] {
     didSet {
-      tableView.reloadSections(.init(integer: 0), with: .automatic)
+      if movieList.isEmpty {
+        tableView.reloadSections(.init(integer: 0), with: .automatic)
+      }
+      tableView.reloadData()
     }
   }
   
   let defaultCellIdentifier = "DefaultCell"
+  
+  var startPage = 1
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -60,11 +67,31 @@ extension MovieSearchViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.movieSearchTableViewCell, for: indexPath) as? MovieSearchTableViewCell else { fatalError("MovieSearchTableViewCell load failure")}
-            
+    
     let media = movieList[indexPath.row]
     cell.configure(with: media)
     return cell
   }
+  
+  
+}
+
+extension MovieSearchViewController: UITableViewDataSourcePrefetching {
+  func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    for indexPath in indexPaths {
+      
+      //마지막 셀에 가까워 졌다면
+      if movieList.count - 1 == indexPath.row {
+        startPage += 10
+        fetchMovieData(searchText: searchFieldBar.text!)
+      }
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+    print("취소\(indexPaths)")
+  }
+  
 }
 
 //MARK: - Delegate
@@ -80,13 +107,19 @@ extension MovieSearchViewController: UISearchBarDelegate {
     
     var components = URLComponents(string: "https://openapi.naver.com/v1/search/movie.json")
     let query = URLQueryItem(name: "query", value: searchText)
-    print(query)
+    let display = URLQueryItem(name: "display", value: "10")
+    let start = URLQueryItem(name: "start", value: "1")
+//    let
+//    print(query)
     //%EC%8A%A4%ED%8C%8C%EC%9D%B4%EB%8D%94%EB%A7%A8
-    components?.queryItems = [query]
+    components?.queryItems = [query, display, start]
     
     //%EC%8A%A4%ED%8C%8C%EC%9D%B4%EB%8D%94%EB%A7%A8
     //%25EC%258A%25A4%25ED%258C%258C%25EC%259D%25B4%25EB%258D%2594%25EB%25A7%25A8
+    
     guard let url = components?.url else { fatalError("url build failure")}
+//    let encodingString = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+//    let url = "https://openapi.naver.com/v1/search/movie.json?query=\(encodingString)&display=10&start=\(startPage)"
     
     let key = [Bundle.main.infoDictionary?["NaverAPIID"] as? String, Bundle.main.infoDictionary?["NaverAPISecret"] as? String]
     let idKeys: HTTPHeaders = ["X-Naver-Client-Id": key[0] ?? "Nokey", "X-Naver-Client-Secret": key[1] ?? "Nokey"]
@@ -95,7 +128,7 @@ extension MovieSearchViewController: UISearchBarDelegate {
       case .success(let value):
         let json = JSON(value)
         print(json)
-        self.movieList = []
+//        self.movieList = []
         
         for item in json["items"].arrayValue {
           let title = item["title"].stringValue.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
@@ -118,8 +151,6 @@ extension MovieSearchViewController: UISearchBarDelegate {
     if !searchFieldBar.text!.isEmpty {
       searchFieldBar.resignFirstResponder()
       fetchMovieData(searchText: searchBar.text!)
-      searchFieldBar.text = ""
-      
     }
   }
   

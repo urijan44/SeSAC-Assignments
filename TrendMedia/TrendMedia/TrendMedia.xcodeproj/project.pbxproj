@@ -12,6 +12,7 @@
 		8A166FE327279D2500FA852B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8A166FE227279D2500FA852B /* Alamofire */; };
 		8A166FE627279D3300FA852B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8A166FE527279D3300FA852B /* SwiftyJSON */; };
 		8A166FE82727A8B200FA852B /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A166FE72727A8B200FA852B /* MovieModel.swift */; };
+		8A20433B2729B8CF00C29541 /* TmdbAPIManager.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20433A2729B8CF00C29541 /* TmdbAPIManager.swift.swift */; };
 		8A233D7027199E0B00BB33DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233D6F27199E0B00BB33DF /* AppDelegate.swift */; };
 		8A233D7227199E0B00BB33DF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233D7127199E0B00BB33DF /* SceneDelegate.swift */; };
 		8A233D7427199E0B00BB33DF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A233D7327199E0B00BB33DF /* MainViewController.swift */; };
@@ -56,6 +57,7 @@
 		8A0D411C271DAA6100D02849 /* MainTableViewTopCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewTopCell.xib; sourceTree = "<group>"; };
 		8A166FE72727A8B200FA852B /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		8A166FE92727AC9A00FA852B /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		8A20433A2729B8CF00C29541 /* TmdbAPIManager.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TmdbAPIManager.swift.swift; path = TrendMedia/TmdbAPIManager.swift.swift; sourceTree = SOURCE_ROOT; };
 		8A233D6C27199E0B00BB33DF /* TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A233D6F27199E0B00BB33DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A233D7127199E0B00BB33DF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				8A233D842719A69A00BB33DF /* Constants.swift */,
 				8A43707F271C3465002BF12F /* MediaContents.swift */,
 				8A166FE72727A8B200FA852B /* MovieModel.swift */,
+				8A20433A2729B8CF00C29541 /* TmdbAPIManager.swift.swift */,
 				8A437081271C3527002BF12F /* MediaManager.swift */,
 				8AC9956527204AD500F64BE2 /* TheaterLocation.swift */,
 			);
@@ -379,6 +382,7 @@
 				8A24E65A271C953A007560D6 /* ActorTableViewCell.swift in Sources */,
 				8ABA494427286B9C00769DE9 /* BoxOfficeCell.swift in Sources */,
 				8A623F57271BEE65006699BA /* MediaTableViewCell.swift in Sources */,
+				8A20433B2729B8CF00C29541 /* TmdbAPIManager.swift.swift in Sources */,
 				8A233D852719A69A00BB33DF /* Constants.swift in Sources */,
 				8A7ADAF6271F3407008AB620 /* BookListCollectionViewCell.swift in Sources */,
 				8A0D411A271D9FBC00D02849 /* WebViewController.swift in Sources */,

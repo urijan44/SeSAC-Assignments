@@ -15,9 +15,12 @@ class ActorTableViewHeaderView: UITableViewHeaderFooterView {
   @IBOutlet weak var titleLabel: UILabel!
   
   func configure(with mediaContent: MediaContent) {
-    let imageURL = URL(string: mediaContent.backdropImage)
-    headerImageView.kf.setImage(with: imageURL, placeholder: UIImage(named: Constants.VerticalPoster.aliceInBorderland))
-    verticalImageView.kf.setImage(with: imageURL, placeholder: UIImage(named: Constants.VerticalPoster.aliceInBorderland))
+    let imagePath = mediaContent.poster_path ?? ""
+    let verticalImageURL = URL(string: imagePath)
+    let headerImageURL = URL(string: mediaContent.backdropImage)
+    headerImageView.kf.setImage(with: headerImageURL, placeholder: UIImage(named: Constants.VerticalPoster.aliceInBorderland))
+    verticalImageView.kf.setImage(with: verticalImageURL, placeholder: UIImage(named: Constants.VerticalPoster.aliceInBorderland))
+    
     titleLabel.text = mediaContent.title
   }
   

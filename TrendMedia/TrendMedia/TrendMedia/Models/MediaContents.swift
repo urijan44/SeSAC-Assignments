@@ -25,6 +25,7 @@ struct MediaContent: Decodable {
   var rate: Double
   var starring: String
   var backdropImage: String
+  var poster_path: String?
   private var starName: [String] {
     starring.components(separatedBy: ", ").map{String($0)}
   }

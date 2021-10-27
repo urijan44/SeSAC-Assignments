@@ -13,19 +13,50 @@ class MainViewController: UIViewController {
     didSet {
       mediaTableView.delegate = self
       mediaTableView.dataSource = self
+      mediaTableView.prefetchDataSource = self
       mediaTableView.register(UINib(nibName: Constants.Cells.mediaTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.Cells.mediaTableViewCell)
       mediaTableView.register(UINib(nibName: Constants.Cells.mainTableViewTopCell, bundle: nil), forCellReuseIdentifier: Constants.Cells.mainTableViewTopCell)
       mediaTableView.separatorStyle = .none
     }
   }
-  var mediaList = MediaManager.shared.mediaList
+  var mediaList: [MediaContent] = [] {
+    didSet {
+      mediaTableView.reloadData()
+    }
+  }
+  
+  var searchMovieBarButton: UIBarButtonItem!
+  
+  var dayWeekChangeBarButton: UIBarButtonItem!
+  
+  var dayWeekPattern = 1
+  
+  var page = 1
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     navigationItem.backButtonTitle = "뒤로"
-    navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: Constants.searchButtonImage), style: .plain, target: self, action: #selector(pushSearchViewController))
-    navigationItem.rightBarButtonItem?.tintColor = .black
+    searchMovieBarButton = UIBarButtonItem(image: UIImage(systemName: Constants.searchButtonImage), style: .plain, target: self, action: #selector(pushSearchViewController))
+    searchMovieBarButton.tintColor = .label
+
+    dayWeekChangeBarButton = UIBarButtonItem(image: UIImage(systemName: "d.circle.fill"), style: .plain, target: self, action: #selector(dayWeekToggleButton))
+    dayWeekChangeBarButton.tintColor = .label
+    
+    navigationItem.rightBarButtonItems = [searchMovieBarButton, dayWeekChangeBarButton]
+    
+    fetchTrandMediaData(page: 1)
+  }
+  
+  @objc func dayWeekToggleButton() {
+    print(#function)
+    if dayWeekPattern == 1 {
+      dayWeekPattern = 7
+      dayWeekChangeBarButton.image = UIImage(systemName: "w.circle.fill")
+    } else {
+      dayWeekPattern = 1
+      dayWeekChangeBarButton.image = UIImage(systemName: "d.circle.fill")
+    }
   }
   
   //MARK: - Navigation
@@ -38,6 +69,37 @@ class MainViewController: UIViewController {
     guard let controller = storyboard?.instantiateViewController(withIdentifier: Constants.ViewController.bookListViewController) as? BookListViewController else { fatalError("BookListViewController load failure")}
     
     navigationController?.pushViewController(controller, animated: true)
+  }
+  
+  func fetchTrandMediaData(page: Int) {
+    TMDBAPIManager.shared.fetchTrendMovieData(page: page, mediaType: .movie, timeWindow: .day) {[ unowned self ] code, json in
+      switch code {
+      case 200:
+        print(code)
+        var tempMediaList: [MediaContent] = []
+        json["results"].arrayValue.forEach { result in
+          if result["media_type"].stringValue == "movie" || result["media_type"].stringValue == "tv" {
+            let media = MediaContent(title: result["title"].stringValue,
+                         releaseDate: result["release_date"].stringValue,
+                         genre: "",
+                         region: result["original_language"].stringValue,
+                         overview: result["overview"].stringValue,
+                         rate: result["vote_average"].doubleValue,
+                         starring: "",
+                                     backdropImage: Constants.URLs.tmdbImageBaseURL + result["backdrop_path"].stringValue,
+                                     poster_path: Constants.URLs.tmdbImageBaseURL + result["poster_path"].stringValue)
+                
+              
+            tempMediaList.append(media)
+          }
+        }
+        self.mediaList += tempMediaList
+      case 400:
+        print(code, json)
+      default:
+        print(code, json)
+      }
+    }
   }
 }
 
@@ -71,9 +133,17 @@ extension MainViewController: UITableViewDataSource {
       fatalError("section case is invalid value")
     }
   }
-  
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    indexPath.section == 0 ? 227 : view.frame.height / 2
+}
+
+extension MainViewController: UITableViewDataSourcePrefetching {
+  func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    print(indexPaths)
+    for indexPath in indexPaths {
+      if mediaList.count - 1 == indexPath.row {
+        page += 1
+        fetchTrandMediaData(page: page)
+      }
+    }
   }
 }
 
@@ -92,6 +162,10 @@ extension MainViewController: UITableViewDelegate {
     default:
       return
     }
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    indexPath.section == 0 ? 227 : view.frame.height / 2
   }
 }
 

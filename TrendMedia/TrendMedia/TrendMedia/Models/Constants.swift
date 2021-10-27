@@ -34,4 +34,8 @@ enum Constants {
     static let greysAnatomy = "v_greys_anatomy"
     static let hometownChaChaCha = "v_hometown_cha_cha_cha"
   }
+  
+  struct URLs {
+    static let tmdbImageBaseURL = "https://www.themoviedb.org/t/p/original"
+  }
 }
