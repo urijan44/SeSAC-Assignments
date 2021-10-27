@@ -29,16 +29,23 @@ class ViewController: UIViewController {
     }
   }
   
-  let weatherManager = WheatherManager()
-  
   var weatherData: [String] = [] {
     didSet {
-      collectionView.reloadData()
-      
+      collectionView.reloadSections(.init(integer: 0))
     }
   }
   
-  let locationManager = LocationManager.shared.locationManager
+  var userLocation: CLLocationCoordinate2D? = .init() {
+    didSet {
+      guard let userLocation = userLocation else {
+        return
+      }
+
+      currentLocationLabel.text = LocationManager.shared.getLocationString(coordinate: userLocation)
+    }
+  }
+  
+  let locationManager = CLLocationManager()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -49,16 +56,42 @@ class ViewController: UIViewController {
 
   @IBAction func updateWeather() {
     locationManager.startUpdatingLocation()
-    guard let userLocation = LocationManager.shared.userLocation else {
+    guard let userLocation = userLocation else {
       print("유저정보 얻을 수 없음")
       checkUserLocationServicesAuthorization()
       locationManager.requestWhenInUseAuthorization()
       return
     }
-    currentLocationLabel.text = LocationManager.shared.hcodeAddress
-    weatherManager.fetchWeatherData(userLocation)
-    collectionView.reloadSections(.init(integer: 0))
-    weatherData = weatherManager.weatherData
+    
+    WheatherManager.shared.fetchWeatherData(userLocation) { [unowned self] statusCode, json in
+      switch statusCode {
+      case 200:
+        var tempWeatherData: [String] = []
+        print("ok")
+        let temp = json["main"]["temp"].double
+        tempWeatherData.append("지금은 \(String(format: "%.1f", temp ?? 0))℃ 에요!")
+        
+        let humidity = json["main"]["humidity"]
+        tempWeatherData.append("\(humidity)% 만큼 습해요!")
+        
+        let wind = json["wind"]
+        tempWeatherData.append("\(wind["deg"]) 방향으로 \(wind["speed"])m/s의 속도로 바람이 불어요")
+        
+        let weather = json["weather"][0]
+        
+        tempWeatherData.append("https://openweathermap.org/img/wn/\(weather["icon"])@2x.png")
+        tempWeatherData.append("행복한 하루 보내세요")
+        weatherData.removeAll()
+        weatherData = tempWeatherData
+      case 400:
+        print("clientError")
+        print(json.stringValue)
+      default:
+        print("error")
+        print(json.stringValue)
+      }
+    }
+    
     dateLabel.text = Date().customFormatted
   }
   
@@ -81,12 +114,12 @@ class ViewController: UIViewController {
 //MARK: - TableView Delegates
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    weatherManager.weatherData.count
+    weatherData.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-    let description = weatherManager.weatherData[indexPath.item]
+    let description = weatherData[indexPath.item]
     if description.first == "h" {
       guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell.identifier, for: indexPath) as? ImageCell else { fatalError("")}
       cell.configure(imageURL: description)
@@ -105,7 +138,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
   
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let description = weatherManager.weatherData[indexPath.item]
+    let description = weatherData[indexPath.item]
     if description.first == "h" {
       return .init(width: UIScreen.main.bounds.width, height: 200)
     } else {
@@ -168,7 +201,7 @@ extension ViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
     print("didUpdate")
     if let location = locations.last {
-      LocationManager.shared.userLocation = location.coordinate
+      userLocation = location.coordinate
     }
   }
   

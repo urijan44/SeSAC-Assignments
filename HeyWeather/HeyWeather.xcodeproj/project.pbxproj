@@ -23,6 +23,7 @@
 		8A8E8B492726BEA300B4F72F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E8B472726BEA300B4F72F /* LaunchScreen.storyboard */; };
 		8A8E8B512726C53000B4F72F /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E8B502726C53000B4F72F /* LabelCell.xib */; };
 		8A8E8B532726C75900B4F72F /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E8B522726C75900B4F72F /* LabelCell.swift */; };
+		8AFADCF227296BCA00865F9A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFADCF127296BCA00865F9A /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		8A8E8B4A2726BEA300B4F72F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A8E8B502726C53000B4F72F /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		8A8E8B522726C75900B4F72F /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
+		8AFADCF127296BCA00865F9A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +110,7 @@
 			children = (
 				8A8E8B3C2726BEA200B4F72F /* AppDelegate.swift */,
 				8A8E8B3E2726BEA200B4F72F /* SceneDelegate.swift */,
-				8A7012302726EEE70018A563 /* DateExtension.swift */,
+				8AFADCF327296BD300865F9A /* Supports */,
 				8A7012282726E3290018A563 /* Manager */,
 				8A7012242726E2B10018A563 /* Controller */,
 				8A7012232726E2A90018A563 /* Views */,
@@ -118,6 +120,15 @@
 				8A8E8B4A2726BEA300B4F72F /* Info.plist */,
 			);
 			path = HeyWeather;
+			sourceTree = "<group>";
+		};
+		8AFADCF327296BD300865F9A /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				8A7012302726EEE70018A563 /* DateExtension.swift */,
+				8AFADCF127296BCA00865F9A /* Constants.swift */,
+			);
+			path = Supports;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +222,7 @@
 				8A8E8B532726C75900B4F72F /* LabelCell.swift in Sources */,
 				8A8E8B3F2726BEA200B4F72F /* SceneDelegate.swift in Sources */,
 				8A70121D2726CEF30018A563 /* ImageCell.swift in Sources */,
+				8AFADCF227296BCA00865F9A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

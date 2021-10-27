@@ -21,7 +21,8 @@
 |10-3|트렌드 미디어|당일 과제 구현, 대부분 만족스럽게 구현 되지가 않음|[이동하기](TrendMedia/1019README.md)|2021/10/20|
 |10-4|트렌드 미디어|당일 과제 구현, 구현은 완료했으나 추가하고 싶은 기능이 많이 생김|[이동하기](TrendMedia/1020README.md)|2021/10/21|
 |11|오토레이아웃연습|다른 사람들이랑 비교해서 어떤 다른 방법이 있는지 알 필요 있음|[이동하기](AutolayoutPractice/README.md)|2021/10/25|
-|12|오픈웨더API|Alamofire공부하기|[이동하기](HeyWeather/README.md)|2021/10/25|
+|12-1|오픈웨더API|Alamofire공부하기|[이동하기](HeyWeather/README.md)|2021/10/25|
 |13-1|로또 당첨번호 검색기|서버 통신 구현하기|[이동하기](Lottery/README.md)|2021/10/26|
 |13-2|로또 당첨번호 검색기|최신 게임 가져오기|[이동하기](Lottery/README.md)|2021/10/26|
 |10-4|트렌드 미디어|데일리 박스 오피스 뷰 추가|[이동하기](TrendMedia/README.md)|2021/10/27|
+|12-2|오픈웨더API|Manager, Escaping Closure로 UI문제 해결|[이동하기](HeyWeather/README.md)|2021/10/27|
