@@ -16,6 +16,10 @@ class MovieSearchViewController: UIViewController {
     didSet {
       searchFieldBar.delegate = self
       searchFieldBar.frame.size.height = 51
+      searchFieldBar.showsScopeBar = true
+      searchFieldBar.showsCancelButton = false
+      searchFieldBar.showsBookmarkButton = true
+      searchFieldBar.showsSearchResultsButton = true
     }
   }
   @IBOutlet weak var tableView: UITableView! {
@@ -24,14 +28,14 @@ class MovieSearchViewController: UIViewController {
       tableView.dataSource = self
       tableView.prefetchDataSource = self
       tableView.contentInset = .init(top: searchFieldBar.frame.height, left: 0, bottom: 0, right: 0)
-      tableView.keyboardDismissMode = .interactive
+      tableView.keyboardDismissMode = .onDrag
       tableView.register(UINib(nibName: Constants.Cells.movieSearchTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.Cells.movieSearchTableViewCell)
     }
   }
   var movieList: [MovieModel] = [] {
     didSet {
       if movieList.isEmpty {
-        tableView.reloadSections(.init(integer: 0), with: .automatic)
+//        tableView.reloadSections(.init(integer: 0), with: .automatic)
       }
       tableView.reloadData()
     }
@@ -150,11 +154,35 @@ extension MovieSearchViewController: UISearchBarDelegate {
   func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     if !searchFieldBar.text!.isEmpty {
       searchFieldBar.resignFirstResponder()
+      startPage = 1
       fetchMovieData(searchText: searchBar.text!)
     }
   }
   
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.text = ""
+    startPage = 1
+    searchBar.resignFirstResponder()
+  }
+  
+  func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    searchBar.setShowsCancelButton(true, animated: true)
+    
+  }
+  
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    print(searchText)
+    fetchMovieData(searchText: searchText)
+    movieList.removeAll()
+  }
+  
+  func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    
+    searchBar.setShowsCancelButton(false, animated: true)
+  }
+  
   func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+    
     return true
   }
   
@@ -162,4 +190,3 @@ extension MovieSearchViewController: UISearchBarDelegate {
     .topAttached
   }
 }
-
