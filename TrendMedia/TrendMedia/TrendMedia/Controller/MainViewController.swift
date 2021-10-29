@@ -81,13 +81,15 @@ class MainViewController: UIViewController {
           if result["media_type"].stringValue == "movie" || result["media_type"].stringValue == "tv" {
             let media = MediaContent(title: result["title"].stringValue,
                          releaseDate: result["release_date"].stringValue,
-                         genre: "",
+                                     genre: result["genre_ids"].arrayObject as? [Int] ?? [],
                          region: result["original_language"].stringValue,
                          overview: result["overview"].stringValue,
                          rate: result["vote_average"].doubleValue,
                          starring: "",
                                      backdropImage: Constants.URLs.tmdbImageBaseURL + result["backdrop_path"].stringValue,
-                                     poster_path: Constants.URLs.tmdbImageBaseURL + result["poster_path"].stringValue)
+                                     poster_path: Constants.URLs.tmdbImageBaseURL + result["poster_path"].stringValue,
+                                     mediaID: result["id"].intValue,
+                                     mediaType: result["media_type"].stringValue)
                 
               
             tempMediaList.append(media)
@@ -137,7 +139,6 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDataSourcePrefetching {
   func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-    print(indexPaths)
     for indexPath in indexPaths {
       if mediaList.count - 1 == indexPath.row {
         page += 1

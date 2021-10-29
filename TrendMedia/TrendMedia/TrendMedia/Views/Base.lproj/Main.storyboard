@@ -177,9 +177,28 @@
                     <view key="view" contentMode="scaleToFill" id="Q6m-tk-buL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGN-ZC-vHq">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fnH-WX-DGm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fnH-WX-DGm" firstAttribute="bottom" secondItem="NGN-ZC-vHq" secondAttribute="bottom" id="HCN-kN-LPL"/>
+                            <constraint firstItem="NGN-ZC-vHq" firstAttribute="top" secondItem="fnH-WX-DGm" secondAttribute="top" id="TfL-7T-VW8"/>
+                            <constraint firstItem="NGN-ZC-vHq" firstAttribute="leading" secondItem="fnH-WX-DGm" secondAttribute="leading" id="aIT-jQ-L3R"/>
+                            <constraint firstItem="fnH-WX-DGm" firstAttribute="trailing" secondItem="NGN-ZC-vHq" secondAttribute="trailing" id="vX8-FW-uA7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="NGN-ZC-vHq" id="M79-wL-pJl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AV6-ez-8yz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

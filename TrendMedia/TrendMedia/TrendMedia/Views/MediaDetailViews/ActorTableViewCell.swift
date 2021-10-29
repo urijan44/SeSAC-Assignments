@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ActorTableViewCell: UITableViewCell {
   
@@ -26,7 +27,18 @@ class ActorTableViewCell: UITableViewCell {
   func configure(with actor: Cast) {
     actorNameLabel.text = actor.name
     actorCharacterLabel.text = actor.character == nil ? "출연 정보 없음" : actor.character
-    actorImageView.image = UIImage(named: actor.image ?? "") ?? UIImage(named: "DummyActor")
+//    actorImageView.image = UIImage(named: actor.image ?? "") ?? UIImage(named: "DummyActor")
+    let url = URL(string: actor.image ?? "")
+    let processor = DownsamplingImageProcessor(size: actorImageView.bounds.size)
+    actorImageView.kf.indicatorType = .activity
+    actorImageView.kf.setImage(
+      with: url,
+      placeholder: UIImage(),
+      options: [
+        .processor(processor),
+        .transition(.fade(1)),
+        .cacheOriginalImage
+      ])
   }
   
   private func setup() {

@@ -5,29 +5,44 @@
 //  Created by hoseung Lee on 2021/10/18.
 //
 
+
 import UIKit
+import WebKit
 
 class WebViewController: UIViewController {
   
+  @IBOutlet weak var webView: WKWebView!
+  
   var navigationBar: UINavigationBar!
-  var mediaContent: MediaContent?
+  var mediaContent: MediaContent!
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    guard let mediaContent = mediaContent else { return }
-    setupNavigationBar(mediaContent.title)
-    
+    requestLink()
   }
   
-  private func setupNavigationBar(_ title: String) {
-    let width = view.frame.width
-    navigationBar = UINavigationBar(frame: .init(x: 0, y: 0, width: width, height: 44))
-    view.addSubview(navigationBar)
-    let navigationItem = UINavigationItem(title: title)
-    navigationBar.setItems([navigationItem], animated: false)
-    navigationBar.backgroundColor = .clear
-    navigationBar.setBackgroundImage(UIImage(), for: .default)
-    navigationBar.shadowImage = UIImage()
+  func requestLink() {
+    guard let mediaID = mediaContent.mediaID else { return }
+    
+    guard let mediaType = MediaType.init(rawValue: mediaContent.mediaType ?? "") else { return }
+    
+    TMDBAPIManager.shared.fetchMediaTrailer(mediaID: mediaID, mediaType: mediaType) { code, json in
+      switch code {
+      case 200:
+        var components = URLComponents(string: Constants.URLs.youtubeBaseURL)
+        let trailerKey = URLQueryItem(name: "v", value: json["results"][0]["key"].stringValue)
+        components?.queryItems = [trailerKey]
+        
+        guard let url = components?.url else { fatalError("url build failure") }
+        let request = URLRequest(url: url)
+        DispatchQueue.main.async { [weak self] in
+          guard let self = self else { return }
+          self.webView.load(request)
+        }
+      default:
+        print(code, json)
+      }
+    }
   }
 }

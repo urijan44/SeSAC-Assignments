@@ -22,6 +22,7 @@ class MovieSearchViewController: UIViewController {
       searchFieldBar.showsSearchResultsButton = true
     }
   }
+  
   @IBOutlet weak var tableView: UITableView! {
     didSet {
       tableView.delegate = self
@@ -133,7 +134,7 @@ extension MovieSearchViewController: UISearchBarDelegate {
         let json = JSON(value)
         print(json)
 //        self.movieList = []
-        
+        var tempMovieList: [MovieModel] = []
         for item in json["items"].arrayValue {
           let title = item["title"].stringValue.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
           let subtitle = item["subtitle"].stringValue
@@ -142,7 +143,10 @@ extension MovieSearchViewController: UISearchBarDelegate {
           let pubDate = item["pubDate"].stringValue
           let image = item["image"].stringValue
           let userRating = item["userRating"].stringValue
-          self.movieList.append(MovieModel(title: title, subtitle: subtitle, director: director, actor: actor, pubData: pubDate, image: image, userRating: userRating))
+          tempMovieList.append(MovieModel(title: title, subtitle: subtitle, director: director, actor: actor, pubData: pubDate, image: image, userRating: userRating))
+        }
+        DispatchQueue.main.async {
+          self.movieList += tempMovieList
         }
         
       case .failure(let error):

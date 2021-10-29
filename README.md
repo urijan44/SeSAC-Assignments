@@ -27,4 +27,5 @@
 |10-4|트렌드 미디어|데일리 박스 오피스 뷰 추가|[이동하기](TrendMedia/1027README.md)|2021/10/27|
 |12-2|오픈웨더API|Manager, Escaping Closure로 UI문제 해결|[이동하기](HeyWeather/README.md)|2021/10/27|
 |14|KAKAO OCR|멀티파트폼데이터|[이동하기](KakaoOCR/README.md)
-|10-5|트렌드 미디어|TMDB 받아오기, 페이지네이션(미완)|[이동하기](TrendMedia/README.md)|2021/10/28|
+|10-5|트렌드 미디어|TMDB 받아오기, 페이지네이션(미완)|[이동하기](TrendMedia/1028README.md)|2021/10/28|
+|10-6|트렌드 미디어|미디어 상세보기(크루, 캐스트, 웹뷰 연결)|[이동하기](TrendMedia/README.md)|2021/10/29|

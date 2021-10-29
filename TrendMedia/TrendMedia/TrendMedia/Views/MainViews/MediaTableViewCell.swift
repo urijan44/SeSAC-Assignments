@@ -66,7 +66,7 @@ class MediaTableViewCell: UITableViewCell {
   
   func configure(_ media: MediaContent) {
     releaseDateLabel.text = media.releaseDate
-    genreLabel.text = "#\(media.genre)"
+    genreLabel.text = media.genresString
     mediaRateLabel.text = String(format: "%.1f", media.rate)
     movieTitleLabel.text = media.title
     castLabel.text = media.starring

@@ -37,5 +37,6 @@ enum Constants {
   
   struct URLs {
     static let tmdbImageBaseURL = "https://www.themoviedb.org/t/p/original"
+    static let youtubeBaseURL = "https://www.youtube.com/watch"
   }
 }

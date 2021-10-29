@@ -14,20 +14,32 @@ class DetailMediaViewController: UITableViewController {
   var storylineViewHeight: CGFloat = 80
   var pageScrollState = false
   
+  var mediaCast: [Cast] = [] {
+    didSet {
+      tableView.reloadSections(.init(integer: 1), with: .automatic)
+    }
+  }
+  var mediaCrew: [Cast] = [] {
+    didSet {
+      tableView.reloadSections(.init(integer: 2), with: .automatic)
+    }
+  }
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     navigationItem.title = "출연/제작"
-    
+    requestCreditData()
     //alert
-    if mediaContent.cast.isEmpty {
-      let alert = UIAlertController(title: "알림", message: "출연정보가 없습니다.", preferredStyle: .alert)
-      let ok = UIAlertAction(title: "확인", style: .default) { _ in
-        self.navigationController?.popViewController(animated: true)
-      }
-      alert.addAction(ok)
-      present(alert, animated: true, completion: nil)
-    }
+//    if mediaContent.cast.isEmpty {
+//      let alert = UIAlertController(title: "알림", message: "출연정보가 없습니다.", preferredStyle: .alert)
+//      let ok = UIAlertAction(title: "확인", style: .default) { _ in
+//        self.navigationController?.popViewController(animated: true)
+//      }
+//      alert.addAction(ok)
+//      present(alert, animated: true, completion: nil)
+//    }
     
     //register
     tableView.register(UINib(nibName: Constants.Cells.actorTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.Cells.actorTableViewCell)
@@ -61,6 +73,34 @@ class DetailMediaViewController: UITableViewController {
     }
 
   }
+  
+  func requestCreditData() {
+    
+    if let mediaType = MediaType(rawValue: mediaContent.mediaType ?? "") {
+      TMDBAPIManager.shared.fetchMediaCredit(mediaID: mediaContent.mediaID ?? 0, mediaType: mediaType) { code, json in
+        switch code {
+        case 200:
+          var tempCast: [Cast] = []
+          json["cast"].arrayValue.forEach { credit in
+            let cast = Cast(name: credit["name"].stringValue, image: Constants.URLs.tmdbImageBaseURL + credit["profile_path"].stringValue, character: credit["character"].stringValue)
+            tempCast.append(cast)
+          }
+          self.mediaCast = tempCast
+          
+          var tempCrew: [Cast] = []
+          json["crew"].arrayValue.forEach { credit in
+            let crew = Cast(name: credit["name"].stringValue, image: Constants.URLs.tmdbImageBaseURL + credit["profile_path"].stringValue, character: credit["department"].stringValue)
+            tempCrew.append(crew)
+          }
+          self.mediaCrew = tempCrew
+        case 400:
+          print(code, json)
+        default:
+          print(code, json)
+        }
+      }
+    }
+  }
 }
 
 
@@ -68,11 +108,18 @@ class DetailMediaViewController: UITableViewController {
 extension DetailMediaViewController {
   
   override func numberOfSections(in tableView: UITableView) -> Int {
-    2
+    3
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    section == 1 ? mediaContent.cast.count : 1
+    switch section {
+    case 1:
+      return mediaCast.count
+    case 2:
+      return mediaCrew.count
+    default:
+      return 1
+    }
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,17 +135,36 @@ extension DetailMediaViewController {
       cell.pageScrollButton.setImage(scrollButtonImage, for: .normal)
       cell.pageScrollButton.addTarget(self, action: #selector(openStorylineView), for: .touchUpInside)
       return cell
-    default:
+    case 1:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.actorTableViewCell, for: indexPath) as? ActorTableViewCell else { fatalError("Cell Load Failure")}
       
-      let person = mediaContent.cast[indexPath.row]
+      let person = mediaCast[indexPath.row]
       
       cell.configure(with: person)
       
       return cell
+    default:
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.actorTableViewCell, for: indexPath) as? ActorTableViewCell else { fatalError("Cell Load Failure")}
+      
+      let person = mediaCrew[indexPath.row]
+      
+      cell.configure(with: person)
+      return cell
+      
     }
     
     
+  }
+  
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    switch section {
+    case 1:
+      return "Cast"
+    case 2:
+      return "Crew"
+    default:
+      return ""
+    }
   }
   
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -123,6 +189,11 @@ extension DetailMediaViewController {
   }
   
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    section == 0 ? 250 : 0
+    switch section {
+    case 0:
+      return 250
+    default:
+      return 44
+    }
   }
 }
