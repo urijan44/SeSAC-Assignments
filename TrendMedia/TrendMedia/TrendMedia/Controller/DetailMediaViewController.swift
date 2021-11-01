@@ -85,14 +85,17 @@ class DetailMediaViewController: UITableViewController {
             let cast = Cast(name: credit["name"].stringValue, image: Constants.URLs.tmdbImageBaseURL + credit["profile_path"].stringValue, character: credit["character"].stringValue)
             tempCast.append(cast)
           }
-          self.mediaCast = tempCast
-          
           var tempCrew: [Cast] = []
           json["crew"].arrayValue.forEach { credit in
             let crew = Cast(name: credit["name"].stringValue, image: Constants.URLs.tmdbImageBaseURL + credit["profile_path"].stringValue, character: credit["department"].stringValue)
             tempCrew.append(crew)
           }
-          self.mediaCrew = tempCrew
+          
+          DispatchQueue.main.async {
+            self.mediaCast = tempCast
+            self.mediaCrew = tempCrew
+          }
+          
         case 400:
           print(code, json)
         default:

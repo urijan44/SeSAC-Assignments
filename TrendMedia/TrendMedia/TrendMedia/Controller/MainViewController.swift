@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Network
 
 class MainViewController: UIViewController {
 
@@ -26,15 +27,15 @@ class MainViewController: UIViewController {
   }
   
   var searchMovieBarButton: UIBarButtonItem!
-  
   var dayWeekChangeBarButton: UIBarButtonItem!
-  
   var dayWeekPattern = 1
-  
   var page = 1
+  
+  var networkMonitor = NWPathMonitor()
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    networkCheck()
     
     navigationItem.backButtonTitle = "뒤로"
     searchMovieBarButton = UIBarButtonItem(image: UIImage(systemName: Constants.searchButtonImage), style: .plain, target: self, action: #selector(pushSearchViewController))
@@ -46,6 +47,22 @@ class MainViewController: UIViewController {
     navigationItem.rightBarButtonItems = [searchMovieBarButton, dayWeekChangeBarButton]
     
     fetchTrandMediaData(page: 1)
+  }
+  
+  func networkCheck() {
+    networkMonitor.pathUpdateHandler = { [weak self] path in
+      guard let self = self else { return }
+      if path.status == .satisfied {
+        
+      } else {
+        let alert = UIAlertController(title: "실패", message: "인터넷 연결이 오프라인 상태입니다.", preferredStyle: .alert)
+        let retry = UIAlertAction(title: "재시도", style: .destructive, handler: nil)
+        alert.addAction(retry)
+        
+        self.present(alert, animated: true, completion: nil)
+      }
+    }
+    networkMonitor.start(queue: DispatchQueue.global())
   }
   
   @objc func dayWeekToggleButton() {
@@ -95,7 +112,9 @@ class MainViewController: UIViewController {
             tempMediaList.append(media)
           }
         }
-        self.mediaList += tempMediaList
+        DispatchQueue.main.async { 
+          self.mediaList += tempMediaList
+        }
       case 400:
         print(code, json)
       default:
