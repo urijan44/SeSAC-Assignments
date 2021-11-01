@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchTableViewCell" rowHeight="110" id="KGk-i7-Jjw" customClass="SearchTableViewCell" customModule="SeSAC6WEEK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="403" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="403" height="110"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목제목" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a67-0b-UJx">
+                        <rect key="frame" x="8" y="8" width="387" height="20"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVd-A3-EGm">
+                        <rect key="frame" x="8" y="61.333333333333343" width="298.33333333333331" height="49"/>
+                        <string key="text">내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용</string>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="Aqc-46-ZqN">
+                        <rect key="frame" x="314.33333333333331" y="28.000000000000007" width="80.666666666666686" height="80.666666666666686"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Aqc-46-ZqN" secondAttribute="height" multiplier="1:1" id="uek-5Z-eSL"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021. 11.  01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdz-xV-Qn8">
+                        <rect key="frame" x="8" y="30" width="298.33333333333331" height="16.333333333333329"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Aqc-46-ZqN" firstAttribute="top" secondItem="a67-0b-UJx" secondAttribute="bottom" id="46g-UU-bWE"/>
+                    <constraint firstItem="Xdz-xV-Qn8" firstAttribute="top" secondItem="a67-0b-UJx" secondAttribute="bottom" constant="2" id="Ff0-xy-Pey"/>
+                    <constraint firstItem="Aqc-46-ZqN" firstAttribute="leading" secondItem="Xdz-xV-Qn8" secondAttribute="trailing" constant="8" id="Ko3-Yh-RsB"/>
+                    <constraint firstItem="Aqc-46-ZqN" firstAttribute="leading" secondItem="JVd-A3-EGm" secondAttribute="trailing" constant="8" symbolic="YES" id="MlG-aY-MJm"/>
+                    <constraint firstAttribute="trailing" secondItem="a67-0b-UJx" secondAttribute="trailing" constant="8" id="PjN-g9-WEY"/>
+                    <constraint firstItem="JVd-A3-EGm" firstAttribute="top" secondItem="Xdz-xV-Qn8" secondAttribute="bottom" constant="15" id="bfE-u3-hl3"/>
+                    <constraint firstItem="a67-0b-UJx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="mqq-sp-R20"/>
+                    <constraint firstAttribute="trailing" secondItem="Aqc-46-ZqN" secondAttribute="trailing" constant="8" id="nVU-Ab-iG9"/>
+                    <constraint firstItem="a67-0b-UJx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ry6-cp-ozM"/>
+                    <constraint firstItem="JVd-A3-EGm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="wqb-Km-4F0"/>
+                    <constraint firstItem="Aqc-46-ZqN" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.2" id="yT2-Nx-EuZ"/>
+                    <constraint firstItem="Xdz-xV-Qn8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="zXq-iY-NJg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="Xdz-xV-Qn8" id="k6s-0z-k1V"/>
+                <outlet property="diaryDescriptionLabel" destination="JVd-A3-EGm" id="M9Q-hd-UnM"/>
+                <outlet property="diaryImageView" destination="Aqc-46-ZqN" id="QZg-r5-fh2"/>
+                <outlet property="titleLabel" destination="a67-0b-UJx" id="rQY-JZ-APY"/>
+            </connections>
+            <point key="canvasLocation" x="-48.799999999999997" y="116.00985221674877"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

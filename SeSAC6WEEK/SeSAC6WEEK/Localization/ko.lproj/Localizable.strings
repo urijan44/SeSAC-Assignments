@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  SeSAC6WEEK
+
+  Created by hoseung Lee on 2021/11/02.
+  
+*/
+
+"search" = "검색";
+"calendar" = "캘린더";
+"setting" = "설정";
+"writeDiary" = "일기쓰기";
+"pleaseTypingTitle" = "제목을 입력해주세요";
+"saveBar" = "저장";
+"dateString" = "yyyy년 MM월 dd일";

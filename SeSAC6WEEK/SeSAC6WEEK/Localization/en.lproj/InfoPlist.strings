@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  SeSAC6WEEK
+
+  Created by hoseung Lee on 2021/11/02.
+  
+*/
+
+NSPhotoLibraryUsageDescription = "Add photos to your Diary";
+NSCameraUsageDescription = "Add photos to your Diary";

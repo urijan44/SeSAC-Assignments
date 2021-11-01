@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddViewController" id="Y6W-OH-hqX" customClass="AddViewController" customModule="SeSAC6WEEK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kye-ie-Hg6">
+                                <rect key="frame" x="0.0" y="44" width="375" height="333.5"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOt-Fc-JDO">
+                                <rect key="frame" x="16" y="393.5" width="343" height="44"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="제목을 입력해주세요" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tsm-ED-9gi">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="4IS-4B-s0b"/>
+                                    <constraint firstItem="tsm-ED-9gi" firstAttribute="leading" secondItem="JOt-Fc-JDO" secondAttribute="leading" id="Bgb-Gr-pVa"/>
+                                    <constraint firstItem="tsm-ED-9gi" firstAttribute="top" secondItem="JOt-Fc-JDO" secondAttribute="top" id="Gmt-J2-eUi"/>
+                                    <constraint firstAttribute="height" constant="44" id="OEf-oZ-Z0e"/>
+                                    <constraint firstAttribute="bottom" secondItem="tsm-ED-9gi" secondAttribute="bottom" id="Uk8-bg-ry7"/>
+                                    <constraint firstAttribute="trailing" secondItem="tsm-ED-9gi" secondAttribute="trailing" id="drB-sq-yxZ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlQ-Q0-Ifc">
+                                <rect key="frame" x="16" y="453.5" width="343" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 10월 24일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhr-FH-nWn">
+                                        <rect key="frame" x="0.0" y="11.5" width="343" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstItem="Jhr-FH-nWn" firstAttribute="centerY" secondItem="YlQ-Q0-Ifc" secondAttribute="centerY" id="DvM-U6-9dD"/>
+                                    <constraint firstAttribute="height" constant="44" id="QfO-LS-F5k"/>
+                                    <constraint firstItem="Jhr-FH-nWn" firstAttribute="leading" secondItem="YlQ-Q0-Ifc" secondAttribute="leading" id="fsc-Or-53x"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jhr-FH-nWn" secondAttribute="trailing" id="iOC-Ua-y4M"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Memo" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ksQ-sa-oNn">
+                                <rect key="frame" x="16" y="513.5" width="343" height="145.5"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JOt-Fc-JDO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="1BB-Sl-gxd"/>
+                            <constraint firstItem="JOt-Fc-JDO" firstAttribute="top" secondItem="kye-ie-Hg6" secondAttribute="bottom" constant="16" id="G2v-qO-y0A"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kye-ie-Hg6" secondAttribute="trailing" id="Gcd-Is-EXE"/>
+                            <constraint firstItem="ksQ-sa-oNn" firstAttribute="top" secondItem="YlQ-Q0-Ifc" secondAttribute="bottom" constant="16" id="HFI-sq-SCp"/>
+                            <constraint firstItem="ksQ-sa-oNn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="M5L-vs-h2v"/>
+                            <constraint firstItem="kye-ie-Hg6" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="44" id="a4z-2i-RXL"/>
+                            <constraint firstItem="kye-ie-Hg6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="erp-5H-24H"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="YlQ-Q0-Ifc" secondAttribute="trailing" constant="16" id="hLw-mq-DkX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JOt-Fc-JDO" secondAttribute="trailing" constant="16" id="j5k-o9-xBz"/>
+                            <constraint firstItem="YlQ-Q0-Ifc" firstAttribute="top" secondItem="JOt-Fc-JDO" secondAttribute="bottom" constant="16" id="l92-cU-Phb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ksQ-sa-oNn" secondAttribute="trailing" constant="16" id="phP-8k-rdf"/>
+                            <constraint firstItem="kye-ie-Hg6" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.5" id="qcl-YR-GJo"/>
+                            <constraint firstItem="YlQ-Q0-Ifc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="s5c-0k-9bh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ksQ-sa-oNn" secondAttribute="bottom" constant="8" id="tff-L5-Xed"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerForDate" destination="YlQ-Q0-Ifc" id="Q5f-a1-zC2"/>
+                        <outlet property="containerForTitle" destination="JOt-Fc-JDO" id="JB6-lQ-jmM"/>
+                        <outlet property="dateLabel" destination="Jhr-FH-nWn" id="Ij1-D9-bXv"/>
+                        <outlet property="diaryDescriptionTextView" destination="ksQ-sa-oNn" id="WPA-DG-yhR"/>
+                        <outlet property="titleImageView" destination="kye-ie-Hg6" id="zv2-WB-vtc"/>
+                        <outlet property="titleTextField" destination="tsm-ED-9gi" id="7LL-4B-Ikd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-362" y="74"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

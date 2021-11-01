@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  SeSAC6WEEK
+
+  Created by hoseung Lee on 2021/11/02.
+  
+*/
+"search" = "Search";
+"calendar" = "Calendar";
+"setting" = "Setting";
+"writeDiary" = "Write Diary";
+"pleaseTypingTitle" = "Please Typing Title";
+"saveBar" = "save";
+"dateString" = "MM. dd. yyyy.";

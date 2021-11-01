@@ -30,3 +30,4 @@
 |10-5|트렌드 미디어|TMDB 받아오기, 페이지네이션(미완)|[이동하기](TrendMedia/1028README.md)|2021/10/28|
 |10-6|트렌드 미디어|미디어 상세보기(크루, 캐스트, 웹뷰 연결)|[이동하기](TrendMedia/README.md)|2021/10/29|
 |15|UIImagePickerController실습|사진을부탁해(가제)|[이동하기](https://github.com/urijan44/OnePhoto/blob/master/README.md)|2021/10/31|
+|16|6주차프로젝트UI|스토리보드 레퍼런스, PHPicker, Localization...|[이동하기](SeSAC6WEEK/README.md)|2021/11/02|

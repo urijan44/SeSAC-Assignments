@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  SeSAC6WEEK
+
+  Created by hoseung Lee on 2021/11/02.
+  
+*/
+
+NSPhotoLibraryUsageDescription = "일기에 사진을 활용하기 위해, 사진 앨범 접근에 대한 권한이 필요합니다.";
+NSCameraUsageDescription = "일기에 사진을 활용하기 위해, 카메라 접근에 대한 권한이 필요합니다.";
