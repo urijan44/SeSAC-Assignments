@@ -18,7 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="설정" image="person.circle" catalog="system" id="QdI-8b-QFd"/>
+                    <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" id="QdI-8b-QFd"/>
                     <connections>
                         <outlet property="settingTabBarItem" destination="QdI-8b-QFd" id="PKF-H8-MbJ"/>
                     </connections>
@@ -29,7 +29,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

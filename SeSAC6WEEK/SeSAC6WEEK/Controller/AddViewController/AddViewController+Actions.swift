@@ -13,7 +13,12 @@ extension AddViewController {
   }
   
   @objc func saveDiary() {
-    print(#function)
+    let task = UserDiary(title: titleTextField.text!, content: diaryDescriptionTextView.text!, writeDate: Date(), registrationDate: Date())
+    
+    try! localRealm.write {
+        localRealm.add(task)
+    }
+    dismiss(animated: true, completion: nil)
   }
   
   @objc func showPhotoPickerView() {

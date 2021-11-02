@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SearchViewController: UIViewController {
   
@@ -16,20 +17,21 @@ class SearchViewController: UIViewController {
   }
   @IBOutlet var searchResultTableView: UITableView!
   
-  var dummyDiary: [Diary] = []
+  // Get all tasks in the realm
+  let localRealm = try! Realm()
+  var tasks: Results<UserDiary>!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     navigationBarSetup()
     tableViewSetup()
-    
-    for index in 1...30 {
-      let diary = Diary(title: "\(index)일기", date: Date(), diaryDescription: "\(index)내용", image: "memil")
-      dummyDiary.append(diary)
-    }
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    tasks = localRealm.objects(UserDiary.self)
     searchResultTableView.reloadData()
-    
   }
   
   func tableViewSetup() {
@@ -64,16 +66,16 @@ extension SearchViewController: UINavigationBarDelegate {
 
 extension SearchViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    dummyDiary.count
+    tasks.count
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath)
             as? SearchTableViewCell else { fatalError("\(SearchTableViewCell.identifier) load failure")}
     
-    let diary = dummyDiary[indexPath.row]
-    
-    cell.configure(with: diary, image: UIImage(named: "memil")!)
+    let result = tasks[indexPath.row]
+
+    cell.configure(with: result, image: UIImage(named: "memil")!)
     
     return cell
   }

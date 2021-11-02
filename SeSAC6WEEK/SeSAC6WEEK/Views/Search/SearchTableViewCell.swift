@@ -47,10 +47,10 @@ class SearchTableViewCell: UITableViewCell {
     
   }
   
-  func configure(with diary: Diary, image: UIImage) {
+  func configure(with diary: UserDiary, image: UIImage) {
     titleLabel.text = diary.title
-    dateLabel.text = diary.date.dateString
-    diaryDescriptionLabel.text = diary.diaryDescription
+    dateLabel.text = diary.writeDate.dateString
+    diaryDescriptionLabel.text = diary.content
     diaryImageView.image = image
   }
 

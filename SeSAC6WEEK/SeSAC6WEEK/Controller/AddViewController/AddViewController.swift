@@ -7,13 +7,12 @@
 
 import UIKit
 import PhotosUI
+import RealmSwift
 
 class AddViewController: UIViewController {
   
   static let identifier = "AddViewController"
-  
-  var diary: String?
-  
+
   @IBOutlet weak var titleImageView: UIImageView! {
     didSet {
       if diary == nil {
@@ -35,6 +34,9 @@ class AddViewController: UIViewController {
     }
   }
   @IBOutlet weak var diaryDescriptionTextView: UITextView!
+  
+  var diary: String?
+  let localRealm = try! Realm()
   
   override func viewDidLoad() {
     super.viewDidLoad()
