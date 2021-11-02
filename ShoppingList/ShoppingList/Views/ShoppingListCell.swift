@@ -40,7 +40,7 @@ class ShoppingListCell: UITableViewCell {
   
   weak var delegate: ShoppingListCellDelegate?
   
-  func configuration(_ idx: Int, for wish: Wish) {
+  func configuration(_ idx: Int, for wish: UserWish) {
     check = wish.check
     star = wish.star
     self.idx = idx
