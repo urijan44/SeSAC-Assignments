@@ -13,7 +13,7 @@ extension ShoppingListViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    section == 0 ? 1 : tasks.count
+    section == 0 ? 1 : sortedUserWishs.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -25,25 +25,39 @@ extension ShoppingListViewController {
       
     default:
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingListCell", for: indexPath) as? ShoppingListCell else { fatalError() }
-      let wish = tasks[indexPath.row]
-      cell.delegate = self
-      cell.configuration(indexPath.row, for: wish)
+      let wish = sortedUserWishs[indexPath.row]
+      
+      let checkGesture = CheckGesture(target: self, action: #selector(toggleCheck))
+      checkGesture.wish = wish
+      checkGesture.indexPath = indexPath
+      let favoriteGesture = StarGesture(target: self, action: #selector(toggleStar))
+      favoriteGesture.wish = wish
+      favoriteGesture.indexPath = indexPath
+      
+      cell.checkboxImageView.addGestureRecognizer(checkGesture)
+      cell.markImageView.addGestureRecognizer(favoriteGesture)
+      
+      cell.configuration(for: wish)
       return cell
     }
   }
+  
+
   
   override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
     indexPath.section == 0 ? false : true
   }
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//    if editingStyle == .delete {
-//      let indexPaths = [indexPath]
-//      let wish = shoppingManager.wishList[indexPath.row]
-//      if shoppingManager.deleteWish(wish: wish) {
-//        tableView.deleteRows(at: indexPaths, with: .automatic)
-//      }
-//    }
+    if editingStyle == .delete {
+      let indexPaths = [indexPath]
+      let userWish = sortedUserWishs[indexPath.row]
+      
+      try! localRealm.write {
+        localRealm.delete(userWish)
+        tableView.deleteRows(at: indexPaths, with: .automatic)
+      }
+    }
   }
   
 }
@@ -66,4 +80,14 @@ extension ShoppingListViewController: AddListCellDelegate {
 
     tableView.reloadSections(.init(integer: 1), with: .automatic)
   }
+}
+
+class CheckGesture: UITapGestureRecognizer {
+  var wish: UserWish?
+  var indexPath: IndexPath?
+}
+
+class StarGesture: UITapGestureRecognizer {
+  var wish: UserWish?
+  var indexPath: IndexPath?
 }

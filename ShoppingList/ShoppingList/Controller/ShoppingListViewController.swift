@@ -18,10 +18,12 @@ class ShoppingListViewController: UITableViewController {
   
   let localRealm = try! Realm()
   var tasks: Results<UserWish>!
-
+  var sortedUserWishs: Results<UserWish>!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     tasks = localRealm.objects(UserWish.self)
+    loadSortStyle()
   }
   
   
@@ -30,6 +32,18 @@ class ShoppingListViewController: UITableViewController {
     tableView.reloadSections(.init(integer: 1), with: .automatic)
     
   }
+  
+  func loadSortStyle() {
+    let currentSortStyle: SortStyle = SortStyle(rawValue: UserDefaults.standard.integer(forKey: "\(SortStyle.self)")) ?? .name
+    switch currentSortStyle {
+    case .check:
+      sortByCheck(sender: checkButton)
+    case .favorite:
+      sortByFavorite(sender: favoriteButton)
+    case .name:
+      sortByName(sender: nameButton)
+    }
+  }
 
   
   func gestureSetup() {
@@ -37,28 +51,13 @@ class ShoppingListViewController: UITableViewController {
     view.addGestureRecognizer(dismissKeyboardGesture)
   }
   
+  
   func updateTintColorSortButton(tappedButton: UIBarButtonItem) {
     [favoriteButton, checkButton, nameButton].forEach { button in
       button.tintColor = button == tappedButton
       ? button.customView?.tintColor
       : .secondaryLabel
     }
-    tableView.reloadData()
-  }
-}
-
-//MARK: - Delegate
-
-extension ShoppingListViewController: ShoppingListCellDelegate {
-  func shoppingListCell(_ shoppingListCell: ShoppingListCell, tappedCheckbox wish: Bool, index: Int) {
-//    shoppingManager.wishList[index].check.toggle()
-//    shoppingManager.sortWish(shoppingManager.currentSortStyle)
-    tableView.reloadData()
-  }
-  
-  func shoppingListCell(_ shoppingListCell: ShoppingListCell, tappedStar wish: Bool, index: Int) {
-//    shoppingManager.wishList[index].star.toggle()
-//    shoppingManager.sortWish(shoppingManager.currentSortStyle)
-    tableView.reloadData()
+    tableView.reloadSections(.init(integer: 1), with: .automatic)
   }
 }
