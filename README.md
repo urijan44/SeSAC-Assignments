@@ -32,3 +32,4 @@
 |15|UIImagePickerController실습|사진을부탁해(가제)|[이동하기](https://github.com/urijan44/OnePhoto/blob/master/README.md)|2021/10/31|
 |16|6주차프로젝트UI|스토리보드 레퍼런스, PHPicker, Localization...|[이동하기](SeSAC6WEEK/README.md)|2021/11/02|
 |9-3|쇼핑리스트|Realm 데이터베이스 적용|[이동하기](ShoppingList/README.md)|2021/11/02|
+|10-7|트랜드 미디어|영진원 박스오피스 Realm 적용|[이동하기](TrendMedia/README.md)|2021/11/03|

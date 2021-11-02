@@ -8,12 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
-
-struct BoxOfficeModel: Decodable {
-  let rank: String
-  let title: String
-  let pubDate: String
-}
+import RealmSwift
 
 
 class BoxOfficeViewController: UIViewController {
@@ -44,30 +39,65 @@ class BoxOfficeViewController: UIViewController {
   }
   
   let dateFormaatter = DateFormatter()
-  
-  var dayBoxOffice: [BoxOfficeModel]  = [] {
+  let yesterday = Date(timeIntervalSinceNow: -(60 * 60 * 24))
+  let localRealm = try! Realm()
+  var boxOfficeHistory: Results<BoxOfficeHistory>!
+  var dayBoxOffice: [BoxOfficeModel] = [] {
     didSet {
       tableView.reloadSections(.init(integer: 0), with: .automatic)
     }
   }
   
-  
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    titleSetup()
+    
+    boxOfficeHistory = localRealm.objects(BoxOfficeHistory.self)
+    searchBoxOffice()
+  }
+  
+  func titleSetup() {
     title = "일간 박스오피스"
     dateFormaatter.dateFormat = "yyyyMMdd"
-    let yesterday = Date(timeIntervalSinceNow: -(60 * 60 * 24))
+    
     searchField.text = dateFormaatter.string(from: yesterday)
-    searchBoxOffice()
   }
   
   
   @IBAction func searchBoxOffice() {
     if let date = dateFormaatter.date(from: searchField.text ?? "") {
       let stringDate = dateFormaatter.string(from: date)
-      fetchBoxOfficeDate(queryDate: stringDate)
+      let searchDate = boxOfficeHistory.filter("targetDate = %@", stringDate)
+      
+      if searchDate.isEmpty {
+        fetchBoxOfficeDate(queryDate: stringDate) { [weak self] code, json in
+          guard let self = self else { return }
+          switch code {
+          case 200:
+            var tempDayBoxOffice: [BoxOfficeModel] = []
+            
+            json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue.forEach { boxOffice in
+              let movie = BoxOfficeModel(rank: boxOffice["rank"].stringValue,
+                                         title: boxOffice["movieNm"].stringValue,
+                                         pubDate: boxOffice["openDt"].stringValue.count < 10
+                                         ? "미개봉"
+                                         : boxOffice["openDt"].stringValue)
+              tempDayBoxOffice.append(movie)
+            }
+            DispatchQueue.main.async {
+              try! self.localRealm.write {
+                let history: BoxOfficeHistory = .init(targetDate: stringDate, boxOfficeModels: tempDayBoxOffice)
+                self.localRealm.add(history)
+              }
+              self.dayBoxOffice = self.boxOfficeHistory.filter("targetDate = %@", stringDate)[0].boxOfficeModels.map{$0}
+            }
+          default:
+            print(code, json)
+          }
+        }
+      } else {
+        dayBoxOffice = boxOfficeHistory.filter("targetDate = %@", stringDate)[0].boxOfficeModels.map{$0}
+      }
     } else {
       print("alert yyyyMMdd!!")
     }
@@ -131,36 +161,16 @@ extension BoxOfficeViewController {
     return urlComponents?.url
   }
   
-  func fetchBoxOfficeDate(queryDate: String) {
+  func fetchBoxOfficeDate(queryDate: String, completion: @escaping (Int, JSON) -> Void) {
     guard let url = getURL(date: queryDate) else {fatalError("URL Build Failure")}
-    
-    let request = URLRequest(url: url)
-    
-    URLSession.shared.dataTask(with: request) { data, response, error in
-      if let error = error {
-        print(error.localizedDescription)
+    AF.request(url, method: .get).validate(statusCode: 200...400).responseJSON { response in
+      switch response.result {
+      case .success(let value):
+        let code = response.response?.statusCode ?? 500
+        completion(code, JSON(value))
+      case .failure(let error):
+        print(error)
       }
-      if let data = data, let response = response {
-        if let httpResponse = response as? HTTPURLResponse {
-          if httpResponse.statusCode == 200 {
-            let json = JSON(data)
-            
-            var tempDayBoxOffice: [BoxOfficeModel] = []
-            
-            json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue.forEach { receive in
-              let moive = BoxOfficeModel(rank: receive["rank"].stringValue,
-                                         title: receive["movieNm"].stringValue,
-                                         pubDate: receive["openDt"].stringValue.count < 10 ? "미개봉" : receive["openDt"].stringValue)
-              tempDayBoxOffice.append(moive)
-            }
-            
-            DispatchQueue.main.async {
-              self.dayBoxOffice = tempDayBoxOffice
-            }
-          }
-        }
-      }
-    }.resume()
+    }
   }
-  
 }

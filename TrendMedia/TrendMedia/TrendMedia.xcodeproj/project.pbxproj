@@ -35,6 +35,9 @@
 		8A43708A271C426B002BF12F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A437089271C426B002BF12F /* Extensions.swift */; };
 		8A623F57271BEE65006699BA /* MediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A623F55271BEE65006699BA /* MediaTableViewCell.swift */; };
 		8A6B81842720338300C03E11 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B81832720338300C03E11 /* MapViewController.swift */; };
+		8A6CA3762731803B003AE5A5 /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6CA3752731803B003AE5A5 /* BoxOfficeModel.swift */; };
+		8A6CA3792731804B003AE5A5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8A6CA3782731804B003AE5A5 /* Realm */; };
+		8A6CA37B2731804B003AE5A5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8A6CA37A2731804B003AE5A5 /* RealmSwift */; };
 		8A7ADAEF271F0E48008AB620 /* DetailMediaStorylineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A7ADAED271F0E48008AB620 /* DetailMediaStorylineTableViewCell.xib */; };
 		8A7ADAF0271F0E48008AB620 /* DetailMediaStorylineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7ADAEE271F0E48008AB620 /* DetailMediaStorylineTableViewCell.swift */; };
 		8A7ADAF2271F31DC008AB620 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7ADAF1271F31DC008AB620 /* BookListViewController.swift */; };
@@ -81,6 +84,7 @@
 		8A437089271C426B002BF12F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8A623F55271BEE65006699BA /* MediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTableViewCell.swift; sourceTree = "<group>"; };
 		8A6B81832720338300C03E11 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		8A6CA3752731803B003AE5A5 /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
 		8A7ADAED271F0E48008AB620 /* DetailMediaStorylineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailMediaStorylineTableViewCell.xib; sourceTree = "<group>"; };
 		8A7ADAEE271F0E48008AB620 /* DetailMediaStorylineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailMediaStorylineTableViewCell.swift; sourceTree = "<group>"; };
 		8A7ADAF1271F31DC008AB620 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
@@ -102,10 +106,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A6CA37B2731804B003AE5A5 /* RealmSwift in Frameworks */,
 				8A166FE627279D3300FA852B /* SwiftyJSON in Frameworks */,
 				8ABA49402728538700769DE9 /* SnapKit in Frameworks */,
 				8A437085271C3720002BF12F /* Kingfisher in Frameworks */,
 				8A166FE327279D2500FA852B /* Alamofire in Frameworks */,
+				8A6CA3792731804B003AE5A5 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +185,7 @@
 				8A20433A2729B8CF00C29541 /* TmdbAPIManager.swift.swift */,
 				8A437081271C3527002BF12F /* MediaManager.swift */,
 				8AC9956527204AD500F64BE2 /* TheaterLocation.swift */,
+				8A6CA3752731803B003AE5A5 /* BoxOfficeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,6 +292,8 @@
 				8A166FE227279D2500FA852B /* Alamofire */,
 				8A166FE527279D3300FA852B /* SwiftyJSON */,
 				8ABA493F2728538700769DE9 /* SnapKit */,
+				8A6CA3782731804B003AE5A5 /* Realm */,
+				8A6CA37A2731804B003AE5A5 /* RealmSwift */,
 			);
 			productName = TrendMedia;
 			productReference = 8A233D6C27199E0B00BB33DF /* TrendMedia.app */;
@@ -322,6 +331,7 @@
 				8A166FE127279D2500FA852B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				8A166FE427279D3300FA852B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				8ABA493E2728538700769DE9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8A6CA3772731804B003AE5A5 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 8A233D6D27199E0B00BB33DF /* Products */;
 			projectDirPath = "";
@@ -363,6 +373,7 @@
 				8A24E65D271C994C007560D6 /* MainTableViewTopCell.swift in Sources */,
 				8A437082271C3528002BF12F /* MediaManager.swift in Sources */,
 				8A24E667271CA4A0007560D6 /* VerticalLineView.swift in Sources */,
+				8A6CA3762731803B003AE5A5 /* BoxOfficeModel.swift in Sources */,
 				8A7ADAF2271F31DC008AB620 /* BookListViewController.swift in Sources */,
 				8A7ADAF0271F0E48008AB620 /* DetailMediaStorylineTableViewCell.swift in Sources */,
 				8A43708A271C426B002BF12F /* Extensions.swift in Sources */,
@@ -637,6 +648,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		8A6CA3772731804B003AE5A5 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		8ABA493E2728538700769DE9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -662,6 +681,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8A437083271C3720002BF12F /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		8A6CA3782731804B003AE5A5 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A6CA3772731804B003AE5A5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		8A6CA37A2731804B003AE5A5 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A6CA3772731804B003AE5A5 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 		8ABA493F2728538700769DE9 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
