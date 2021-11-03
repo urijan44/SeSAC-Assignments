@@ -1,8 +1,17 @@
-# Shopping List 
+# Shopping List
 
-## 카테고리 구현
-- Category라는 이름의 상위 클래스를 만들고, Category안에서 UserWish를 리스트로 가짐
+- 이전 [README.md](README_v2.md)
+
+# Realm 적용하기
+- 기존 모델과 모델 매니저를 Realm 데이터베이스 적용
+- 데이터 추가, 삭제, 정렬 구현
+- 역시 라이브러리를 써서 그런가 매니저를 적용하는 것 보다 훨씬 쉬운 것 같음
+
+
+# Realm 모델
 ```Swift
+import RealmSwift
+
 class UserWish: Object {
   @Persisted(primaryKey: true) var _id: ObjectId
   @Persisted var wishDescription: String
@@ -17,35 +26,52 @@ class UserWish: Object {
     self.star = false
   }
 }
-
-class Category: Object {
-  @Persisted(primaryKey: true) var _id: ObjectId
-  @Persisted var category: String
-  @Persisted var wishList: List<UserWish>
-  
-  convenience init(category: String) {
-    self.init()
-    self.category = category
-  }
-}
 ```
-![storyboard](src/storyboard.png)
 
-- 카테고리 뷰가 상위에 있고, 카테고리를 생성, 디테일로 들어가면 각 카테고리에 UserWish를 추가할 수 있음
-- 특별히 볼만한 코드는 없음!
-- 카테고리를 삭제할 때 처음에는 `localRealm.delete(category)`만 해줬는데 `List<WishList>`는 삭제가 안되더라, 몇번 해보다가 문제점을 찾으려고 노력했는데, 딱히 그런거는 아니었고 상위 인스턴스를 삭제하기 전에 내부 리스트도 삭제를 해주면 되긴 되더라, 문서 보고는 있는데 맞는 방법인지는 모르겠음
-
+# 모델 정렬
+- 쇼핑리스트는 즐겨찾기, 체크, 이름순으로 정렬되는데 Results 모델을 참조하는 인스턴스를 하나 더 만들어서 사용
 ```Swift
-override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    let category = categories[indexPath.row]
+  let localRealm = try! Realm()
+  var tasks: Results<UserWish>!
+  var sortedUserWishs: Results<UserWish>!
+
+  @IBAction func sortByFavorite(sender: UIBarButtonItem) {
+    sortedUserWishs = tasks.sorted(byKeyPath: "star", ascending: false)
+    UserDefaults.standard.set(SortStyle.favorite.rawValue, forKey: "\(SortStyle.self)")
+    updateTintColorSortButton(tappedButton: sender)
+  }
+  
+  @IBAction func sortByCheck(sender: UIBarButtonItem) {
+    sortedUserWishs = tasks.sorted(byKeyPath: "check", ascending: false)
+    UserDefaults.standard.set(SortStyle.check.rawValue, forKey: "\(SortStyle.self)")
+    updateTintColorSortButton(tappedButton: sender)
+  }
+  
+  @IBAction func sortByName(sender: UIBarButtonItem) {
+    sortedUserWishs = tasks.sorted(byKeyPath: "wishDescription", ascending: true)
+    UserDefaults.standard.set(SortStyle.name.rawValue, forKey: "\(SortStyle.self)")
+    updateTintColorSortButton(tappedButton: sender)
+  }
+```
+
+# 체크, 즐겨찾기 반영
+- Realm Model 인스턴스가 클래스 객체이다 보니, 참조로 전달 된 인스턴스를 변경하더라도 원본이 변경되어서 훨씬 또 쉽게 값을 바꿀 수 있었다.
+```Swift
+  @objc func toggleCheck(_ gesture: CheckGesture) {
     try! localRealm.write {
-      localRealm.delete(category.wishList)
-      localRealm.delete(category)
-      tableView.deleteRows(at: [indexPath], with: .automatic)
+      gesture.wish?.check.toggle()
+    }
+    if let _ = gesture.indexPath {
+      tableView.reloadData()
+    }
+  }
+  
+  @objc func toggleStar(_ gesture: StarGesture) {
+    try! localRealm.write {
+      gesture.wish?.star.toggle()
+    }
+    if let _ = gesture.indexPath {
+      tableView.reloadData()
     }
   }
 ```
-
-|1|2|
-|-|-|
-|![](src/CategoryAdd.gif)|![](src/ListAdd.gif)
