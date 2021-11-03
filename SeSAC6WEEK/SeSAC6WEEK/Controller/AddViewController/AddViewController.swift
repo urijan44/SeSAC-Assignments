@@ -47,6 +47,42 @@ class AddViewController: UIViewController {
     keyboardNotificationSetup()
     keyboardToolbarSetup()
   }
+  
+  func saveImage(imageName: String, image: UIImage) {
+    guard let imageDirectory = FileManager.default.urls(
+      for: .documentDirectory,
+      in: .userDomainMask)
+            .first?
+            .appendingPathComponent(
+              "image",
+              isDirectory: true)
+    else { print("App Directory Access Denied"); return}
+    
+    var isDirectory = ObjCBool(false)
+    let directoryExists = FileManager.default.fileExists(atPath: imageDirectory.path, isDirectory: &isDirectory)
+    
+    if !directoryExists && isDirectory.boolValue {
+      try? FileManager
+        .default
+        .createDirectory(
+          at: imageDirectory.appendingPathComponent("image", isDirectory: true),
+          withIntermediateDirectories: true)
+    }
+    
+    let imageURL = imageDirectory.appendingPathComponent(imageName)
+    
+    guard let data = image.jpegData(compressionQuality: 0.7) else { print("alert"); return }
+    
+    if FileManager.default.fileExists(atPath: imageDirectory.path) {
+      do {
+        try data.write(to: imageURL, options: .atomic)
+//        try data.write(to: folder, options: .atomic)
+        print("image save success")
+      } catch let error {
+        print(error)
+      }
+    }
+  }
 }
 
 extension AddViewController: UINavigationBarDelegate {

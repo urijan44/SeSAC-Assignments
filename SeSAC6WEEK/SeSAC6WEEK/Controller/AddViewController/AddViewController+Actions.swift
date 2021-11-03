@@ -16,7 +16,8 @@ extension AddViewController {
     let task = UserDiary(title: titleTextField.text!, content: diaryDescriptionTextView.text!, writeDate: Date(), registrationDate: Date())
     
     try! localRealm.write {
-        localRealm.add(task)
+      localRealm.add(task)
+      saveImage(imageName: "\(task._id)", image: titleImageView.image!)
     }
     dismiss(animated: true, completion: nil)
   }

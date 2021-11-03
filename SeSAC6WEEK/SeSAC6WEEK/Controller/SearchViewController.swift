@@ -54,6 +54,22 @@ class SearchViewController: UIViewController {
     
     navigationBar.setItems([customNavigationItem], animated: false)
   }
+  
+  func loadImageFromDocumentDirectory(imageName: String) -> UIImage {
+    
+    guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("image", isDirectory: true) else { fatalError("App Directory Access Denied")}
+    let url = URL(fileURLWithPath: imageName,
+                        relativeTo: documentDirectory)
+    
+    do {
+      let data = try Data(contentsOf: url)
+      let image = UIImage(data: data) ?? UIImage()
+      return image
+    } catch let error {
+      print(error)
+      return UIImage()
+    }
+  }
 }
 
 extension SearchViewController: UINavigationBarDelegate {
@@ -75,9 +91,20 @@ extension SearchViewController: UITableViewDataSource {
     
     let result = tasks[indexPath.row]
 
-    cell.configure(with: result, image: UIImage(named: "memil")!)
+    cell.configure(with: result, image: loadImageFromDocumentDirectory(imageName: "\(result._id)"))
     
     return cell
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    let task = tasks[indexPath.row]
+    guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("image", isDirectory: true) else { fatalError("App Directory Access Denied")}
+    let url = URL(fileURLWithPath: "\(task._id)", relativeTo: documentDirectory)
+    try? FileManager.default.removeItem(at: url)
+    try! localRealm.write {
+      localRealm.delete(tasks[indexPath.row])
+      tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
   }
 }
 
@@ -88,5 +115,33 @@ extension SearchViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
+    
+    //View Transition
+    let taskToUpdate = tasks[indexPath.row]
+    
+//    try! localRealm.write {
+//      taskToUpdate.title = "New Title"
+//      taskToUpdate.content = "New Content"
+//      tableView.reloadRows(at: [indexPath], with: .fade)
+//    }
+//    try! localRealm.write {
+//      tasks.setValue(Date(timeIntervalSinceNow: -60 * 60 * 24 * 3), forKey: "writeDate")
+//      tableView.reloadSections(.init(integer: 0), with: .automatic)
+//    }
+    
+    //pk 기준으로 수정할때 권장 X
+    //아래 코드 기준으로는 title 값 제외하고는 다른값이 다 초기화 되어버림
+//    try! localRealm.write {
+//      let update = UserDiary(value: ["_id": taskToUpdate._id, "title": "바뀌어라 얍"])
+//      localRealm.add(update, update: .modified)
+//      tableView.reloadSections(.init(integer: 0), with: .automatic)
+//    }
+    
+    try! localRealm.write {
+      localRealm.create(UserDiary.self, value: ["_id": taskToUpdate._id, "title": "또 바뀌어라!"], update: .modified)
+      tableView.reloadSections(.init(integer: 0), with: .automatic)
+    }
+    
   }
+  
 }
