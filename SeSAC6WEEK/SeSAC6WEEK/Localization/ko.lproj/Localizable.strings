@@ -16,3 +16,8 @@
 "cancel" = "취소";
 "camera" = "카메라";
 "album" = "사진 앨범";
+"ok" = "확인";
+"alert" = "알림";
+"directoryAccessDenied" = "사진 폴더에 접근하는 것에 실패했습니다";
+"photoSaveFail" = "사진 저장에 실패했습니다";
+"saveDiary" = "저장!";

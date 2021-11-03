@@ -16,3 +16,8 @@
 "cancel" = "Cancel";
 "camera" = "Camera";
 "album" = "Album";
+"ok" = "OK";
+"alert" = "Alert";
+"directoryAccessDenied" = "Did Fail at Photo Directory Access";
+"photoSaveFail" = "Photo save fail";
+"saveDiary" = "Save";

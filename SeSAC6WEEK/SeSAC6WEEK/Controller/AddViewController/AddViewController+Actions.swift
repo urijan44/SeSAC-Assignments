@@ -18,8 +18,16 @@ extension AddViewController {
     try! localRealm.write {
       localRealm.add(task)
       saveImage(imageName: "\(task._id)", image: titleImageView.image!)
+      
+      let hudView = HudView.hud(inView: view, animated: true)
+      hudView.text = LocalizableStrings.saveDiary.localized
+      
+      afterDelay(0.5) {
+        hudView.hide()
+
+        self.dismiss(animated: true, completion: nil)
+      }
     }
-    dismiss(animated: true, completion: nil)
   }
   
   @objc func showPhotoPickerView() {

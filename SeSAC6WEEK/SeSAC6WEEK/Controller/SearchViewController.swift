@@ -50,7 +50,7 @@ class SearchViewController: UIViewController {
     navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.mainExtraBold]
     view.addSubview(navigationBar)
     
-    let customNavigationItem = UINavigationItem(title: "검색")
+    let customNavigationItem = UINavigationItem(title: LocalizableStrings.search.localized)
     
     navigationBar.setItems([customNavigationItem], animated: false)
   }

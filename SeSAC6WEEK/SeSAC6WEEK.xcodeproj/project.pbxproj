@@ -15,6 +15,9 @@
 		8A5748CB272FBC310068DE54 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5748CA272FBC310068DE54 /* HomeViewController.swift */; };
 		8A5748CE272FBC710068DE54 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5748CD272FBC710068DE54 /* AddViewController.swift */; };
 		8A5748D2272FBCB70068DE54 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5748D1272FBCB70068DE54 /* SearchViewController.swift */; };
+		8A6872EF273262BE006F8859 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6872EE273262BE006F8859 /* AlertView.swift */; };
+		8A6872F127326863006F8859 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6872F027326863006F8859 /* HudView.swift */; };
+		8A6872F327327140006F8859 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6872F227327140006F8859 /* Functions.swift */; };
 		8A7651FC27301D40005D30D0 /* AddViewController+Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7651FB27301D40005D30D0 /* AddViewController+Actions.swift */; };
 		8A7651FE27301D97005D30D0 /* AddViewController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7651FD27301D97005D30D0 /* AddViewController+Setup.swift */; };
 		8A76520227302FCF005D30D0 /* SCDream3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A76520027302FCF005D30D0 /* SCDream3.otf */; };
@@ -53,6 +56,9 @@
 		8A5748CA272FBC310068DE54 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8A5748CD272FBC710068DE54 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		8A5748D1272FBCB70068DE54 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		8A6872EE273262BE006F8859 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		8A6872F027326863006F8859 /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
+		8A6872F227327140006F8859 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		8A7651FB27301D40005D30D0 /* AddViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+Actions.swift"; sourceTree = "<group>"; };
 		8A7651FD27301D97005D30D0 /* AddViewController+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+Setup.swift"; sourceTree = "<group>"; };
 		8A76520027302FCF005D30D0 /* SCDream3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream3.otf; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 				8AE79D9A272FBADC00D74498 /* Views */,
 				8AE79D8F272FBABE00D74498 /* Assets.xcassets */,
 				8AE79D94272FBABE00D74498 /* Info.plist */,
+				8A6872F227327140006F8859 /* Functions.swift */,
 			);
 			path = SeSAC6WEEK;
 			sourceTree = "<group>";
@@ -232,6 +239,8 @@
 				8A76520A27303485005D30D0 /* Search */,
 				8A5748C8272FBB6B0068DE54 /* Setting.storyboard */,
 				8AE79D91272FBABE00D74498 /* LaunchScreen.storyboard */,
+				8A6872EE273262BE006F8859 /* AlertView.swift */,
+				8A6872F027326863006F8859 /* HudView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,7 +336,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A6872F127326863006F8859 /* HudView.swift in Sources */,
 				8A7651FE27301D97005D30D0 /* AddViewController+Setup.swift in Sources */,
+				8A6872EF273262BE006F8859 /* AlertView.swift in Sources */,
 				8A975258272FEAFE00F35B80 /* CalendarViewController.swift in Sources */,
 				8A7651FC27301D40005D30D0 /* AddViewController+Actions.swift in Sources */,
 				8A975256272FEACE00F35B80 /* SettingViewController.swift.swift in Sources */,
@@ -342,6 +353,7 @@
 				8AE79D89272FBABE00D74498 /* SceneDelegate.swift in Sources */,
 				8A97910A2730C97500023FFB /* RealmModel.swift in Sources */,
 				8A76520527302FF3005D30D0 /* UIFont+Extensions.swift in Sources */,
+				8A6872F327327140006F8859 /* Functions.swift in Sources */,
 				8A5748CB272FBC310068DE54 /* HomeViewController.swift in Sources */,
 				8A8E41E427303822005CECD5 /* DiaryModel.swift in Sources */,
 				8A8E41F527304331005CECD5 /* LocalizableStrings.swift in Sources */,

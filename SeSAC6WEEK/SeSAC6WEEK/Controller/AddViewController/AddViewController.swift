@@ -56,7 +56,12 @@ class AddViewController: UIViewController {
             .appendingPathComponent(
               "image",
               isDirectory: true)
-    else { print("App Directory Access Denied"); return}
+    else { alertFunction(
+      self,
+      title: LocalizableStrings.alert.localized,
+      body: LocalizableStrings.directoryAccessDenied.localized)
+      return
+    }
     
     let directoryExists = FileManager.default.fileExists(atPath: imageDirectory.path)
     
@@ -70,7 +75,13 @@ class AddViewController: UIViewController {
     
     let imageURL = imageDirectory.appendingPathComponent(imageName)
     
-    guard let data = image.jpegData(compressionQuality: 0.7) else { print("alert"); return }
+    guard let data = image.jpegData(compressionQuality: 0.7) else {
+      alertFunction(
+        self,
+        title: LocalizableStrings.alert.localized,
+        body: LocalizableStrings.photoSaveFail.localized)
+      return
+    }
     
     if FileManager.default.fileExists(atPath: imageDirectory.path) {
       do {
