@@ -69,7 +69,6 @@ class AddViewController: UIViewController {
       } catch let error {
         alertFunction(self, title: LocalizableStrings.alert.localized, body: error.localizedDescription)
       }
-      
     }
   }
   
