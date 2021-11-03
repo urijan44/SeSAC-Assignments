@@ -16,6 +16,9 @@ enum LocalizableStrings: String {
   case pleaseTypingTitle
   case saveBar
   case dateString
+  case cancel
+  case camera
+  case album
   
   var localized: String {
     self.rawValue.localized()

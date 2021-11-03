@@ -25,27 +25,13 @@ extension AddViewController {
   @objc func showPhotoPickerView() {
     view.endEditing(true)
     
-    requestPHPhoroLibraryAuthorization {
-      DispatchQueue.main.async {
-        var configuration = PHPickerConfiguration()
-        configuration.filter = .any(of: [.images, .livePhotos])
-        configuration.selectionLimit = 1
-        let picker = PHPickerViewController(configuration: configuration)
-        picker.delegate = self
-        self.present(picker, animated: true, completion: nil)
-      }
-    }
-  }
-  
-  func requestPHPhoroLibraryAuthorization(completion: @escaping () -> ()) {
-    PHPhotoLibrary.requestAuthorization(for: .readWrite) { authorizationStatus in
-      switch authorizationStatus {
-      case .limited:
-        completion()
-      case .authorized:
-        completion()
-      default:
-        return
+    if true || UIImagePickerController.isSourceTypeAvailable(.camera) {
+      photoMenu()
+    } else {
+      requestPHPhoroLibraryAuthorization {
+        DispatchQueue.main.async {
+          self.showPhotoLibrary()
+        }
       }
     }
   }

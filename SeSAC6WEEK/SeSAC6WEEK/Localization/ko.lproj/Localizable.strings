@@ -13,3 +13,6 @@
 "pleaseTypingTitle" = "제목을 입력해주세요";
 "saveBar" = "저장";
 "dateString" = "yyyy년 MM월 dd일";
+"cancel" = "취소";
+"camera" = "카메라";
+"album" = "사진 앨범";

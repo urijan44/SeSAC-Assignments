@@ -22,6 +22,7 @@
 		8A76520527302FF3005D30D0 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A76520427302FF3005D30D0 /* UIFont+Extensions.swift */; };
 		8A7652082730347C005D30D0 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7652062730347C005D30D0 /* SearchTableViewCell.swift */; };
 		8A7652092730347C005D30D0 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A7652072730347C005D30D0 /* SearchTableViewCell.xib */; };
+		8A7C7A6827325D8B001D4185 /* AddViewController+Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7C7A6727325D8B001D4185 /* AddViewController+Photo.swift */; };
 		8A8E41E427303822005CECD5 /* DiaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E41E327303822005CECD5 /* DiaryModel.swift */; };
 		8A8E41E727303F6E005CECD5 /* SCDream6.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E41E627303F6E005CECD5 /* SCDream6.otf */; };
 		8A8E41ED273042B7005CECD5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A8E41EF273042B7005CECD5 /* Localizable.strings */; };
@@ -59,6 +60,7 @@
 		8A76520427302FF3005D30D0 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		8A7652062730347C005D30D0 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		8A7652072730347C005D30D0 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
+		8A7C7A6727325D8B001D4185 /* AddViewController+Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+Photo.swift"; sourceTree = "<group>"; };
 		8A8E41E327303822005CECD5 /* DiaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryModel.swift; sourceTree = "<group>"; };
 		8A8E41E627303F6E005CECD5 /* SCDream6.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCDream6.otf; sourceTree = "<group>"; };
 		8A8E41E827304029005CECD5 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				8A5748CD272FBC710068DE54 /* AddViewController.swift */,
 				8A7651FB27301D40005D30D0 /* AddViewController+Actions.swift */,
 				8A7651FD27301D97005D30D0 /* AddViewController+Setup.swift */,
+				8A7C7A6727325D8B001D4185 /* AddViewController+Photo.swift */,
 				8A97525D273010FE00F35B80 /* DatePickerViewController.swift */,
 			);
 			path = AddViewController;
@@ -329,6 +332,7 @@
 				8A7651FC27301D40005D30D0 /* AddViewController+Actions.swift in Sources */,
 				8A975256272FEACE00F35B80 /* SettingViewController.swift.swift in Sources */,
 				8A97525E273010FE00F35B80 /* DatePickerViewController.swift in Sources */,
+				8A7C7A6827325D8B001D4185 /* AddViewController+Photo.swift in Sources */,
 				8A5748D2272FBCB70068DE54 /* SearchViewController.swift in Sources */,
 				8A5748CE272FBC710068DE54 /* AddViewController.swift in Sources */,
 				8A975260273015CB00F35B80 /* Date+extensions.swift in Sources */,

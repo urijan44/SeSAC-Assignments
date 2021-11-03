@@ -58,10 +58,9 @@ class AddViewController: UIViewController {
               isDirectory: true)
     else { print("App Directory Access Denied"); return}
     
-    var isDirectory = ObjCBool(false)
-    let directoryExists = FileManager.default.fileExists(atPath: imageDirectory.path, isDirectory: &isDirectory)
+    let directoryExists = FileManager.default.fileExists(atPath: imageDirectory.path)
     
-    if !directoryExists && isDirectory.boolValue {
+    if !directoryExists {
       try? FileManager
         .default
         .createDirectory(
@@ -76,8 +75,6 @@ class AddViewController: UIViewController {
     if FileManager.default.fileExists(atPath: imageDirectory.path) {
       do {
         try data.write(to: imageURL, options: .atomic)
-//        try data.write(to: folder, options: .atomic)
-        print("image save success")
       } catch let error {
         print(error)
       }

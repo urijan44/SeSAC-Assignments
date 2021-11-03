@@ -117,7 +117,7 @@ extension SearchViewController: UITableViewDelegate {
     tableView.deselectRow(at: indexPath, animated: true)
     
     //View Transition
-    let taskToUpdate = tasks[indexPath.row]
+//    let taskToUpdate = tasks[indexPath.row]
     
 //    try! localRealm.write {
 //      taskToUpdate.title = "New Title"
@@ -137,10 +137,10 @@ extension SearchViewController: UITableViewDelegate {
 //      tableView.reloadSections(.init(integer: 0), with: .automatic)
 //    }
     
-    try! localRealm.write {
-      localRealm.create(UserDiary.self, value: ["_id": taskToUpdate._id, "title": "또 바뀌어라!"], update: .modified)
-      tableView.reloadSections(.init(integer: 0), with: .automatic)
-    }
+//    try! localRealm.write {
+//      localRealm.create(UserDiary.self, value: ["_id": taskToUpdate._id, "title": "또 바뀌어라!"], update: .modified)
+//      tableView.reloadSections(.init(integer: 0), with: .automatic)
+//    }
     
   }
   
