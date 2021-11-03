@@ -12,7 +12,7 @@
 |7|Drink Water|여태 한 것중 가장 덩치그 크나 크게 어려운 부분은 없었음, 그러나 추가하고 싶은 것은 많음, 리드미 참고, 이 시점에서 Assignment Repo 통합함|[이동하기](DrinkWater/README.md)|2021/10/19|
 |8|테이블뷰컨트롤러구현하기|테이블뷰컨트롤러 스태틱과 프로토타입으로 구현, 14이후 deprecated된 셀, 헤더 구성방법 특별히 신경써봄|[이동하기](MyChecklist/README.md)|
 |9-1|환율변동프로그램|특별한 점은 없음, Setter는 항상 조금 헷갈림|[이동하기](ExchangeProgram/README.md)|
-|9-2|쇼핑리스트|DiffableDataSource 적용 실패기 ㅎㅎ.|[이동하기](ShoppingList/README.md)|
+|9-2|쇼핑리스트|DiffableDataSource 적용 실패기 ㅎㅎ.|[이동하기](ShoppingList/README_v1.md)|
 |10-1|트렌드 미디어|셀 이미지를 로드 향상 필요함, 서치뷰 적용 필요함, cornerRadius랑 shadow 동시에 주기가 번거로웠음|[이동하기](TrendMedia/1017README.md)|
 |10-2|트렌드 미디어|킹피셔를 이용한 이미지 로드 향상, 당일 과제 구현 달성|[이동하기](TrendMedia/1018README.md)|2021/10/19|
 |10-3|트렌드 미디어|당일 과제 구현, 대부분 만족스럽게 구현 되지가 않음|[이동하기](TrendMedia/README.md)|2021/10/20|
@@ -31,7 +31,7 @@
 |10-6|트렌드 미디어|미디어 상세보기(크루, 캐스트, 웹뷰 연결)|[이동하기](TrendMedia/README.md)|2021/10/29|
 |15|UIImagePickerController실습|사진을부탁해(가제)|[이동하기](https://github.com/urijan44/OnePhoto/blob/master/README.md)|2021/10/31|
 |16-1|6주차프로젝트UI|스토리보드 레퍼런스, PHPicker, Localization...|[이동하기](SeSAC6WEEK/README_v1.md)|2021/11/02|
-|9-3|쇼핑리스트|Realm 데이터베이스 적용|[이동하기](ShoppingList/README.md)|2021/11/02|
+|9-3|쇼핑리스트|Realm 데이터베이스 적용|[이동하기](ShoppingList/README_v2.md)|2021/11/02|
 |10-7|트랜드 미디어|영진원 박스오피스 Realm 적용|[이동하기](TrendMedia/README.md)|2021/11/03|
 |16-2|6주차프로젝트(일기앱)|사진촬영,포토라이브러리, 디테일 뷰, 편집 모드 추가|[이동하기](SeSAC6WEEK/README_v2.md)|2021/11/03|
-|9-4|쇼핑리스트|카테고리 추가|[이동하기](ShoppingList/README_v2.md)|2021/11/03|
+|9-4|쇼핑리스트|카테고리 추가|[이동하기](ShoppingList/README_v3.md)|2021/11/03|
