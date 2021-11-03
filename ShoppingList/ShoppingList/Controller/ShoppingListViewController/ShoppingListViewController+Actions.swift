@@ -15,7 +15,6 @@ extension ShoppingListViewController {
   
   @IBAction func sortByFavorite(sender: UIBarButtonItem) {
     sortedUserWishs = tasks.sorted(byKeyPath: "star", ascending: false)
-    
     UserDefaults.standard.set(SortStyle.favorite.rawValue, forKey: "\(SortStyle.self)")
     updateTintColorSortButton(tappedButton: sender)
   }

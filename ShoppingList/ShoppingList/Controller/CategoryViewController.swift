@@ -24,6 +24,12 @@ class CategoryViewController: UITableViewController {
     navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .add, target: self, action: #selector(addCategory))
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    tableView.reloadData()
+  }
+  
   
   //MARK: - Actions
   @objc func addCategory() {
@@ -93,13 +99,11 @@ extension CategoryViewController {
   }
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    tableView.deleteRows(at: [indexPath], with: .automatic)
     let category = categories[indexPath.row]
     try! localRealm.write {
+      localRealm.delete(category.wishList)
       localRealm.delete(category)
+      tableView.deleteRows(at: [indexPath], with: .automatic)
     }
-    
-    
-    
   }
 }
