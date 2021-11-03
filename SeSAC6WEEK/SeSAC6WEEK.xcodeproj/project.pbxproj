@@ -40,6 +40,9 @@
 		8A9791052730C89100023FFB /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8A9791042730C89100023FFB /* Realm */; };
 		8A9791072730C89100023FFB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8A9791062730C89100023FFB /* RealmSwift */; };
 		8A97910A2730C97500023FFB /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9791092730C97500023FFB /* RealmModel.swift */; };
+		8A9B24342732CC2A00C2571B /* SearchViewController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A9B24332732CC2A00C2571B /* SearchViewController+Setup.swift */; };
+		8AA0AB1D27327C38009CDD8E /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AA0AB1C27327C38009CDD8E /* DetailView.storyboard */; };
+		8AA0AB1F27327FF1009CDD8E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA0AB1E27327FF1009CDD8E /* DetailViewController.swift */; };
 		8AE79D87272FBABE00D74498 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE79D86272FBABE00D74498 /* AppDelegate.swift */; };
 		8AE79D89272FBABE00D74498 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE79D88272FBABE00D74498 /* SceneDelegate.swift */; };
 		8AE79D8E272FBABE00D74498 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8AE79D8C272FBABE00D74498 /* Main.storyboard */; };
@@ -83,6 +86,9 @@
 		8A97525D273010FE00F35B80 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		8A97525F273015CB00F35B80 /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 		8A9791092730C97500023FFB /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		8A9B24332732CC2A00C2571B /* SearchViewController+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Setup.swift"; sourceTree = "<group>"; };
+		8AA0AB1C27327C38009CDD8E /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
+		8AA0AB1E27327FF1009CDD8E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8AE79D83272FBABE00D74498 /* SeSAC6WEEK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC6WEEK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AE79D86272FBABE00D74498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AE79D88272FBABE00D74498 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,8 +116,9 @@
 			children = (
 				8A5748CA272FBC310068DE54 /* HomeViewController.swift */,
 				8A97525C273010ED00F35B80 /* AddViewController */,
-				8A5748D1272FBCB70068DE54 /* SearchViewController.swift */,
+				8A9B24352732CC5600C2571B /* SearchViewController */,
 				8A975255272FEACE00F35B80 /* SettingViewController.swift.swift */,
+				8AA0AB1E27327FF1009CDD8E /* DetailViewController.swift */,
 				8A975257272FEAFE00F35B80 /* CalendarViewController.swift */,
 			);
 			path = Controller;
@@ -159,6 +166,7 @@
 			children = (
 				8A5748C2272FBB5A0068DE54 /* Content.storyboard */,
 				8A97525A2730108300F35B80 /* DatePicker.storyboard */,
+				8AA0AB1C27327C38009CDD8E /* DetailView.storyboard */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -191,6 +199,15 @@
 				8A9791092730C97500023FFB /* RealmModel.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		8A9B24352732CC5600C2571B /* SearchViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A5748D1272FBCB70068DE54 /* SearchViewController.swift */,
+				8A9B24332732CC2A00C2571B /* SearchViewController+Setup.swift */,
+			);
+			path = SearchViewController;
 			sourceTree = "<group>";
 		};
 		8AE79D7A272FBABE00D74498 = {
@@ -321,6 +338,7 @@
 				8A7652092730347C005D30D0 /* SearchTableViewCell.xib in Resources */,
 				8A76520327302FCF005D30D0 /* SCDream7.otf in Resources */,
 				8A8E41E727303F6E005CECD5 /* SCDream6.otf in Resources */,
+				8AA0AB1D27327C38009CDD8E /* DetailView.storyboard in Resources */,
 				8A76520227302FCF005D30D0 /* SCDream3.otf in Resources */,
 				8A5748C7272FBB660068DE54 /* Search.storyboard in Resources */,
 				8A5748C1272FBB530068DE54 /* Home.storyboard in Resources */,
@@ -342,11 +360,13 @@
 				8A975258272FEAFE00F35B80 /* CalendarViewController.swift in Sources */,
 				8A7651FC27301D40005D30D0 /* AddViewController+Actions.swift in Sources */,
 				8A975256272FEACE00F35B80 /* SettingViewController.swift.swift in Sources */,
+				8A9B24342732CC2A00C2571B /* SearchViewController+Setup.swift in Sources */,
 				8A97525E273010FE00F35B80 /* DatePickerViewController.swift in Sources */,
 				8A7C7A6827325D8B001D4185 /* AddViewController+Photo.swift in Sources */,
 				8A5748D2272FBCB70068DE54 /* SearchViewController.swift in Sources */,
 				8A5748CE272FBC710068DE54 /* AddViewController.swift in Sources */,
 				8A975260273015CB00F35B80 /* Date+extensions.swift in Sources */,
+				8AA0AB1F27327FF1009CDD8E /* DetailViewController.swift in Sources */,
 				8A7652082730347C005D30D0 /* SearchTableViewCell.swift in Sources */,
 				8AE79D87272FBABE00D74498 /* AppDelegate.swift in Sources */,
 				8A8E41F3273042F8005CECD5 /* String+Extensions.swift in Sources */,

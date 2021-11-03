@@ -24,6 +24,8 @@ enum LocalizableStrings: String {
   case directoryAccessDenied
   case photoSaveFail
   case saveDiary
+  case delete
+  case edit
   
   var localized: String {
     self.rawValue.localized()

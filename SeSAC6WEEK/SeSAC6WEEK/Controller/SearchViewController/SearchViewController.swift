@@ -15,6 +15,7 @@ class SearchViewController: UIViewController {
       searchTabBarItem.title = LocalizableStrings.search.localized
     }
   }
+  
   @IBOutlet var searchResultTableView: UITableView!
   
   // Get all tasks in the realm
@@ -33,33 +34,10 @@ class SearchViewController: UIViewController {
     tasks = localRealm.objects(UserDiary.self)
     searchResultTableView.reloadData()
   }
-  
-  func tableViewSetup() {
-//    let tableViewFrame = CGRect(x: 0, y: 44, width: view.bounds.width, height: view.bounds.height + 44)
-//    searchResultTableView = UITableView(frame: tableViewFrame, style: .insetGrouped)
-    searchResultTableView.delegate = self
-    searchResultTableView.dataSource = self
-    searchResultTableView.register(.init(nibName: SearchTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SearchTableViewCell.identifier)
-  }
-  
-  func navigationBarSetup() {
-    let navigationBar = UINavigationBar(frame: .init(x: 0, y: 44, width: view.frame.width, height: 44))
-    navigationBar.delegate = self
-    navigationBar.setBackgroundImage(UIImage(), for: .default)
-    navigationBar.shadowImage = UIImage()
-    navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.mainExtraBold]
-    view.addSubview(navigationBar)
-    
-    let customNavigationItem = UINavigationItem(title: LocalizableStrings.search.localized)
-    
-    navigationBar.setItems([customNavigationItem], animated: false)
-  }
-  
+
   func loadImageFromDocumentDirectory(imageName: String) -> UIImage {
     
-    guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("image", isDirectory: true) else { fatalError("App Directory Access Denied")}
-    let url = URL(fileURLWithPath: imageName,
-                        relativeTo: documentDirectory)
+    let url = imageFileURL(fileName: imageName)
     
     do {
       let data = try Data(contentsOf: url)
@@ -96,10 +74,13 @@ extension SearchViewController: UITableViewDataSource {
     return cell
   }
   
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    true
+  }
+  
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     let task = tasks[indexPath.row]
-    guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("image", isDirectory: true) else { fatalError("App Directory Access Denied")}
-    let url = URL(fileURLWithPath: "\(task._id)", relativeTo: documentDirectory)
+    let url = imageFileURL(fileName: "\(task._id)")
     try? FileManager.default.removeItem(at: url)
     try! localRealm.write {
       localRealm.delete(tasks[indexPath.row])
@@ -142,6 +123,35 @@ extension SearchViewController: UITableViewDelegate {
 //      tableView.reloadSections(.init(integer: 0), with: .automatic)
 //    }
     
+    guard let controller = UIStoryboard(name: "DetailView", bundle: nil)
+      .instantiateViewController(withIdentifier: DetailViewController.identifier)
+    as? DetailViewController else { fatalError("DetailViewController load failure")}
+    
+    let diary = tasks[indexPath.row]
+    
+    controller.userDiary = diary
+    controller.modalPresentationStyle = .fullScreen
+    
+    navigationController?.pushViewController(controller, animated: true)
+    
+  }
+  
+  func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    let edit = UIContextualAction(style: .normal, title: LocalizableStrings.edit.localized) { [weak self] (_, _, success: @escaping (Bool) -> Void) in
+      guard let self = self else { return }
+      guard let controller = UIStoryboard(name: "Content", bundle: nil)
+        .instantiateViewController(withIdentifier: AddViewController.identifier)
+              as? AddViewController else { print("AddViewController load failure"); return }
+      
+      controller.editDiary = self.tasks[indexPath.row]
+      controller.isEditingMode = true
+      controller.modalPresentationStyle = .fullScreen
+      self.present(controller, animated: true)
+      
+      success(true)
+    }
+    edit.backgroundColor = .systemTeal
+    return .init(actions: [edit])
   }
   
 }

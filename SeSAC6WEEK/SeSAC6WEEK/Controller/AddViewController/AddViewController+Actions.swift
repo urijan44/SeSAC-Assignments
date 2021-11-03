@@ -13,21 +13,49 @@ extension AddViewController {
   }
   
   @objc func saveDiary() {
-    let task = UserDiary(title: titleTextField.text!, content: diaryDescriptionTextView.text!, writeDate: Date(), registrationDate: Date())
-    
-    try! localRealm.write {
-      localRealm.add(task)
-      saveImage(imageName: "\(task._id)", image: titleImageView.image!)
+    if isEditingMode, let diary = editDiary {
+      let taskToUpdate = UserDiary(
+        title: titleTextField.text!,
+        content: diaryDescriptionTextView.text,
+        writeDate: dateLabel.text!.dateType!,
+        registrationDate: diary.registrationDate)
       
-      let hudView = HudView.hud(inView: view, animated: true)
-      hudView.text = LocalizableStrings.saveDiary.localized
-      
-      afterDelay(0.5) {
-        hudView.hide()
+        try! localRealm.write {
+          localRealm.create(UserDiary.self,
+                            value: ["_id": diary._id,
+                                    "title": taskToUpdate.title,
+                                    "content": taskToUpdate.content ?? "",
+                                    "writeDate": taskToUpdate.writeDate],
+                            update: .modified)
+          saveImage(imageName: "\(diary._id)", image: titleImageView.image!)
+          let hudView = HudView.hud(inView: view, animated: true)
+          hudView.text = LocalizableStrings.saveDiary.localized
+          
+          afterDelay(0.5) {
+            hudView.hide()
 
-        self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true, completion: nil)
+          }
+        }
+      
+    } else {
+      let task = UserDiary(title: titleTextField.text!, content: diaryDescriptionTextView.text!, writeDate: Date(), registrationDate: Date())
+      try! localRealm.write {
+        localRealm.add(task)
+        saveImage(imageName: "\(task._id)", image: titleImageView.image!)
+        
+        let hudView = HudView.hud(inView: view, animated: true)
+        hudView.text = LocalizableStrings.saveDiary.localized
+        
+        afterDelay(0.5) {
+          hudView.hide()
+
+          self.dismiss(animated: true, completion: nil)
+        }
       }
     }
+    
+    
   }
   
   @objc func showPhotoPickerView() {

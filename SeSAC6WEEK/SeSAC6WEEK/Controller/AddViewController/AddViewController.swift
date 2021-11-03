@@ -36,7 +36,10 @@ class AddViewController: UIViewController {
   @IBOutlet weak var diaryDescriptionTextView: UITextView!
   
   var diary: String?
+  var isEditingMode = false
   let localRealm = try! Realm()
+  
+  var editDiary: UserDiary?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -46,6 +49,28 @@ class AddViewController: UIViewController {
     viewStyleSetup()
     keyboardNotificationSetup()
     keyboardToolbarSetup()
+    
+    if isEditingMode {
+      editModeConfigure()
+    }
+  }
+  
+  func editModeConfigure() {
+    if let diary = editDiary {
+      titleTextField.text = diary.title
+      dateLabel.text = diary.writeDate.dateString
+      diaryDescriptionTextView.text = diary.content
+      
+      let url = imageFileURL(fileName: "\(diary._id)")
+      do {
+        let data = try Data(contentsOf: url)
+        let image = UIImage(data: data)
+        titleImageView.image = image
+      } catch let error {
+        alertFunction(self, title: LocalizableStrings.alert.localized, body: error.localizedDescription)
+      }
+      
+    }
   }
   
   func saveImage(imageName: String, image: UIImage) {

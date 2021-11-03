@@ -21,3 +21,5 @@
 "directoryAccessDenied" = "사진 폴더에 접근하는 것에 실패했습니다";
 "photoSaveFail" = "사진 저장에 실패했습니다";
 "saveDiary" = "저장!";
+"delete" = "삭제";
+"edit" = "편집";

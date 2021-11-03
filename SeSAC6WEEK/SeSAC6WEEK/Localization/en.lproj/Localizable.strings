@@ -21,3 +21,5 @@
 "directoryAccessDenied" = "Did Fail at Photo Directory Access";
 "photoSaveFail" = "Photo save fail";
 "saveDiary" = "Save";
+"delete" = "Delete";
+"edit" = "Edit";
