@@ -9,21 +9,26 @@ import UIKit
 import RealmSwift
 
 
-class ShoppingListViewController: UITableViewController {
+class ShoppingListViewController: UITableViewController, UIGestureRecognizerDelegate {
   
+  static let identifier = "ShoppingListViewController"
   
   @IBOutlet weak var favoriteButton: UIBarButtonItem!
   @IBOutlet weak var checkButton: UIBarButtonItem!
   @IBOutlet weak var nameButton: UIBarButtonItem!
   
+  var categoryTitle: String!
   let localRealm = try! Realm()
-  var tasks: Results<UserWish>!
+  var tasks: List<UserWish>!
   var sortedUserWishs: Results<UserWish>!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tasks = localRealm.objects(UserWish.self)
+
+    title = categoryTitle
     loadSortStyle()
+    
+    swipeBackGesture()
   }
   
   
@@ -31,6 +36,11 @@ class ShoppingListViewController: UITableViewController {
     super.viewWillAppear(animated)
     tableView.reloadSections(.init(integer: 1), with: .automatic)
     
+  }
+  
+  func swipeBackGesture() {
+    navigationController?.interactivePopGestureRecognizer?.delegate = self
+    navigationController?.interactivePopGestureRecognizer?.isEnabled = true
   }
   
   func loadSortStyle() {

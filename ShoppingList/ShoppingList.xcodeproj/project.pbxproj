@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A353D202732D0D3000BB37E /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A353D1F2732D0D3000BB37E /* CategoryViewController.swift */; };
 		8A3BBEE42731049D0046C9C1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3BBEE32731049D0046C9C1 /* Realm */; };
 		8A3BBEE62731049D0046C9C1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3BBEE52731049D0046C9C1 /* RealmSwift */; };
 		8A3BBEE9273104BF0046C9C1 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3BBEE8273104BF0046C9C1 /* RealmModel.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A353D1F2732D0D3000BB37E /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		8A3BBEE8273104BF0046C9C1 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		8A3BBEEB273109E40046C9C1 /* ShoppingListViewController+Actions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShoppingListViewController+Actions.swift"; sourceTree = "<group>"; };
 		8A3BBEED27310A410046C9C1 /* ShoppingListVIewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShoppingListVIewController+TableView.swift"; sourceTree = "<group>"; };
@@ -57,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A353D212732D0EE000BB37E /* ShoppingListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8A8EEEAC27173C1D0044BACA /* ShoppingListViewController.swift */,
+				8A3BBEED27310A410046C9C1 /* ShoppingListVIewController+TableView.swift */,
+				8A3BBEEB273109E40046C9C1 /* ShoppingListViewController+Actions.swift */,
+			);
+			path = ShoppingListViewController;
+			sourceTree = "<group>";
+		};
 		8A3BBEE7273104B10046C9C1 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,9 +132,8 @@
 		8A8EEEC5271754990044BACA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				8A8EEEAC27173C1D0044BACA /* ShoppingListViewController.swift */,
-				8A3BBEED27310A410046C9C1 /* ShoppingListVIewController+TableView.swift */,
-				8A3BBEEB273109E40046C9C1 /* ShoppingListViewController+Actions.swift */,
+				8A353D1F2732D0D3000BB37E /* CategoryViewController.swift */,
+				8A353D212732D0EE000BB37E /* ShoppingListViewController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -209,6 +220,7 @@
 				8A8DCE37271765B30031B4CA /* ShoppingListCell.swift in Sources */,
 				8A8EEEC1271748740044BACA /* Wish.swift in Sources */,
 				8A8DCE36271765B30031B4CA /* AddListCell.swift in Sources */,
+				8A353D202732D0D3000BB37E /* CategoryViewController.swift in Sources */,
 				8AF5E89C271858C9007C310F /* SortStyle.swift in Sources */,
 				8A3BBEE9273104BF0046C9C1 /* RealmModel.swift in Sources */,
 				8A8EEEAD27173C1D0044BACA /* ShoppingListViewController.swift in Sources */,

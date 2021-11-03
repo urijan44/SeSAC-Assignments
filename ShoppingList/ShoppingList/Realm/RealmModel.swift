@@ -22,3 +22,14 @@ class UserWish: Object {
     self.star = false
   }
 }
+
+class Category: Object {
+  @Persisted(primaryKey: true) var _id: ObjectId
+  @Persisted var category: String
+  @Persisted var wishList: List<UserWish>
+  
+  convenience init(category: String) {
+    self.init()
+    self.category = category
+  }
+}

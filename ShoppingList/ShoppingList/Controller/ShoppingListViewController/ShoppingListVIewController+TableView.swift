@@ -75,7 +75,7 @@ extension ShoppingListViewController: AddListCellDelegate {
     let task = UserWish(wishDescription: text)
     
     try! localRealm.write{
-      localRealm.add(task)
+      tasks.append(task)
     }
 
     tableView.reloadSections(.init(integer: 1), with: .automatic)
