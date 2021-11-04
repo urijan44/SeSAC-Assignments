@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="w81-df-JaH">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,12 +14,12 @@
             <objects>
                 <tableViewController storyboardIdentifier="ShoppingListViewController" id="YvA-0z-uO4" customClass="ShoppingListViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="eHe-dM-D96">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddListCell" rowHeight="70" id="nLJ-bA-wse" customClass="AddListCell" customModule="ShoppingList" customModuleProvider="target">
-                                <rect key="frame" x="16" y="49.5" width="343" height="70"/>
+                                <rect key="frame" x="16" y="49" width="343" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nLJ-bA-wse" id="A7I-lB-mJR">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="70"/>
@@ -62,20 +63,20 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ShoppingListCell" rowHeight="50" id="sg1-Ul-tGT" customClass="ShoppingListCell" customModule="ShoppingList" customModuleProvider="target">
-                                <rect key="frame" x="16" y="119.5" width="343" height="50"/>
+                                <rect key="frame" x="16" y="119" width="343" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sg1-Ul-tGT" id="eBP-2B-Hbu">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPO-x1-Y0E">
-                                            <rect key="frame" x="0.0" y="2.5" width="343" height="45"/>
+                                            <rect key="frame" x="0.0" y="2.6666666666666679" width="343" height="45"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7jH-yv-OIR">
                                                     <rect key="frame" x="20" y="10" width="303" height="25"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="checkmark.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Xhh-FP-fht">
-                                                            <rect key="frame" x="0.0" y="1" width="35" height="22.5"/>
+                                                            <rect key="frame" x="0.0" y="1.6666666666666643" width="35" height="22.000000000000004"/>
                                                             <color key="tintColor" systemColor="labelColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="7us-gP-Ysf"/>
@@ -83,13 +84,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그립톡 구매하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zic-EV-c1K">
-                                                            <rect key="frame" x="45" y="2.5" width="223" height="20.5"/>
+                                                            <rect key="frame" x="45" y="2.3333333333333339" width="223" height="20.333333333333329"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="253" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1lf-QZ-s24">
-                                                            <rect key="frame" x="278" y="-0.5" width="25" height="25"/>
+                                                            <rect key="frame" x="278" y="-0.33333333333333215" width="25" height="24.666666666666664"/>
                                                             <color key="tintColor" systemColor="labelColor"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="25" id="DrK-hp-Qor"/>
@@ -174,31 +175,150 @@
             </objects>
             <point key="canvasLocation" x="1279" y="117"/>
         </scene>
+        <!--설정-->
+        <scene sceneID="mdC-6K-BLr">
+            <objects>
+                <tableViewController storyboardIdentifier="SettingViewController" id="Zos-5D-P3f" customClass="SettingViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="D4B-gd-4DX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="데이터" id="IX8-Bs-MBi">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="brb-CT-1G4" style="IBUITableViewCellStyleDefault" id="Boe-g4-0e0">
+                                        <rect key="frame" x="16" y="49" width="343" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Boe-g4-0e0" id="zIv-1t-54Q">
+                                            <rect key="frame" x="0.0" y="0.0" width="317.33333333333331" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="백업/복구하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="brb-CT-1G4">
+                                                    <rect key="frame" x="16" y="0.0" width="293.33333333333331" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="wTH-Kt-Gi8" kind="show" id="nmK-3g-k1f"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Zos-5D-P3f" id="gOE-1P-sVf"/>
+                            <outlet property="delegate" destination="Zos-5D-P3f" id="PGj-Ql-XJZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="설정" id="MXr-tM-3OC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QRO-59-QWi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="-596"/>
+        </scene>
+        <!--백업/복구-->
+        <scene sceneID="iti-YE-7Ma">
+            <objects>
+                <viewController id="wTH-Kt-Gi8" customClass="DataManagerViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7rF-y2-Bgj"/>
+                        <viewControllerLayoutGuide type="bottom" id="7TS-dk-hD9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OCB-J2-Sa8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="oAr-yt-Y4r">
+                                <rect key="frame" x="81" y="314.66666666666669" width="213" height="83"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRz-NY-M9d">
+                                        <rect key="frame" x="0.0" y="0.0" width="83" height="83"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gRz-NY-M9d" secondAttribute="height" multiplier="1:1" id="mhZ-B2-isa"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="백업하기" imagePadding="8">
+                                            <imageReference key="image" image="tray.and.arrow.down.fill" catalog="system" symbolScale="default"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                            <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="backupData" destination="wTH-Kt-Gi8" eventType="touchUpInside" id="uRw-nk-2uV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRw-i7-d6V">
+                                        <rect key="frame" x="130" y="0.0" width="83" height="83"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="zRw-i7-d6V" secondAttribute="height" multiplier="1:1" id="ipX-LU-SvF"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="복구하기" imagePadding="8">
+                                            <imageReference key="image" image="tray.and.arrow.up" catalog="system" symbolScale="default"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                            <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="restoreData" destination="wTH-Kt-Gi8" eventType="touchUpInside" id="65t-5S-hkl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYO-fy-z9o">
+                                <rect key="frame" x="16" y="447.66666666666669" width="343" height="81.333333333333314"/>
+                                <string key="text">현재 상태를 압축파일로 저장하고, 다른 기기에 내용을 덮어 쓸 수 있습니다.
+
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="aYO-fy-z9o" secondAttribute="trailing" id="13W-PW-cgo"/>
+                            <constraint firstItem="gRz-NY-M9d" firstAttribute="width" secondItem="OCB-J2-Sa8" secondAttribute="width" multiplier="0.221333" id="67g-Ae-JJF"/>
+                            <constraint firstItem="aYO-fy-z9o" firstAttribute="leading" secondItem="OCB-J2-Sa8" secondAttribute="leadingMargin" id="9nr-0n-UUc"/>
+                            <constraint firstItem="zRw-i7-d6V" firstAttribute="width" secondItem="OCB-J2-Sa8" secondAttribute="width" multiplier="0.221333" id="Ai1-e9-IOQ"/>
+                            <constraint firstItem="aYO-fy-z9o" firstAttribute="top" secondItem="oAr-yt-Y4r" secondAttribute="bottom" constant="50" id="UXa-Cn-yTa"/>
+                            <constraint firstItem="oAr-yt-Y4r" firstAttribute="centerY" secondItem="OCB-J2-Sa8" secondAttribute="centerY" constant="-50" id="Yub-p7-osg"/>
+                            <constraint firstItem="oAr-yt-Y4r" firstAttribute="centerX" secondItem="OCB-J2-Sa8" secondAttribute="centerX" id="ock-wq-0P7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="백업/복구" id="vps-02-brC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MuN-yk-EiF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1277.5999999999999" y="-597.75112443778119"/>
+        </scene>
         <!--My List-->
         <scene sceneID="JqX-yP-Lb4">
             <objects>
                 <tableViewController id="xJb-tT-eQJ" customClass="CategoryViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="0LO-SC-GJK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" textLabel="KR6-nL-1hm" detailTextLabel="MW9-fm-Iql" style="IBUITableViewCellStyleValue1" id="SdG-Iv-wKC">
-                                <rect key="frame" x="16" y="49.5" width="343" height="43.5"/>
+                                <rect key="frame" x="16" y="49" width="343" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SdG-Iv-wKC" id="dKG-K1-wiS">
-                                    <rect key="frame" x="0.0" y="0.0" width="317.5" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="317.33333333333331" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" tag="1000" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KR6-nL-1hm">
-                                            <rect key="frame" x="16" y="14" width="28.5" height="17"/>
+                                            <rect key="frame" x="15.999999999999998" y="14" width="28.333333333333332" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" tag="1001" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MW9-fm-Iql">
-                                            <rect key="frame" x="272" y="14" width="37.5" height="17"/>
+                                            <rect key="frame" x="272" y="14" width="37.333333333333336" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
@@ -216,6 +336,7 @@
                     <navigationItem key="navigationItem" title="My List" id="ZYD-HC-SiC"/>
                     <connections>
                         <segue destination="YvA-0z-uO4" kind="show" id="6sb-lB-usB"/>
+                        <segue destination="Zos-5D-P3f" kind="show" id="zDj-SC-g35"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKw-6R-LiV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -228,12 +349,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="w81-df-JaH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qi7-wD-2Zx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Q6p-bw-X5X">
-                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
@@ -245,9 +366,12 @@
             <point key="canvasLocation" x="-335.19999999999999" y="118.29085457271366"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="labelColor"/>
     <resources>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="star" catalog="system" width="128" height="116"/>
+        <image name="tray.and.arrow.down.fill" catalog="system" width="128" height="114"/>
+        <image name="tray.and.arrow.up" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

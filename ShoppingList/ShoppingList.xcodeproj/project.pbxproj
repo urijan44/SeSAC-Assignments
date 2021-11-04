@@ -24,6 +24,10 @@
 		8A8EEEC1271748740044BACA /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8EEEC0271748740044BACA /* Wish.swift */; };
 		8A8EEEC4271748EC0044BACA /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8EEEC3271748EC0044BACA /* ShoppingList.swift */; };
 		8AF5E89C271858C9007C310F /* SortStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5E89B271858C9007C310F /* SortStyle.swift */; };
+		8AFEC251273412B2004327EB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEC250273412B2004327EB /* SettingViewController.swift */; };
+		8AFEC2532734196E004327EB /* DataManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEC2522734196E004327EB /* DataManagerViewController.swift */; };
+		8AFEC25627341AFA004327EB /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 8AFEC25527341AFA004327EB /* Zip */; };
+		8AFEC25827342058004327EB /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEC25727342058004327EB /* Functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		8A8EEEC0271748740044BACA /* Wish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wish.swift; sourceTree = "<group>"; };
 		8A8EEEC3271748EC0044BACA /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
 		8AF5E89B271858C9007C310F /* SortStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortStyle.swift; sourceTree = "<group>"; };
+		8AFEC250273412B2004327EB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		8AFEC2522734196E004327EB /* DataManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerViewController.swift; sourceTree = "<group>"; };
+		8AFEC25727342058004327EB /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		8AFEC25B27344CA1004327EB /* ShoppingList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShoppingList.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AFEC25627341AFA004327EB /* Zip in Frameworks */,
 				8A3BBEE62731049D0046C9C1 /* RealmSwift in Frameworks */,
 				8A3BBEE42731049D0046C9C1 /* Realm in Frameworks */,
 			);
@@ -107,8 +116,10 @@
 		8A8EEEA727173C1D0044BACA /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				8AFEC25B27344CA1004327EB /* ShoppingList.entitlements */,
 				8A8EEEA827173C1D0044BACA /* AppDelegate.swift */,
 				8A8EEEAA27173C1D0044BACA /* SceneDelegate.swift */,
+				8AFEC25727342058004327EB /* Functions.swift */,
 				8A3BBEE7273104B10046C9C1 /* Realm */,
 				8A8EEEC2271748780044BACA /* Models */,
 				8A8EEEC5271754990044BACA /* Controller */,
@@ -134,6 +145,8 @@
 			children = (
 				8A353D1F2732D0D3000BB37E /* CategoryViewController.swift */,
 				8A353D212732D0EE000BB37E /* ShoppingListViewController */,
+				8AFEC250273412B2004327EB /* SettingViewController.swift */,
+				8AFEC2522734196E004327EB /* DataManagerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -157,6 +170,7 @@
 			packageProductDependencies = (
 				8A3BBEE32731049D0046C9C1 /* Realm */,
 				8A3BBEE52731049D0046C9C1 /* RealmSwift */,
+				8AFEC25527341AFA004327EB /* Zip */,
 			);
 			productName = ShoppingList;
 			productReference = 8A8EEEA527173C1D0044BACA /* ShoppingList.app */;
@@ -188,6 +202,7 @@
 			mainGroup = 8A8EEE9C27173C1D0044BACA;
 			packageReferences = (
 				8A3BBEE22731049D0046C9C1 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				8AFEC25427341AFA004327EB /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 8A8EEEA627173C1D0044BACA /* Products */;
 			projectDirPath = "";
@@ -216,12 +231,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AFEC2532734196E004327EB /* DataManagerViewController.swift in Sources */,
+				8AFEC251273412B2004327EB /* SettingViewController.swift in Sources */,
 				8A3BBEEE27310A410046C9C1 /* ShoppingListVIewController+TableView.swift in Sources */,
 				8A8DCE37271765B30031B4CA /* ShoppingListCell.swift in Sources */,
 				8A8EEEC1271748740044BACA /* Wish.swift in Sources */,
 				8A8DCE36271765B30031B4CA /* AddListCell.swift in Sources */,
 				8A353D202732D0D3000BB37E /* CategoryViewController.swift in Sources */,
 				8AF5E89C271858C9007C310F /* SortStyle.swift in Sources */,
+				8AFEC25827342058004327EB /* Functions.swift in Sources */,
 				8A3BBEE9273104BF0046C9C1 /* RealmModel.swift in Sources */,
 				8A8EEEAD27173C1D0044BACA /* ShoppingListViewController.swift in Sources */,
 				8A8EEEC4271748EC0044BACA /* ShoppingList.swift in Sources */,
@@ -374,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ShoppingList/ShoppingList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XJXA3BQDMJ;
@@ -385,6 +404,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -404,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ShoppingList/ShoppingList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XJXA3BQDMJ;
@@ -415,6 +436,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,6 +483,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		8AFEC25427341AFA004327EB /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -473,6 +503,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8A3BBEE22731049D0046C9C1 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		8AFEC25527341AFA004327EB /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AFEC25427341AFA004327EB /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -22,6 +22,7 @@ class CategoryViewController: UITableViewController {
   
   func navigationBarConfigure() {
     navigationItem.rightBarButtonItem = .init(barButtonSystemItem: .add, target: self, action: #selector(addCategory))
+    navigationItem.leftBarButtonItem = .init(image: .init(systemName: "gearshape.fill"), style: .plain, target: self, action: #selector(pushSetupViewController))
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +57,13 @@ class CategoryViewController: UITableViewController {
     }
     
     present(alert, animated: true)
+  }
+  
+  @objc func pushSetupViewController() {
+    guard let controller = storyboard?.instantiateViewController(withIdentifier: SettingViewController.identifier)
+            as? SettingViewController else { return }
+    
+    navigationController?.pushViewController(controller, animated: true)
   }
   
 }
@@ -94,8 +102,6 @@ extension CategoryViewController {
     controller.tasks = category.wishList
     
     navigationController?.pushViewController(controller, animated: true)
-    
-    
   }
   
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
