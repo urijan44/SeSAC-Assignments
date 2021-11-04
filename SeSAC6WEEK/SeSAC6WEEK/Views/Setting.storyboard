@@ -15,8 +15,50 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1A-HL-bxR">
+                                <rect key="frame" x="8" y="52" width="398" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="mcj-5w-qND"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="백업하기"/>
+                                <connections>
+                                    <action selector="backupData" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KeZ-nd-0Vg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUw-CS-Sop">
+                                <rect key="frame" x="171" y="437.5" width="72.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="공유하기"/>
+                                <connections>
+                                    <action selector="showActiviryViewButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GRd-1J-v8d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4k-aS-TU4">
+                                <rect key="frame" x="8" y="476.5" width="398" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="csD-s9-3tS"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="복구하기"/>
+                                <connections>
+                                    <action selector="dataRestore:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="H51-mf-xI3"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="j4k-aS-TU4" firstAttribute="top" secondItem="sUw-CS-Sop" secondAttribute="bottom" constant="8" id="9O8-x3-MtZ"/>
+                            <constraint firstItem="f1A-HL-bxR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="W70-b3-78C"/>
+                            <constraint firstItem="sUw-CS-Sop" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerXWithinMargins" id="aft-3e-rMS"/>
+                            <constraint firstItem="f1A-HL-bxR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="amT-ch-Uk5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="f1A-HL-bxR" secondAttribute="trailing" constant="8" id="cvE-6A-1XV"/>
+                            <constraint firstItem="sUw-CS-Sop" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="epG-he-2VT"/>
+                            <constraint firstItem="j4k-aS-TU4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="t4g-sL-TRa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="j4k-aS-TU4" secondAttribute="trailing" constant="8" id="zRq-K4-Rgq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="설정" image="gearshape" catalog="system" id="QdI-8b-QFd"/>
                     <connections>
@@ -25,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-610" y="110"/>
+            <point key="canvasLocation" x="-146" y="110"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.015686274510000001" green="0.66274509800000003" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>

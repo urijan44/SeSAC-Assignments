@@ -16,3 +16,8 @@ func imageFileURL(fileName: String) -> URL {
   let url = URL(fileURLWithPath: fileName, relativeTo: documentDirectory)
   return url
 }
+
+func imageDirectoryURL() -> URL {
+  guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("image", isDirectory: true) else { fatalError() }
+  return documentDirectory
+}
