@@ -11,6 +11,8 @@ func getDocumnetDirectoryPath() -> URL {
   return FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
 }
 
+
+
 func showAlert(_ controller: UIViewController, title: String, body: String, onlyOk: Bool = false, handler: ((UIAlertAction) -> Void)? = nil) {
   let alert = UIAlertController(title: title, message: body, preferredStyle: .alert)
   let ok = UIAlertAction(title: "확인", style: .destructive, handler: handler)

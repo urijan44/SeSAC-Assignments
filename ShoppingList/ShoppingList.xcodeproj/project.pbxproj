@@ -23,6 +23,7 @@
 		8A8EEEB527173C1E0044BACA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A8EEEB327173C1E0044BACA /* LaunchScreen.storyboard */; };
 		8A8EEEC1271748740044BACA /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8EEEC0271748740044BACA /* Wish.swift */; };
 		8A8EEEC4271748EC0044BACA /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8EEEC3271748EC0044BACA /* ShoppingList.swift */; };
+		8ACB48CC27382976005858EC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ACB48CB27382976005858EC /* Constants.swift */; };
 		8AF5E89C271858C9007C310F /* SortStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF5E89B271858C9007C310F /* SortStyle.swift */; };
 		8AFEC251273412B2004327EB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEC250273412B2004327EB /* SettingViewController.swift */; };
 		8AFEC2532734196E004327EB /* DataManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AFEC2522734196E004327EB /* DataManagerViewController.swift */; };
@@ -47,6 +48,7 @@
 		8A8EEEB627173C1E0044BACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A8EEEC0271748740044BACA /* Wish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wish.swift; sourceTree = "<group>"; };
 		8A8EEEC3271748EC0044BACA /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
+		8ACB48CB27382976005858EC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8AF5E89B271858C9007C310F /* SortStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortStyle.swift; sourceTree = "<group>"; };
 		8AFEC250273412B2004327EB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8AFEC2522734196E004327EB /* DataManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				8A8EEEA827173C1D0044BACA /* AppDelegate.swift */,
 				8A8EEEAA27173C1D0044BACA /* SceneDelegate.swift */,
 				8AFEC25727342058004327EB /* Functions.swift */,
+				8ACB48CB27382976005858EC /* Constants.swift */,
 				8A3BBEE7273104B10046C9C1 /* Realm */,
 				8A8EEEC2271748780044BACA /* Models */,
 				8A8EEEC5271754990044BACA /* Controller */,
@@ -238,6 +241,7 @@
 				8A8EEEC1271748740044BACA /* Wish.swift in Sources */,
 				8A8DCE36271765B30031B4CA /* AddListCell.swift in Sources */,
 				8A353D202732D0D3000BB37E /* CategoryViewController.swift in Sources */,
+				8ACB48CC27382976005858EC /* Constants.swift in Sources */,
 				8AF5E89C271858C9007C310F /* SortStyle.swift in Sources */,
 				8AFEC25827342058004327EB /* Functions.swift in Sources */,
 				8A3BBEE9273104BF0046C9C1 /* RealmModel.swift in Sources */,

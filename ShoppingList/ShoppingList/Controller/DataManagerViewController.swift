@@ -7,12 +7,13 @@
 
 import UIKit
 import Zip
+import RealmSwift
 //import MobileCoreServices
 //import UniformTypeIdentifiers
 
 class DataManagerViewController: UIViewController {
   
-  let archivePath = URL(fileURLWithPath: "archive", relativeTo: getDocumnetDirectoryPath()).appendingPathExtension("zip")
+  let archivePath = URL(fileURLWithPath: "archive", relativeTo: Constants.backupPath).appendingPathExtension("zip")
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,8 +39,6 @@ class DataManagerViewController: UIViewController {
 
       if FileManager.default.fileExists(atPath: realm.path) {
         do {
-          Zip.addCustomFileExtension("myList")
-          print(self.archivePath)
           try Zip.zipFiles(paths: [realm], zipFilePath: self.archivePath, password: "1234") { progress in
             print(progress)
             //HUD View
@@ -58,7 +57,6 @@ class DataManagerViewController: UIViewController {
     showAlert(self, title: "데이터 복구", body: "백업된 데이터를 불러옵니다. \n 기존 데이터에 덮어쓰는 작업으로 이전 데이터는 삭제됩니다!") { [weak self] _ in
       guard let self = self else { return }
       let documnetPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.archive, .zip], asCopy: true)
-//      let documnetPicker = UIDocumentPickerViewController(documentTypes: [kUTTypeArchive as String], in: .import)
       documnetPicker.delegate = self
       documnetPicker.allowsMultipleSelection = false
       
@@ -72,29 +70,55 @@ extension DataManagerViewController: UIDocumentPickerDelegate {
     guard let selectedUrl = urls.first else { return }
     
     do {
-//      guard archivePath.startAccessingSecurityScopedResource() else {
-//        showAlert(self, title: "실패", body: "앱의 디렉토리 접근에 실패했습니다.", onlyOk: true, handler: nil)
-//        return
-//      }
-//      let data = try Data(contentsOf: selectedUrl)
-//      try data.write(to: archivePath, options: .atomic)
-      
+      try FileManager.default.createDirectory(
+        at: Constants.backupPath,
+        withIntermediateDirectories: true,
+        attributes: nil)
       try FileManager.default.copyItem(at: selectedUrl, to: archivePath)
-      try Zip.unzipFile(archivePath, destination: getDocumnetDirectoryPath(), overwrite: true, password: "1234", progress: { progress in
+      try Zip.unzipFile(archivePath, destination: Constants.backupPath, overwrite: true, password: "1234", progress: { progress in
         print(progress)
         //progress hud view
       }, fileOutputHandler: { unzippedFile in
-        showAlert(self, title: "알림", body: "백업 파일을 불러왔습니다\n 잠시 후 어플리케이션이 강제로 종료됩니다.", onlyOk: true)
-        self.view.isUserInteractionEnabled = false
+
       })
-      try FileManager.default.removeItem(at: archivePath)
-      //countdown hud view
-      afterDelay(3) {
-        exit(0)
+      
+      let realm = try! Realm()
+      let backupRealmURL = Constants.backupPath.appendingPathComponent("default").appendingPathExtension("realm")
+      guard FileManager.default.fileExists(atPath: backupRealmURL.path) else {
+        showAlert(self, title: "알림", body: "백업 파일 위치를 찾을 수 없습니다", onlyOk: true, handler: nil)
+        try? FileManager.default.removeItem(at: Constants.backupPath)
+        return
       }
+      
+      let config = Realm.Configuration(fileURL: backupRealmURL, readOnly: true)
+      guard let backupRealm = try? Realm(configuration: config) else{
+        showAlert(self, title: "알림", body: "복구에 실패했습니다.", onlyOk: true, handler: nil)
+        try? FileManager.default.removeItem(at: Constants.backupPath)
+        return
+      }
+      
+      let backupCategory = backupRealm.objects(Category.self)
+      do {
+        try realm.write {
+          for category in backupCategory {
+            realm.create(Category.self, value: category, update: .modified)
+          }
+        }
+      } catch let error {
+        showAlert(self, title: "알림", body: error.localizedDescription, onlyOk: true, handler: nil)
+      }
+      
+      try FileManager.default.removeItem(at: archivePath)
+      try FileManager.default.removeItem(at: Constants.backupPath)
+      
+      showAlert(self, title: "알림", body: "백업 파일을 불러왔습니다\n", onlyOk: true) { [weak self] _ in
+        guard let self = self else { return }
+        self.navigationController?.popToRootViewController(animated: true)
+      }
+      
     } catch let error {
+      try? FileManager.default.removeItem(at: archivePath)
       showAlert(self, title: "알림", body: error.localizedDescription, onlyOk: true)
     }
-    archivePath.stopAccessingSecurityScopedResource()
   }
 }

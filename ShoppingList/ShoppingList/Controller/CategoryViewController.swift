@@ -18,6 +18,7 @@ class CategoryViewController: UITableViewController {
     categories = localRealm.objects(Category.self)
     print(localRealm.configuration.fileURL!)
     navigationBarConfigure()
+    print("CategoryViewController viewDidLoad!")
   }
   
   func navigationBarConfigure() {
