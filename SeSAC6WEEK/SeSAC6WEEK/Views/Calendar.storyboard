@@ -15,14 +15,39 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBU-IZ-HNY" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="44" width="414" height="414"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UBU-IZ-HNY" secondAttribute="height" multiplier="1:1" id="nya-cd-YP7"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpO-X6-Ygm">
+                                <rect key="frame" x="15" y="483" width="384" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fpO-X6-Ygm" firstAttribute="top" secondItem="UBU-IZ-HNY" secondAttribute="bottom" constant="25" id="42W-Cq-dwo"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fpO-X6-Ygm" secondAttribute="trailing" constant="15" id="HH6-xo-YWy"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UBU-IZ-HNY" secondAttribute="trailing" id="IRD-fL-xJY"/>
+                            <constraint firstItem="fpO-X6-Ygm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="g3U-Lb-0dN"/>
+                            <constraint firstItem="UBU-IZ-HNY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="vhB-tf-AWo"/>
+                            <constraint firstItem="UBU-IZ-HNY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wCY-xv-9L3"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="lAz-vd-6me"/>
                     <navigationItem key="navigationItem" id="f8A-GZ-gAv"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarTabBarItem" destination="lAz-vd-6me" id="HVe-3F-v54"/>
+                        <outlet property="calendarView" destination="UBU-IZ-HNY" id="YGv-3t-Nl7"/>
+                        <outlet property="wholeDiaryCountLabel" destination="fpO-X6-Ygm" id="rQn-JW-6M1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

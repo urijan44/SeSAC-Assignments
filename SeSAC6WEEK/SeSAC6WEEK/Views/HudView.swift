@@ -23,7 +23,7 @@ class HudView: UIView {
       height: boxHeight)
     
     let roundedRect = UIBezierPath(roundedRect: boxRect, cornerRadius: 10)
-    UIColor(white: 0.3, alpha: 0.8).setFill()
+    UIColor(white: 0.3, alpha: 1).setFill()
     roundedRect.fill()
     
     if let image = UIImage(named: "Openbook") {

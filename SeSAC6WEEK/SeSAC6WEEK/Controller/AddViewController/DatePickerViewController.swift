@@ -46,14 +46,4 @@ class DatePickerViewController: UIViewController {
     delegate?.datePickerViewController(self, didSelectDate: datePicker.date)
     dismiss(animated: true, completion: nil)
   }
-  
-  @IBAction func selectDate(_ sender: UIDatePicker) {
-    delegate?.datePickerViewController(self, didSelectDate: sender.date)
-    dismiss(animated: true, completion: nil)
-  }
-  
-  @IBAction func didEndSelectDate(_ sender: UIDatePicker) {
-    delegate?.datePickerViewController(self, didSelectDate: sender.date)
-    dismiss(animated: true, completion: nil)
-  }
 }

@@ -15,9 +15,9 @@ extension AddViewController {
   @objc func saveDiary() {
     if isEditingMode, let diary = editDiary {
       let taskToUpdate = UserDiary(
-        title: titleTextField.text!,
+        title: titleTextField.text ?? "",
         content: diaryDescriptionTextView.text,
-        writeDate: dateLabel.text!.dateType!,
+        writeDate: dateLabel.text?.dateType ?? Date(),
         registrationDate: diary.registrationDate)
       
         try! localRealm.write {
@@ -70,6 +70,24 @@ extension AddViewController {
         }
       }
     }
+  }
+  
+  @objc func showDatePickerAlert() {
+    let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    
+    guard let contentView = UIStoryboard(name: "DatePicker2", bundle: nil).instantiateViewController(withIdentifier: DatePickerViewController2.identifier)
+            as? DatePickerViewController2 else { return }
+    
+    contentView.preferredContentSize.height = UIScreen.main.bounds.height * 0.3
+    
+    alert.setValue(contentView, forKey: "contentViewController")
+    let ok = UIAlertAction(title: LocalizableStrings.ok.localized, style: .cancel) { [weak self] _ in
+      guard let self = self else { return }
+      self.dateLabel.text = contentView.datePicker.date.dateString
+    }
+    alert.addAction(ok)
+    
+    present(alert, animated: true, completion: nil)
   }
   
   @objc func showDatePicker() {

@@ -21,10 +21,6 @@
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="8ER-iV-x0x">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="162"/>
-                                        <connections>
-                                            <action selector="didEndSelectDate:" destination="tje-Of-uRA" eventType="valueChanged" id="Tld-1j-uyO"/>
-                                            <action selector="selectDate:" destination="tje-Of-uRA" eventType="valueChanged" id="xkx-nx-uIM"/>
-                                        </connections>
                                     </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

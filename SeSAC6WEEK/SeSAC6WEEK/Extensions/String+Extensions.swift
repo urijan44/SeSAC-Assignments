@@ -15,7 +15,7 @@ extension String {
   var dateType: Date? {
     let formatter = DateFormatter()
     formatter.dateFormat = LocalizableStrings.dateString.localized
-    
+
     guard let date = formatter.date(from: self) else {
       print("date formatter invalid")
       return nil
