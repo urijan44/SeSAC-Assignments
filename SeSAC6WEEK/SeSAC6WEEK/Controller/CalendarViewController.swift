@@ -71,7 +71,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
 //  }
   
   func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
-    let diaryDates = tasks.filter("writeDate")
+//    let diaryDates = tasks.filter("writeDate")
     return 1
   }
 }

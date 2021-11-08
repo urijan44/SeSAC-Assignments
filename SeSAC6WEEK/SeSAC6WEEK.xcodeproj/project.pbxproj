@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A3717EA2738AA9F00C2581F /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3717E92738AA9F00C2581F /* HomeTableViewCell.swift */; };
+		8A3717F02738B17F00C2581F /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3717EF2738B17F00C2581F /* HomeCollectionViewCell.swift */; };
 		8A411CAE27336DB400536F55 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 8A411CAD27336DB400536F55 /* Zip */; };
 		8A5748C1272FBB530068DE54 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5748C0272FBB530068DE54 /* Home.storyboard */; };
 		8A5748C3272FBB5A0068DE54 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A5748C2272FBB5A0068DE54 /* Content.storyboard */; };
@@ -56,6 +58,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A3717E92738AA9F00C2581F /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		8A3717EF2738B17F00C2581F /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A5748C0272FBB530068DE54 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8A5748C2272FBB5A0068DE54 /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
 		8A5748C4272FBB5F0068DE54 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
@@ -121,6 +125,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A3717E82738AA8E00C2581F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8A5748C0272FBB530068DE54 /* Home.storyboard */,
+				8A3717E92738AA9F00C2581F /* HomeTableViewCell.swift */,
+				8A3717EF2738B17F00C2581F /* HomeCollectionViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		8A5748D0272FBCA40068DE54 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,7 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				8AE79D8C272FBABE00D74498 /* Main.storyboard */,
-				8A5748C0272FBB530068DE54 /* Home.storyboard */,
+				8A3717E82738AA8E00C2581F /* Home */,
 				8A9752592730106700F35B80 /* Content */,
 				8A5748C4272FBB5F0068DE54 /* Calendar.storyboard */,
 				8A76520A27303485005D30D0 /* Search */,
@@ -374,8 +388,10 @@
 			files = (
 				8A6872F127326863006F8859 /* HudView.swift in Sources */,
 				8A7651FE27301D97005D30D0 /* AddViewController+Setup.swift in Sources */,
+				8A3717EA2738AA9F00C2581F /* HomeTableViewCell.swift in Sources */,
 				8A6872EF273262BE006F8859 /* AlertView.swift in Sources */,
 				8A975258272FEAFE00F35B80 /* CalendarViewController.swift in Sources */,
+				8A3717F02738B17F00C2581F /* HomeCollectionViewCell.swift in Sources */,
 				8A7651FC27301D40005D30D0 /* AddViewController+Actions.swift in Sources */,
 				8A975256272FEACE00F35B80 /* SettingViewController.swift.swift in Sources */,
 				8A9B24342732CC2A00C2571B /* SearchViewController+Setup.swift in Sources */,
