@@ -19,7 +19,6 @@
 		8A3C80972770BBAA0049B328 /* ParingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C80962770BBAA0049B328 /* ParingHeaderView.swift */; };
 		8A3C809A2770C10F0049B328 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C80992770C10F0049B328 /* Beer.swift */; };
 		8A3C809C2770C2330049B328 /* BeerDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C809B2770C2330049B328 /* BeerDescriptionView.swift */; };
-		8A3C809E2770E9F90049B328 /* TopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C809D2770E9F90049B328 /* TopHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		8A3C80962770BBAA0049B328 /* ParingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParingHeaderView.swift; sourceTree = "<group>"; };
 		8A3C80992770C10F0049B328 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		8A3C809B2770C2330049B328 /* BeerDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDescriptionView.swift; sourceTree = "<group>"; };
-		8A3C809D2770E9F90049B328 /* TopHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				8A3C8091277091F10049B328 /* StretchyTableHeaderView.swift */,
-				8A3C809D2770E9F90049B328 /* TopHeaderView.swift */,
 				8A3C809B2770C2330049B328 /* BeerDescriptionView.swift */,
 				8A3C80942770973E0049B328 /* BeerTableViewCell.swift */,
 				8A3C80962770BBAA0049B328 /* ParingHeaderView.swift */,
@@ -204,7 +201,6 @@
 				8A2C881127702D17009853FF /* SceneDelegate.swift in Sources */,
 				8A3C809A2770C10F0049B328 /* Beer.swift in Sources */,
 				8A3C80952770973E0049B328 /* BeerTableViewCell.swift in Sources */,
-				8A3C809E2770E9F90049B328 /* TopHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,11 +24,12 @@ class RandomBeerViewController: UIViewController {
   "Lambada"
   ]
   
-  var mock: [String] = []
+  var mock: [String] = ["mock"]
   
   private let tableView: UITableView = {
     let tableView = UITableView()
     tableView.register(BeerTableViewCell.self, forCellReuseIdentifier: BeerTableViewCell.reuseIdentifier)
+    tableView.register(BeerDescriptionViewCell.self, forCellReuseIdentifier: BeerDescriptionViewCell.reuseIdentifier)
     return tableView
   }()
   
@@ -55,11 +56,14 @@ class RandomBeerViewController: UIViewController {
     tableView.frame = view.bounds
     tableView.separatorStyle = .none
     header.frame = .init(x: 0, y: 0, width: view.frame.width, height: view.frame.width)
-    header.delegate = self
     header.imageView.image = UIImage(named: "Bundarberg")
-    header.beer = Beer(name: "Clown King", origin: "US Style Barley Wine", description: "A titillating, neurotic, peroxide punk of a Pale Ale. Combining attitude, style, substance, and a little bit of low self esteem for good measure; what would your mother say? The seductive lure of the sassy passion fruit hop proves too much to resist. All that is even before we get onto the fact that there are no additives, preservatives, pasteurization or strings attached. All wrapped up with the customary BrewDog bite and imaginative twist")
-
-
+    tableView.tableHeaderView = header
+    header.layer.zPosition = -2
+  }
+  
+  @objc private func moreHandler() {
+    tableView.reloadData()
+    tableView.reloadRows(at: [.init(row: 0, section: 0)], with: .fade)
   }
 }
 
@@ -85,8 +89,14 @@ extension RandomBeerViewController: UITableViewDataSource {
           
       return cell
     } else {
-      let cell = UITableViewCell()
+      let cell = tableView.dequeueReusableCell(withIdentifier: BeerDescriptionViewCell.reuseIdentifier, for: indexPath)
+      as! BeerDescriptionViewCell
+      cell.clipsToBounds = false
+      cell.contentView.clipsToBounds = false
+      cell.contentView.isUserInteractionEnabled = false
       cell.selectionStyle = .none
+      cell.beerConfigure(beer: Beer(name: "맥주", origin: "원산지", description: "아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨"))
+      cell.moreHandler = moreHandler
       return cell
     }
   }
@@ -104,15 +114,14 @@ extension RandomBeerViewController: UITableViewDelegate {
       header.title = "Food - Paring"
       return header
     } else {
-      
-      return header
+      return UIView(frame: .zero)
     }
     
   }
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     if section == 0 {
-      return headerHeight
+      return 0
     } else {
       return 66
     }
@@ -120,7 +129,7 @@ extension RandomBeerViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     if indexPath.section == 0 {
-      return 300
+      return UITableView.automaticDimension
     } else {
       return 44
     }
@@ -133,33 +142,8 @@ extension RandomBeerViewController: UITableViewDelegate {
 
 extension RandomBeerViewController: UIScrollViewDelegate {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    header.imageView.snp.updateConstraints { make in
-      make.height.equalTo(header.containerView.snp.height).multipliedBy(0.5).offset(-scrollView.contentOffset.y)
-    }
+    header.scrollViewDidScroll(scrollView: scrollView)
   }
-}
-
-extension RandomBeerViewController: StretchyTableHeaderViewDelegate {
-  func stretchyTableHeaderView(_ view: StretchyTableHeaderView, expandedView: Bool) {
-    if expandedView {
-      mock = []
-      headerHeight = view.frame.width + 300
-      UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
-        self.tableView.reloadData()
-        self.view.layoutIfNeeded()
-      }
-    } else {
-      mock = []
-      headerHeight = view.frame.width
-      UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseIn) {
-        self.tableView.reloadData()
-        
-        self.view.layoutIfNeeded()
-      }
-    }
-  }
-  
-  
 }
 
 #if DEBUG
