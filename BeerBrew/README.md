@@ -2,20 +2,27 @@
 
 - 현재 결과물
 
-![](src/2.gif)
+![](src/3.gif)
 
-> Reference https://youtu.be/ur7UsnCVPjc
+# Reference
+[iOS Academy](https://youtu.be/ur7UsnCVPjc)<br>
+[JD-Man](https://github.com/JD-man/SeSAC/tree/main/Beers)<br>
+[simonful](https://github.com/simoniful/SSAC_BeerRecommendation)<br>
 
-
-### 20201220
+# Update
+### 20211220
 - Strech 에 원리에 대해서는 어느정도 이해를 하곘음
 - ImageView를 scaleAspectFill 로 두고, scroll offset값에 따라 height 값을 늘려주면 늘어지는 효과가 남
 - 근데 설명 란 부분을 못하겠음.. 헤더랑 겹쳐 있어야 하는데, button에 의해서 늘어나고 줄어들기도 해야하고,, 맥주 설명 뷰 부분을 헤더에 포함시켰는데도 이상함, 
 
-### 20201221
+### 20211221
 - layer.zPosition 으로 아래 깔린 뷰를 올리는 방법을 확인함
 - animation 적용이 제대로 안되어서 방법 찾는중
 
+### 20211222
+- zPosition 쓰지 않고 해결
+- 스크롤 변화는 훨씬 자연스러워 짐
+- 방식을 바꿔서, 맥주 설명 뷰 more 버튼 확장이 부자연스러워 져서, textView로 변경
 
 - ScrollView Offset값에 따라 height 값 변경
 ```Swift

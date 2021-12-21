@@ -6,99 +6,115 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RandomBeerViewController: UIViewController {
-  
-  var dummy: [String] = [
-  "apple",
-  "banana",
-  "cola",
-  "dream",
-  "Echo",
-  "Fox",
-  "Golf",
-  "Hotel",
-  "India",
-  "July",
-  "Korea",
-  "Lambada"
-  ]
-  
-  var mock: [String] = ["mock"]
-  
+    
   private let tableView: UITableView = {
     let tableView = UITableView()
     tableView.register(BeerTableViewCell.self, forCellReuseIdentifier: BeerTableViewCell.reuseIdentifier)
-    tableView.register(BeerDescriptionViewCell.self, forCellReuseIdentifier: BeerDescriptionViewCell.reuseIdentifier)
     return tableView
   }()
   
-  private var descriptionView: UIView = {
-    let uiview = UIView()
-    uiview.backgroundColor = .systemRed
-    return uiview
+  
+  private var bottomTabBar: BottomTabBar = {
+    let bar = BottomTabBar()
+    bar.backgroundColor = .white
+    return bar
   }()
   
   let header = StretchyTableHeaderView()
-  
-  var headerHeight: CGFloat = 0
+  var beer: Beer?
+  var headerHeight: CGFloat = UIScreen.main.bounds.width
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    headerHeight = view.frame.width
+    view.backgroundColor = .white
+    createView()
     tableViewConfigure()
+    bottomTabBarLayoutConfigure()
+    fetchBeer()
+    moreHandler(false)
+  }
+  
+  private func fetchBeer() {
+    BeerManager.shared.fetchBeer { beer in
+      self.beer = beer
+      DispatchQueue.main.async {
+        if let beer = beer {
+          self.header.containerView.beerConfigure(beer: beer)
+        }
+        let url = URL(string: beer!.imageURL ?? "")
+        self.header.imageView.kf.setImage(
+          with: url,
+          placeholder: UIImage(named: "Bundarberg"),
+          options: [
+            .transition(.fade(1)),
+            .cacheOriginalImage])
+        self.tableView.reloadData()
+      }
+    }
+  }
+  
+  private func createView() {
+    view.addSubview(tableView)
+    view.addSubview(bottomTabBar)
+  }
+  
+  private func bottomTabBarLayoutConfigure() {
+    bottomTabBar.snp.makeConstraints { make in
+      make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+      make.leading.trailing.equalToSuperview().inset(8)
+      make.height.equalTo(66)
+    }
+    
+    bottomTabBar.refreshButtonHandler = fetchBeer
   }
   
   private func tableViewConfigure() {
-    view.addSubview(tableView)
     tableView.delegate = self
     tableView.dataSource = self
     tableView.frame = view.bounds
+    tableView.snp.makeConstraints { make in
+      make.top.leading.trailing.equalToSuperview()
+      make.bottom.equalTo(bottomTabBar.snp.top)
+    }
     tableView.separatorStyle = .none
-    header.frame = .init(x: 0, y: 0, width: view.frame.width, height: view.frame.width)
-    header.imageView.image = UIImage(named: "Bundarberg")
+    header.frame = .init(x: view.bounds.midX, y: 0, width: view.bounds.width, height: headerHeight)
+    header.containerView.moreHandler = moreHandler
     tableView.tableHeaderView = header
-    header.layer.zPosition = -2
+
   }
   
-  @objc private func moreHandler() {
-    tableView.reloadData()
-    tableView.reloadRows(at: [.init(row: 0, section: 0)], with: .fade)
+  @objc private func moreHandler(_ isExpended: Bool) {
+    UIView.transition(with: tableView, duration: 0.2, options: .transitionCrossDissolve) {
+      self.header.snp.updateConstraints { make in
+        make.centerX.equalToSuperview()
+        make.width.equalToSuperview()
+        make.height.equalTo(self.headerHeight + (isExpended ? 200 : 0))
+      }
+    } completion: { _ in
+      self.tableView.reloadData()
+    }
   }
 }
 
 extension RandomBeerViewController: UITableViewDataSource {
   func numberOfSections(in tableView: UITableView) -> Int {
-    2
+    1
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if section == 0 {
-      return mock.count
-    } else {
-      return dummy.count
-    }
+    beer?.foodPairingCount ?? 0
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if indexPath.section == 1 {
-      let cell = tableView.dequeueReusableCell(withIdentifier: BeerTableViewCell.reuseIdentifier, for: indexPath)
-      as! BeerTableViewCell
-      
-      cell.title = dummy[indexPath.row]
-          
-      return cell
-    } else {
-      let cell = tableView.dequeueReusableCell(withIdentifier: BeerDescriptionViewCell.reuseIdentifier, for: indexPath)
-      as! BeerDescriptionViewCell
-      cell.clipsToBounds = false
-      cell.contentView.clipsToBounds = false
-      cell.contentView.isUserInteractionEnabled = false
-      cell.selectionStyle = .none
-      cell.beerConfigure(beer: Beer(name: "맥주", origin: "원산지", description: "아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨아쥬 오래됨"))
-      cell.moreHandler = moreHandler
-      return cell
-    }
+    let cell = tableView.dequeueReusableCell(withIdentifier: BeerTableViewCell.reuseIdentifier, for: indexPath)
+    as! BeerTableViewCell
+    
+    cell.title = beer?.foodPairing[indexPath.row]
+    
+    return cell
   }
   
   func tableView(_ tableView: UITableView, selectionFollowsFocusForRowAt indexPath: IndexPath) -> Bool {
@@ -109,30 +125,17 @@ extension RandomBeerViewController: UITableViewDataSource {
 extension RandomBeerViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    if section == 1 {
-      let header = ParingHeaderView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 66))
-      header.title = "Food - Paring"
-      return header
-    } else {
-      return UIView(frame: .zero)
-    }
-    
+    let header = ParingHeaderView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 66))
+    header.title = "Food - Paring"
+    return header
   }
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    if section == 0 {
-      return 0
-    } else {
-      return 66
-    }
+    return 66
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    if indexPath.section == 0 {
-      return UITableView.automaticDimension
-    } else {
-      return 44
-    }
+    return 44
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -143,6 +146,15 @@ extension RandomBeerViewController: UITableViewDelegate {
 extension RandomBeerViewController: UIScrollViewDelegate {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     header.scrollViewDidScroll(scrollView: scrollView)
+    let offset = scrollView.contentOffset.y
+    if offset < 0 {
+      header.snp.updateConstraints { make in
+        make.centerX.equalToSuperview()
+        make.width.equalToSuperview()
+        make.height.equalTo(headerHeight - offset)
+      }
+      self.tableView.reloadData()
+    }
   }
 }
 
@@ -156,15 +168,6 @@ struct RandomBeerViewControllerRepresentable: UIViewControllerRepresentable {
   }
   
   func updateUIViewController(_ uiViewController: RandomBeerViewController, context: Context) {
-    uiViewController.dummy = ["apple",
-                              "banana",
-                              "cola",
-                              "dream",
-                              "Echo",
-                              "Fox",
-                              "Golf",
-                              "Hotel",
-                              "India"]
   }
 }
 

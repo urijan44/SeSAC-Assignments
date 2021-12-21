@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 
 final class StretchyTableHeaderView: UIView {
-   
+  
   var beerImage: UIImage? {
     didSet {
       imageView.image = beerImage
@@ -19,17 +19,13 @@ final class StretchyTableHeaderView: UIView {
   public let imageView: UIImageView = {
     let imageView = UIImageView()
     imageView.clipsToBounds = true
-    imageView.contentMode = .scaleAspectFill
+    imageView.contentMode = .scaleAspectFit
     imageView.backgroundColor = .clear
     return imageView
   }()
   
-  private var imageViewHeight = NSLayoutConstraint()
-  private var imageViewBottom = NSLayoutConstraint()
-  private var containerView = UIView()
-  private var containerViewHeight = NSLayoutConstraint()
-  
-  
+  public var containerView = BeerDescriptionView()
+    
   override init(frame: CGRect) {
     super.init(frame: frame)
     backgroundColor = .clear
@@ -43,35 +39,33 @@ final class StretchyTableHeaderView: UIView {
   }
   
   private func createViews() {
+    addSubview(imageView)
     addSubview(containerView)
-    containerView.addSubview(imageView)
   }
   
-  func setViewConstraints() {
-    NSLayoutConstraint.activate([
-      widthAnchor.constraint(equalTo: containerView.widthAnchor),
-      centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-      heightAnchor.constraint(equalTo: containerView.heightAnchor)
-    ])
+  private func setViewConstraints() {
+    imageView.snp.makeConstraints { make in
+      make.centerX.equalToSuperview()
+      make.top.equalToSuperview().inset(8)
+      make.height.equalToSuperview().multipliedBy(0.5)
+      make.width.equalTo(snp.height).multipliedBy(0.5)
+    }
     
-    containerView.translatesAutoresizingMaskIntoConstraints = false
-    containerView.widthAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
-    containerViewHeight = containerView.heightAnchor.constraint(equalTo: self.heightAnchor )
-    containerViewHeight.isActive = true
-    
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageViewBottom = imageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor)
-    imageViewBottom.isActive = true
-    imageViewHeight = imageView.heightAnchor.constraint(equalTo: containerView.heightAnchor)
-    imageViewHeight.isActive = true
+    containerView.snp.makeConstraints { make in
+      make.top.equalTo(imageView.snp.bottom).offset(-60)
+      make.centerX.equalToSuperview()
+      make.leading.trailing.bottom.equalToSuperview().inset(8)
+    }
+    containerView.isUserInteractionEnabled = true
   }
   
   public func scrollViewDidScroll(scrollView: UIScrollView) {
-    containerViewHeight.constant = scrollView.contentInset.top
-    let offsetY = -(scrollView.contentOffset.y + scrollView.contentInset.top)
-    containerView.clipsToBounds = offsetY <= 0
-    imageViewBottom.constant = offsetY >= 0 ? 0 : -offsetY / 2
-    imageViewHeight.constant = max(offsetY + scrollView.contentInset.top, scrollView.contentInset.top)
+    let offset = scrollView.contentOffset.y
+    if offset < 0 {
+      imageView.snp.updateConstraints { make in
+        make.height.equalToSuperview().multipliedBy(0.5).offset(-offset)
+      }
+    }
   }
 }
 
@@ -87,6 +81,7 @@ struct StretchyTableHeaderViewRepresentable: UIViewRepresentable {
   
   func updateUIView(_ uiView: StretchyTableHeaderView, context: Context) {
     uiView.imageView.image = UIImage(named: "Bundarberg")
+    uiView.containerView.beerConfigure(beer: Beer(name: "맥주", origin: "우리집산", description: "매우매우 긴 디테일매우매우 긴 디테일매우매우 긴 디테일매우매우 긴 디테일매우매우 긴 디테일매우매우 긴 디테일매우매우 긴 디테일매우매우 긴 디테일", imageURL: nil, foodPairing: []))
   }
   
 }
@@ -94,7 +89,7 @@ struct StretchyTableHeaderViewRepresentable: UIViewRepresentable {
 struct StretchyTableHeaderViewPreview: PreviewProvider {
   static var previews: some View {
     StretchyTableHeaderViewRepresentable()
-      .frame(width: 340, height: 340 + 180)
+      .frame(width: 340, height: 340)
       .previewLayout(.sizeThatFits)
   }
 }

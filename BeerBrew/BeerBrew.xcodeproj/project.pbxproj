@@ -19,6 +19,9 @@
 		8A3C80972770BBAA0049B328 /* ParingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C80962770BBAA0049B328 /* ParingHeaderView.swift */; };
 		8A3C809A2770C10F0049B328 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C80992770C10F0049B328 /* Beer.swift */; };
 		8A3C809C2770C2330049B328 /* BeerDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3C809B2770C2330049B328 /* BeerDescriptionView.swift */; };
+		8AE240A82771FB3000BBF57F /* BottomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE240A72771FB3000BBF57F /* BottomTabBar.swift */; };
+		8AE240AA277202D700BBF57F /* BeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE240A9277202D700BBF57F /* BeerManager.swift */; };
+		8AE240AD2772063400BBF57F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8AE240AC2772063400BBF57F /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,8 @@
 		8A3C80962770BBAA0049B328 /* ParingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParingHeaderView.swift; sourceTree = "<group>"; };
 		8A3C80992770C10F0049B328 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		8A3C809B2770C2330049B328 /* BeerDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDescriptionView.swift; sourceTree = "<group>"; };
+		8AE240A72771FB3000BBF57F /* BottomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabBar.swift; sourceTree = "<group>"; };
+		8AE240A9277202D700BBF57F /* BeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AE240AD2772063400BBF57F /* Kingfisher in Frameworks */,
 				8A2C882427702D40009853FF /* SnapKit in Frameworks */,
 				8A2C882727702DFA009853FF /* Alamofire in Frameworks */,
 			);
@@ -103,6 +109,7 @@
 				8A3C809B2770C2330049B328 /* BeerDescriptionView.swift */,
 				8A3C80942770973E0049B328 /* BeerTableViewCell.swift */,
 				8A3C80962770BBAA0049B328 /* ParingHeaderView.swift */,
+				8AE240A72771FB3000BBF57F /* BottomTabBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -111,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				8A3C80992770C10F0049B328 /* Beer.swift */,
+				8AE240A9277202D700BBF57F /* BeerManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,6 +142,7 @@
 			packageProductDependencies = (
 				8A2C882327702D40009853FF /* SnapKit */,
 				8A2C882627702DFA009853FF /* Alamofire */,
+				8AE240AC2772063400BBF57F /* Kingfisher */,
 			);
 			productName = BeerBrew;
 			productReference = 8A2C880B27702D17009853FF /* BeerBrew.app */;
@@ -166,6 +175,7 @@
 			packageReferences = (
 				8A2C882227702D40009853FF /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8A2C882527702DFA009853FF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				8AE240AB2772063400BBF57F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 8A2C880C27702D17009853FF /* Products */;
 			projectDirPath = "";
@@ -196,6 +206,8 @@
 				8A3C80972770BBAA0049B328 /* ParingHeaderView.swift in Sources */,
 				8A3C809C2770C2330049B328 /* BeerDescriptionView.swift in Sources */,
 				8A2C881327702D17009853FF /* RandomBeerViewController.swift in Sources */,
+				8AE240AA277202D700BBF57F /* BeerManager.swift in Sources */,
+				8AE240A82771FB3000BBF57F /* BottomTabBar.swift in Sources */,
 				8A2C880F27702D17009853FF /* AppDelegate.swift in Sources */,
 				8A3C8092277091F10049B328 /* StretchyTableHeaderView.swift in Sources */,
 				8A2C881127702D17009853FF /* SceneDelegate.swift in Sources */,
@@ -348,7 +360,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,7 +388,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,6 +442,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8AE240AB2772063400BBF57F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -442,6 +462,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8A2C882527702DFA009853FF /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		8AE240AC2772063400BBF57F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AE240AB2772063400BBF57F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

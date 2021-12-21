@@ -8,11 +8,9 @@
 import UIKit
 import SnapKit
 
-class BeerDescriptionViewCell: UITableViewCell {
-  
-  static let reuseIdentifier = "BeerDescriptionViewCell"
-  
-  var moreHandler: (() -> ())?
+class BeerDescriptionView: UIView {
+    
+  var moreHandler: ((_ isExpended: Bool) -> ())?
   
   private let descriptionView: UIView = {
     let uiView = UIView()
@@ -25,13 +23,14 @@ class BeerDescriptionViewCell: UITableViewCell {
   
   private let titlelabel = UILabel()
   private let originLabel = UILabel()
-  private let descriptionLabel = UILabel()
+  private let descriptionTextView = UITextView()
   
-  private let moreButton: UIButton = {
+  public let moreButton: UIButton = {
     let button = UIButton()
-    button.addTarget(self, action: #selector(descriptionExpend), for: .touchUpInside)
     button.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+    button.setTitle("more", for: .normal)
     button.setTitleColor(.black, for: .normal)
+    button.setTitleColor(.black.withAlphaComponent(0.5), for: .highlighted)
     return button
   }()
   
@@ -39,28 +38,25 @@ class BeerDescriptionViewCell: UITableViewCell {
     let stackView = UIStackView()
     stackView.axis = .vertical
     stackView.spacing = 16
-    stackView.alignment = .fill
-    stackView.distribution = .equalSpacing
+    stackView.alignment = .center
+    stackView.distribution = .fillProportionally
     return stackView
   }()
   
-  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-    super.init(style: style, reuseIdentifier: reuseIdentifier)
+  override init(frame: CGRect) {
+    super.init(frame: frame)
     descriptionViewConfigure()
+    isUserInteractionEnabled = true
   }
   
   required init?(coder: NSCoder) {
     fatalError()
   }
   
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-  }
-  
   public func beerConfigure(beer: Beer) {
     titlelabel.text = beer.name
     originLabel.text = beer.origin
-    descriptionLabel.text = beer.description
+    descriptionTextView.text = beer.description
   }
   
   private func descriptionViewConfigure() {
@@ -70,60 +66,84 @@ class BeerDescriptionViewCell: UITableViewCell {
     descriptionView.layer.shadowOpacity = 0.4
     
     descriptionView.addSubview(stackView)
-    stackView.addArrangedSubview(titlelabel)
-    stackView.addArrangedSubview(originLabel)
-    stackView.addArrangedSubview(descriptionLabel)
-    stackView.addArrangedSubview(moreButton)
+    descriptionView.addSubview(titlelabel)
+    descriptionView.addSubview(originLabel)
+    descriptionView.addSubview(descriptionTextView)
+    addSubview(moreButton)
+    
+    descriptionTextView.isEditable = false
+    descriptionTextView.showsVerticalScrollIndicator = false
+    descriptionTextView.textColor = .black
     
     descriptionView.snp.makeConstraints { make in
       make.width.equalToSuperview().multipliedBy(0.9)
       make.centerX.equalToSuperview()
-      make.top.equalToSuperview().offset(-80)
+      make.top.equalToSuperview()
       make.bottom.equalToSuperview()
     }
-
-    moreButton.setTitle("more", for: .normal)
     
-    stackView.snp.makeConstraints {
-        $0.top.equalTo(20)
-        $0.leading.equalTo(20)
-        $0.trailing.equalTo(-20)
-        $0.bottom.equalTo(-10)
+    titlelabel.snp.makeConstraints { make in
+      make.width.equalToSuperview().multipliedBy(0.9)
+      make.centerX.equalToSuperview()
+      make.top.equalToSuperview().offset(8)
     }
+    
+    originLabel.snp.makeConstraints { make in
+      make.width.equalToSuperview().multipliedBy(0.9)
+      make.centerX.equalToSuperview()
+      make.top.equalTo(titlelabel.snp.bottom).offset(16)
+    }
+    
+    descriptionTextView.snp.makeConstraints { make in
+      make.top.equalTo(originLabel.snp.bottom).offset(8)
+      make.width.equalToSuperview()
+      make.centerX.equalToSuperview()
+      make.bottom.equalTo(moreButton.snp.top).offset(-8)
+    }
+    
+    moreButton.snp.makeConstraints { make in
+      make.height.equalTo(22)
+      make.width.equalToSuperview().multipliedBy(0.9)
+      make.centerX.equalToSuperview()
+      make.bottom.equalToSuperview().inset(8)
+    }
+    
+      
+    moreButton.addTarget(self, action: #selector(descriptionExpend(_:)), for: .touchUpInside)
     
     titlelabel.textAlignment = .center
     titlelabel.font = .systemFont(ofSize: 22, weight: .bold)
     titlelabel.textColor = .black
 
-
-
     originLabel.textAlignment = .center
     originLabel.font = .systemFont(ofSize: 14)
   
-    descriptionLabel.font = .systemFont(ofSize: 15)
-    descriptionLabel.numberOfLines = 4
+    descriptionTextView.font = .systemFont(ofSize: 15)
   }
   
   @objc private func descriptionExpend(_ sender: UIButton) {
     isExpended.toggle()
-    self.descriptionLabel.numberOfLines = self.isExpended ? 0 : 4
-    
+    UIView.transition(with: stackView, duration: 0.2, options: .transitionCrossDissolve) {
 
-    moreHandler?()
+    } completion: { _ in
+      self.moreHandler?(self.isExpended)
+    }
+
+    
   }
 }
 
 #if DEBUG
 import SwiftUI
 struct BeerDescriptionViewRepresentable: UIViewRepresentable {
-  typealias UIViewType = BeerDescriptionViewCell
+  typealias UIViewType = BeerDescriptionView
   
-  func makeUIView(context: UIViewRepresentableContext<BeerDescriptionViewRepresentable>) ->  BeerDescriptionViewCell {
-    BeerDescriptionViewCell()
+  func makeUIView(context: UIViewRepresentableContext<BeerDescriptionViewRepresentable>) ->  BeerDescriptionView {
+    BeerDescriptionView()
   }
   
-  func updateUIView(_ uiView: BeerDescriptionViewCell, context: Context) {
-    uiView.beerConfigure(beer: Beer(name: "맥주", origin: "원산지", description: "맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주맥주"))
+  func updateUIView(_ uiView: BeerDescriptionView, context: Context) {
+    
   }
   
 }

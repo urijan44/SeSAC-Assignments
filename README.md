@@ -40,3 +40,5 @@
 |17-1|코드기반 레이아웃|멜론|[이동하기](CodeBaseLayout/README_v1.md)|2021/12/14|
 |18-1|코드기반 레이아웃2|당근|[이동하기](CarrotUI/README.md)|2021/12/15|
 |19-1|맥주 추천 앱 만들기|UI구성, StrechView|[이동하기](BeerBrew/README.md)|2021/12/20|
+|19-2|맥주 추천 앱 만들기|UI구성, StrechView|[이동하기](BeerBrew/README.md)|2021/12/21|
+|19-3|맥주 추천 앱 만들기|UI구성, StrechView, API 적용|[이동하기](BeerBrew/README.md)|2021/12/22|
