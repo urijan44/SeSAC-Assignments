@@ -23,6 +23,7 @@
 - zPosition 쓰지 않고 해결
 - 스크롤 변화는 훨씬 자연스러워 짐
 - 방식을 바꿔서, 맥주 설명 뷰 more 버튼 확장이 부자연스러워 져서, textView로 변경
+- PunkAPI 적용
 
 - ScrollView Offset값에 따라 height 값 변경
 ```Swift
