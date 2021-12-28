@@ -1,49 +1,56 @@
 # 회원가입 구현하기
-## MVVM 이해하기
-[Notion](https://gookbobhenry.notion.site/MVVM-eb74da5ceb494f3c801bf96b98157382)
+# 보드 구현
 
-![](src/1.png)
+- skeletion 
+![](src/3.gif)
+- skeletion View가 뭔가 마음대로 안된다.
 
-수업에서 배운 대로 MVVM 이용해서 작성함
-MVVM에서는 ViewController가 없어서 둘다 뷰에 해당 되는거 같은데, View는 UI배치들이 있고, ViewController에는 주로 타겟 연결 등이 이루어 졌다. 
-
-![](src/2.gif)
-
-
+- API 호출에서 URLSession 클로져 반복되는 부분을 메소드로 따로 빼보았다.
 ```Swift
-  @objc func sendSignUpRequest() {
-    mainView.signUpButton.configuration?.showsActivityIndicator = true
-    mainView.signUpButton.isEnabled = false
-    viewModel.postSignUpRequest { user, error in
-      DispatchQueue.main.async {
-        if let _ = user {
-          guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-          windowScene.windows.first?.rootViewController = MainViewController()
-          windowScene.windows.first?.makeKeyAndVisible()
+static func fetchBoard(token: String, boardType: BoardElement, completion: @escaping (BoardElement?, APIError?) -> Void) {
+    let url = URL(string: "http://test.monocoding.com/boards")!
+    var request = URLRequest(url: url)
+    request.httpMethod = "GET"
+    request.setValue("bearer \(token)", forHTTPHeaderField: "authorization")
+    
+    requestTask(request: request, objectType: boardType) { board, error in
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        if let _ = error {
+          completion(nil, error)
+          return
         }
         
-        if let error = error {
-          let alert = UIAlertController(title: "회원가입 실패", message: error.localizedDescription, preferredStyle: .alert)
-          alert.addAction(.init(title: "확인", style: .default))
-          self.present(alert, animated: true)
+        if let board = board {
+          completion(board, nil)
+          return
         }
-        self.mainView.signUpButton.configuration?.showsActivityIndicator = false
-        self.mainView.signUpButton.isEnabled = true
       }
     }
   }
+  
+  fileprivate static func requestTask<T: Decodable>(request: URLRequest, objectType: T, completion: @escaping (T?, APIError?) -> Void) {
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+      guard error == nil else {
+        completion(nil, .failed)
+        return
+      }
+      
+      guard let response = response as? HTTPURLResponse, (200..<300).contains(response.statusCode) else {
+        completion(nil, .invalidResponse)
+        return
+      }
+      
+      guard let data = data else {
+        completion(nil, .noData)
+        return
+      }
+
+      guard let decoded = try? JSONDecoder().decode([T].self, from: data) else {
+        completion(nil, .invalidData)
+        return
+      }
+      completion(decoded.first, nil)
+    }
+    task.resume()
+  }
 ```
-- View에서는 ViewModel에서 전달받은 결과되로 View를 업데이트만 하면 되는 상황, 에러가 전달됐을때는 에러 컨트롤러를 출력한다.
-
-
-## APIService
-```Swift
-    let json = ["username": username,
-                "email": email,
-                "password": password]
-    let data = try? JSONSerialization.data(withJSONObject: json)
-    request.httpBody = data
-```
-- API요구사항에 body는 =과 &로 이루어져 있는데 위 방법은 json 그대로 들어간다. 다르게 해야했을 듯
-
-
