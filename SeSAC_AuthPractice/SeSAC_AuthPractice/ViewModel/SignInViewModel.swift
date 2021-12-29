@@ -15,7 +15,7 @@ class SignInViewModel {
     APIService.login(identifier: username.value, password: password.value) { user, error in
       
       guard let user = user else {
-        print(error)
+        print(error ?? "")
         return
       }
       UserDefaults.standard.set(user.jwt, forKey: "userToken")

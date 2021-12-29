@@ -20,13 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     if let token = UserDefaults.standard.string(forKey: "userToken") {
       print(token)
-      let controller = MainViewController()
-      controller.label.text = "\(token)"
-      window?.rootViewController = MainViewController()
+      window?.rootViewController = BoardViewController()
     } else {
       window?.rootViewController = SignUpViewController()
     }
-    
+   
+//    window?.rootViewController = PersonViewController()
     window?.makeKeyAndVisible()
   }
 

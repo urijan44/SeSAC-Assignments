@@ -36,7 +36,7 @@ class SingInViewController: UIViewController {
     viewModel.postUserLogin {
       OperationQueue.main.addOperation {
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-        windowScene.windows.first?.rootViewController = MainViewController()
+        windowScene.windows.first?.rootViewController = BoardViewController()
         windowScene.windows.first?.makeKeyAndVisible()
       }
     }

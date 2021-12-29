@@ -11,6 +11,13 @@
 		8A5D78A3277A347600C2D99A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D78A2277A347600C2D99A /* SignUpViewController.swift */; };
 		8A5D78A5277A34A900C2D99A /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5D78A4277A34A900C2D99A /* SignUpViewModel.swift */; };
 		8A731ABB2779ABE60020B5A8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A731ABA2779ABE60020B5A8 /* SignUpView.swift */; };
+		8A827414277A91470016D7ED /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A827413277A91470016D7ED /* LottoViewController.swift */; };
+		8A827417277A946E0016D7ED /* Lotto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A827416277A946E0016D7ED /* Lotto.swift */; };
+		8A827419277A96170016D7ED /* LottoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A827418277A96170016D7ED /* LottoViewModel.swift */; };
+		8A82741C277AA6610016D7ED /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A82741B277AA6610016D7ED /* Person.swift */; };
+		8A827420277AAA810016D7ED /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A82741F277AAA810016D7ED /* PersonViewModel.swift */; };
+		8A827422277AAB820016D7ED /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A827421277AAB820016D7ED /* PersonViewController.swift */; };
+		8A8E8F80277BF2E200E0216A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A8E8F7F277BF2E200E0216A /* Endpoint.swift */; };
 		8AD2C6DE2779483900B1BE4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2C6DD2779483900B1BE4A /* AppDelegate.swift */; };
 		8AD2C6E02779483900B1BE4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2C6DF2779483900B1BE4A /* SceneDelegate.swift */; };
 		8AD2C6E22779483900B1BE4A /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2C6E12779483900B1BE4A /* SignViewController.swift */; };
@@ -20,9 +27,13 @@
 		8AD2C6F627794BC600B1BE4A /* SIgnInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2C6F527794BC600B1BE4A /* SIgnInView.swift */; };
 		8AD2C6F82779503800B1BE4A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2C6F72779503800B1BE4A /* APIService.swift */; };
 		8AD2C6FA2779573900B1BE4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2C6F92779573900B1BE4A /* User.swift */; };
-		8AD2C6FC27795B1C00B1BE4A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2C6FB27795B1C00B1BE4A /* MainViewController.swift */; };
+		8AD2C6FC27795B1C00B1BE4A /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2C6FB27795B1C00B1BE4A /* BoardViewController.swift */; };
 		8AD2C6FE27795FAC00B1BE4A /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2C6FD27795FAC00B1BE4A /* Observable.swift */; };
 		8AD2C700277960E000B1BE4A /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD2C6FF277960E000B1BE4A /* SignInViewModel.swift */; };
+		8AF3A5E6277B7851009AD951 /* BoardMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF3A5E5277B7851009AD951 /* BoardMainView.swift */; };
+		8AF3A5E8277B7A1B009AD951 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF3A5E7277B7A1B009AD951 /* BoardViewModel.swift */; };
+		8AF3A5EA277B7DD5009AD951 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF3A5E9277B7DD5009AD951 /* Board.swift */; };
+		8AF3A5ED277B8259009AD951 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 8AF3A5EC277B8259009AD951 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +41,14 @@
 		8A5D78A2277A347600C2D99A /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8A5D78A4277A34A900C2D99A /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		8A731ABA2779ABE60020B5A8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		8A827413277A91470016D7ED /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
+		8A827416277A946E0016D7ED /* Lotto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lotto.swift; sourceTree = "<group>"; };
+		8A827418277A96170016D7ED /* LottoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewModel.swift; sourceTree = "<group>"; };
+		8A82741A277AA4A30016D7ED /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		8A82741B277AA6610016D7ED /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		8A82741F277AAA810016D7ED /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
+		8A827421277AAB820016D7ED /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		8A8E8F7F277BF2E200E0216A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		8AD2C6DA2779483900B1BE4A /* SeSAC_AuthPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_AuthPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AD2C6DD2779483900B1BE4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AD2C6DF2779483900B1BE4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,9 +59,12 @@
 		8AD2C6F527794BC600B1BE4A /* SIgnInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SIgnInView.swift; sourceTree = "<group>"; };
 		8AD2C6F72779503800B1BE4A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		8AD2C6F92779573900B1BE4A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		8AD2C6FB27795B1C00B1BE4A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		8AD2C6FB27795B1C00B1BE4A /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		8AD2C6FD27795FAC00B1BE4A /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		8AD2C6FF277960E000B1BE4A /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		8AF3A5E5277B7851009AD951 /* BoardMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardMainView.swift; sourceTree = "<group>"; };
+		8AF3A5E7277B7A1B009AD951 /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
+		8AF3A5E9277B7DD5009AD951 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8AF3A5ED277B8259009AD951 /* SkeletonView in Frameworks */,
 				8AD2C6F32779486400B1BE4A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				8AD2C6F92779573900B1BE4A /* User.swift */,
+				8A827416277A946E0016D7ED /* Lotto.swift */,
+				8A82741B277AA6610016D7ED /* Person.swift */,
+				8AF3A5E9277B7DD5009AD951 /* Board.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -76,8 +102,8 @@
 		8A731AB62779ABBE0020B5A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8AF3A5E4277B7841009AD951 /* Baord */,
 				8A731AB92779ABDA0020B5A8 /* SignUp */,
-				8AD2C6FB27795B1C00B1BE4A /* MainViewController.swift */,
 				8A731AB72779ABC50020B5A8 /* SignIn */,
 			);
 			path = View;
@@ -98,6 +124,7 @@
 				8AD2C6FD27795FAC00B1BE4A /* Observable.swift */,
 				8AD2C6F72779503800B1BE4A /* APIService.swift */,
 				8A5D78A0277A321200C2D99A /* UIView+Extension.swift */,
+				8A8E8F7F277BF2E200E0216A /* Endpoint.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -110,6 +137,24 @@
 				8A5D78A4277A34A900C2D99A /* SignUpViewModel.swift */,
 			);
 			path = SignUp;
+			sourceTree = "<group>";
+		};
+		8A827415277A91700016D7ED /* Lotto */ = {
+			isa = PBXGroup;
+			children = (
+				8A827413277A91470016D7ED /* LottoViewController.swift */,
+				8A827418277A96170016D7ED /* LottoViewModel.swift */,
+			);
+			path = Lotto;
+			sourceTree = "<group>";
+		};
+		8A82741E277AAA740016D7ED /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				8A82741F277AAA810016D7ED /* PersonViewModel.swift */,
+				8A827421277AAB820016D7ED /* PersonViewController.swift */,
+			);
+			path = Person;
 			sourceTree = "<group>";
 		};
 		8AD2C6D12779483900B1BE4A = {
@@ -133,15 +178,28 @@
 			children = (
 				8AD2C6DD2779483900B1BE4A /* AppDelegate.swift */,
 				8AD2C6DF2779483900B1BE4A /* SceneDelegate.swift */,
+				8A82741E277AAA740016D7ED /* Person */,
+				8A827415277A91700016D7ED /* Lotto */,
 				8A731AB82779ABCF0020B5A8 /* Support */,
 				8A731AB62779ABBE0020B5A8 /* View */,
 				8A731AB52779ABB90020B5A8 /* ViewModel */,
 				8A731AB42779ABB50020B5A8 /* Model */,
 				8AD2C6E62779483900B1BE4A /* Assets.xcassets */,
+				8A82741A277AA4A30016D7ED /* Config.xcconfig */,
 				8AD2C6E82779483900B1BE4A /* LaunchScreen.storyboard */,
 				8AD2C6EB2779483900B1BE4A /* Info.plist */,
 			);
 			path = SeSAC_AuthPractice;
+			sourceTree = "<group>";
+		};
+		8AF3A5E4277B7841009AD951 /* Baord */ = {
+			isa = PBXGroup;
+			children = (
+				8AD2C6FB27795B1C00B1BE4A /* BoardViewController.swift */,
+				8AF3A5E5277B7851009AD951 /* BoardMainView.swift */,
+				8AF3A5E7277B7A1B009AD951 /* BoardViewModel.swift */,
+			);
+			path = Baord;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +220,7 @@
 			name = SeSAC_AuthPractice;
 			packageProductDependencies = (
 				8AD2C6F22779486400B1BE4A /* SnapKit */,
+				8AF3A5EC277B8259009AD951 /* SkeletonView */,
 			);
 			productName = SeSAC_AuthPractice;
 			productReference = 8AD2C6DA2779483900B1BE4A /* SeSAC_AuthPractice.app */;
@@ -193,6 +252,7 @@
 			mainGroup = 8AD2C6D12779483900B1BE4A;
 			packageReferences = (
 				8AD2C6F12779486400B1BE4A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				8AF3A5EB277B8259009AD951 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 8AD2C6DB2779483900B1BE4A /* Products */;
 			projectDirPath = "";
@@ -221,18 +281,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A5D78A1277A321200C2D99A /* UIView+Extension.swift in Sources */,
+				8A827422277AAB820016D7ED /* PersonViewController.swift in Sources */,
 				8A5D78A5277A34A900C2D99A /* SignUpViewModel.swift in Sources */,
 				8AD2C6FE27795FAC00B1BE4A /* Observable.swift in Sources */,
-				8AD2C6FC27795B1C00B1BE4A /* MainViewController.swift in Sources */,
+				8AF3A5EA277B7DD5009AD951 /* Board.swift in Sources */,
+				8A827420277AAA810016D7ED /* PersonViewModel.swift in Sources */,
+				8A827414277A91470016D7ED /* LottoViewController.swift in Sources */,
+				8AD2C6FC27795B1C00B1BE4A /* BoardViewController.swift in Sources */,
 				8AD2C6E22779483900B1BE4A /* SignViewController.swift in Sources */,
+				8A827417277A946E0016D7ED /* Lotto.swift in Sources */,
 				8AD2C6F82779503800B1BE4A /* APIService.swift in Sources */,
 				8AD2C6FA2779573900B1BE4A /* User.swift in Sources */,
 				8A5D78A3277A347600C2D99A /* SignUpViewController.swift in Sources */,
 				8AD2C700277960E000B1BE4A /* SignInViewModel.swift in Sources */,
 				8A731ABB2779ABE60020B5A8 /* SignUpView.swift in Sources */,
 				8AD2C6DE2779483900B1BE4A /* AppDelegate.swift in Sources */,
+				8A827419277A96170016D7ED /* LottoViewModel.swift in Sources */,
+				8A8E8F80277BF2E200E0216A /* Endpoint.swift in Sources */,
+				8A82741C277AA6610016D7ED /* Person.swift in Sources */,
 				8AD2C6F627794BC600B1BE4A /* SIgnInView.swift in Sources */,
+				8AF3A5E6277B7851009AD951 /* BoardMainView.swift in Sources */,
 				8AD2C6E02779483900B1BE4A /* SceneDelegate.swift in Sources */,
+				8AF3A5E8277B7A1B009AD951 /* BoardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +322,7 @@
 /* Begin XCBuildConfiguration section */
 		8AD2C6EC2779483900B1BE4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A82741A277AA4A30016D7ED /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -313,6 +384,7 @@
 		};
 		8AD2C6ED2779483900B1BE4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A82741A277AA4A30016D7ED /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -452,6 +524,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		8AF3A5EB277B8259009AD951 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -459,6 +539,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8AD2C6F12779486400B1BE4A /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		8AF3A5EC277B8259009AD951 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8AF3A5EB277B8259009AD951 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -40,7 +40,7 @@ class SignUpViewController: UIViewController {
       DispatchQueue.main.async {
         if let _ = user {
           guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-          windowScene.windows.first?.rootViewController = MainViewController()
+          windowScene.windows.first?.rootViewController = BoardViewController()
           windowScene.windows.first?.makeKeyAndVisible()
         }
         
@@ -53,7 +53,6 @@ class SignUpViewController: UIViewController {
         self.mainView.signUpButton.isEnabled = true
       }
     }
-    
   }
   
   @objc func showSignInView(_ sender: UIButton) {

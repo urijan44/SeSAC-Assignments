@@ -9,8 +9,6 @@
 import UIKit
 import SnapKit
 
-
-
 class SignInView: UIView, ViewRepresenable {
   func setupView() {
     [usernameTextField, passwordTextField, signInButton].forEach { sub in
@@ -32,7 +30,8 @@ class SignInView: UIView, ViewRepresenable {
     usernameTextField.snp.makeConstraints { make in
       make.width.equalToSuperview().multipliedBy(0.8)
       make.height.equalTo(44)
-      make.centerX.centerY.equalToSuperview()
+      make.centerX.equalToSuperview()
+      make.centerY.equalToSuperview().multipliedBy(0.5)
     }
     
     passwordTextField.snp.makeConstraints { make in
