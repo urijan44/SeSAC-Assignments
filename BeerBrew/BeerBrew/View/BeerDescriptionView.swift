@@ -53,7 +53,8 @@ class BeerDescriptionView: UIView {
     fatalError()
   }
   
-  public func beerConfigure(beer: Beer) {
+  func beerConfigure(beer: Beer) {
+    print(#function)
     titlelabel.text = beer.name
     originLabel.text = beer.origin
     descriptionTextView.text = beer.description

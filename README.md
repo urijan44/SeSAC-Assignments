@@ -45,3 +45,4 @@
 |20|드라마정보조회|검색 뷰|[이동하기](DramaInfo/README.md)|2021/12/22|
 |21|회원가입구현하기|URLSession, MVVM|[이동하기](SeSAC_AuthPractice/README_v1.md)|2021/12/27|
 |21-2|회원가입구현하기|Board, MVVM, Skeleton|[이동하기](SeSAC_AuthPractice/README.md)|2021/12/28|
+|19-4|맥주 추천 앱 만들기|MVC -> MVVM 리펙토링|[설명없음]()|2021/12/30|
